@@ -46,6 +46,13 @@ def test_process_lookup_is_deterministic_and_source_linked():
     assert payload["unknowns"]
 
 
+def test_complex_process_question_without_key_keeps_process_context():
+    response = client.post("/api/ask", json={"question": "What evidence would be needed to assess a test facility bottleneck?", "process_id": "environmental-test"})
+    assert response.status_code == 200
+    assert response.json()["mode"] == "deterministic-process"
+    assert response.json()["process"]["id"] == "environmental-test"
+
+
 def test_responses_api_parses_output_content_and_falls_back(monkeypatch):
     import main
 
