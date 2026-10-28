@@ -12,13 +12,22 @@ client = TestClient(app)
 def test_health_and_data_contract():
     health = client.get("/healthz")
     assert health.status_code == 200
-    assert health.json()["version"] == "0.3.0"
+    assert health.json()["version"] == "0.4.0"
     data = client.get("/api/data").json()
     assert len(data["stages"]) == 7
     assert len(data["companies"]) >= 18
-    assert len(data["facilities"]) == len(data["companies"])
+    assert len(data["facilities"]) >= len(data["companies"])
     assert len(data["processes"]) >= 14
-    assert all(r["type"] == "conceptual-process-dependency" for r in data["relationships"])
+    conceptual = [r for r in data["relationships"] if r["type"] == "conceptual-process-dependency"]
+    assert conceptual and all(r["evidence_status"] == "public-engineering-source" for r in conceptual)
+
+
+def test_verified_facility_records_have_provenance_and_coordinates():
+    data = client.get("/api/data").json()
+    verified = [f for f in data["facilities"] if f.get("verification_status")]
+    assert len(verified) >= 3
+    assert all(f["source"].startswith("https://") and f["latitude"] and f["longitude"] for f in verified)
+    assert any(f["id"] == "vandenberg-sld30" and f["location_precision"] == "base-centroid" for f in verified)
 
 
 def test_lookup_stays_deterministic_and_cited():
@@ -51,6 +60,13 @@ def test_complex_process_question_without_key_keeps_process_context():
     assert response.status_code == 200
     assert response.json()["mode"] == "deterministic-process"
     assert response.json()["process"]["id"] == "environmental-test"
+
+
+def test_facility_retrieval_is_cited_without_openai():
+    response = client.post("/api/ask", json={"question": "Which facilities support environmental testing?"})
+    assert response.status_code == 200
+    assert response.json()["mode"] == "deterministic-facility"
+    assert response.json()["citations"]
 
 
 def test_responses_api_parses_output_content_and_falls_back(monkeypatch):
