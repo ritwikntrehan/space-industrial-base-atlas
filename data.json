@@ -1,0 +1,36 @@
+{
+  "project":"Space Industrial Base Atlas",
+  "version":"Starter 0.1",
+  "geography":"Orange County seed cohort; not a complete Southern California space industrial inventory",
+  "limitations":"Company-to-stage mappings are analyst categorizations of publicly described capabilities, not evidence of actual supply relationships, qualification, available capacity, production throughput, bottlenecks, or launch contracts.",
+  "stages":[
+    {"id":"materials","name":"Materials & inputs","summary":"Feedstock, composite materials, electronics, and manufacturing inputs","question":"Are critical inputs available and qualified?"},
+    {"id":"components","name":"Components & fabrication","summary":"Machining, composites, harnesses, electronics, and hardware fabrication","question":"Which capabilities are available for the bill of materials?"},
+    {"id":"subsystems","name":"Subsystems & payloads","summary":"Communications, power, avionics, structures, spacecraft subsystems","question":"Who can provide integrated functional equipment?"},
+    {"id":"integration","name":"Spacecraft integration","summary":"System assembly, mission integration, and interfaces","question":"Which organizations can integrate and assemble?"},
+    {"id":"testing","name":"Qualification & testing","summary":"Verification, instrumentation, environmental and acceptance tests","question":"Which tests are needed, and where can they be performed?"},
+    {"id":"launch","name":"Launch integration","summary":"Launch services, transportation, range interfaces, and campaign readiness","question":"How does flight-ready hardware get to launch?"},
+    {"id":"operations","name":"On-orbit operations","summary":"Space communications, tracking, monitoring, and mission operations","question":"Who supports the mission after deployment?"}
+  ],
+  "companies":[
+    {"name":"Advanced Composite Products & Technology (ACPT)","city":"Huntington Beach","sector":"Advanced composites / aerospace manufacturing","description":"Composite manufacturing; filament winding; composite tooling; pressure vessels; aerospace structures","stages":["materials","components"],"source":"https://www.acpt.com/"},
+    {"name":"Airtech International","city":"Huntington Beach","sector":"Advanced composites / materials","description":"Composite tooling, vacuum bagging and composite process materials","stages":["materials","components"],"source":"https://www.airtechintl.com/"},
+    {"name":"ALIGN PRECISION","city":"Garden Grove","sector":"Precision manufacturing / aerospace and defense","description":"Precision and CNC machining for aerospace and defense manufacturing","stages":["components"],"source":"https://alignprecision.com/"},
+    {"name":"APEX Space & Defense","city":"Santa Ana","sector":"Aerospace and defense manufacturing","description":"Composite manufacturing and aerospace systems engineering","stages":["components","subsystems"],"source":"https://www.apexsds.com/"},
+    {"name":"Arkisys","city":"Los Alamitos","sector":"Space infrastructure","description":"Space infrastructure, aerospace systems and mission hardware","stages":["subsystems","integration","operations"],"source":"https://www.arkisys.com/"},
+    {"name":"AstroForge","city":"Seal Beach","sector":"Space / asteroid mining","description":"Spacecraft systems and mission hardware","stages":["subsystems","integration","operations"],"source":"https://www.astroforge.com/"},
+    {"name":"Astronics Test Systems","city":"Irvine","sector":"Aerospace / defense test and measurement","description":"Automated test equipment, electronic instrumentation, mission-critical electronic testing","stages":["testing"],"source":"https://www.astronics.com/test-systems/"},
+    {"name":"Auriga Space","city":"Garden Grove","sector":"Space launch / electromagnetic systems","description":"Electromagnetic launch, hypersonic test systems and pulsed power","stages":["launch","testing"],"source":"https://www.aurigaspace.com/"},
+    {"name":"Comtech Space Components and Antennas","city":"Cypress","sector":"Space communications / antennas","description":"Satellite communication, antenna systems, RF components and launch tracking communications","stages":["components","subsystems","operations"],"source":"https://comtech.com/"},
+    {"name":"Ducommun","city":"Costa Mesa","sector":"Aerospace / defense manufacturing","description":"Aerospace structures, aerostructures and engineered electronics","stages":["components","subsystems"],"source":"https://www.ducommun.com/"},
+    {"name":"ExoAnalytic Solutions","city":"Foothill Ranch","sector":"Space domain awareness","description":"Space-domain awareness and mission systems","stages":["operations"],"source":"https://exoanalytic.com/"},
+    {"name":"Intellian Technologies","city":"Irvine","sector":"Satellite communications hardware","description":"Satellite communication antennas, gateways, user terminals and RF systems","stages":["subsystems","operations"],"source":"https://intelliantech.com/"},
+    {"name":"Karman Space & Defense","city":"Brea","sector":"Aerospace and defense manufacturing","description":"Defense manufacturing, aerospace systems and mission hardware","stages":["components","subsystems"],"source":"https://karman-sd.com/"},
+    {"name":"Layup Parts","city":"Huntington Beach","sector":"Advanced composites","description":"Composite parts, tooling and digital manufacturing workflow","stages":["materials","components"],"source":"https://www.layupparts.com/"},
+    {"name":"Marvin Test Solutions","city":"Irvine","sector":"Aerospace test and measurement","description":"Automated test systems, electronic instrumentation, turnkey test integration","stages":["testing"],"source":"https://www.marvintest.com/"},
+    {"name":"Mercury Systems","city":"Cypress","sector":"Defense electronics / microelectronics","description":"Defense microelectronics, RF electronics and embedded computing","stages":["components","subsystems"],"source":"https://www.mrcy.com/"},
+    {"name":"RAVE Manufacturing","city":"Anaheim","sector":"Advanced manufacturing / composites","description":"Five-axis machining, composite manufacturing and RF structures","stages":["components"],"source":"https://www.ravemfg.com"},
+    {"name":"Senra Systems","city":"Cypress","sector":"Aerospace manufacturing / wire systems","description":"Wire harness design and assembly; digital aerospace manufacturing","stages":["components"],"source":"https://www.senrasystems.us/"}
+  ],
+  "priority_data_gaps":["Flight qualification by product and process","Verified facility-level production capacity and utilization","Production lead times and order backlogs","Actual supply relationships and sole-source dependencies","Qualification test facility availability","Launch integration access and campaign timelines","Support programs and funding transitions"]
+}
