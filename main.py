@@ -149,7 +149,7 @@ def health(): return {"ok": True, "version": "0.3.0", "organizations": len(DATA[
 async def ask(payload: AskRequest, request: Request):
     question, found = payload.question.strip(), matches(payload.question, payload.stage)
     selected_process = process_by_id(payload.process_id)
-    if selected_process and not should_synthesize(question):
+    if selected_process and (not should_synthesize(question) or not OPENAI_API_KEY):
         return process_answer(selected_process)
     if not should_synthesize(question) or not OPENAI_API_KEY:
         return deterministic_answer(found, payload.stage)
