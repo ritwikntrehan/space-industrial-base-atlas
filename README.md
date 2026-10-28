@@ -1,14 +1,13 @@
-# Space Industrial Base Atlas | v0.2
+# Space Industrial Base Atlas | v0.3
 
 Independent Render/FastAPI app adapted conceptually from [SCHTMap](https://github.com/ritwikntrehan/oc-hard-tech-landscape). The original project is not modified.
 
 ## Features
-- Clickable production-to-launch pathway with stage-specific company capabilities
-- Interactive city-centroid company map and searchable Orange County seed registry (18 public descriptions from SCHTMap as of October 2026)
-- Explicit industrial data gaps, without pretending that capacity or dependencies have been measured
-- Source-linked company entries
-- Deterministic `/api/ask` answers for direct lookups, plus OpenAI Responses API synthesis only where comparison or interpretation is requested
-- In-memory response cache, per-client usage guard, and deterministic fallback if OpenAI is unavailable
+- Interactive dependency graph for a representative small-satellite production-to-launch reference workflow: materials, structures, avionics, power, RF, propulsion, payload, harnessing, test, integration, launch and initial operations.
+- Select a process to inspect generic upstream/downstream dependencies, potential controls, candidate public capability matches, cited engineering evidence, and missing information.
+- Normalized API objects for organizations, city-level facility labels, capabilities, processes, typed conceptual dependencies, and evidence sources.
+- Interactive city-centroid map and searchable 18-organization Orange County seed registry. City points are not facility-address assertions.
+- Deterministic `/api/ask` process, company, stage and capability retrieval. OpenAI Responses API is optional and only used for synthesis; it is cached, rate-limited and falls back deterministically.
 
 ## Local run
 
@@ -24,13 +23,14 @@ Create a **new GitHub repository** and push these files. In Render, create a **n
 
 ## Data quality and interpretation
 
-The seven-stage chain is an illustrative generalized space hardware production workflow. It is not a verified serial process for every space program. Company-to-stage matches are analytical classifications from existing public descriptions in SCHTMap, not verified contractual relationships, flight qualifications, inventory, production rates, capacity, utilization, bottlenecks or launch access. The 'coverage' bars are **counts in this small seed cohort**, not evidence of sector-wide supply adequacy. Launch-stage capability is particularly sparse in this Orange County seed and must not be interpreted as a sector-wide shortage. Validate each stage attribution before use externally.
+The dependency graph is a generic engineering reference model grounded in NASA systems-engineering and small-spacecraft material; it is not a verified serial process for every space program. Company-to-stage and company-to-capability matches are analytical classifications from public descriptions, not verified contractual relationships, flight qualifications, inventory, production rates, capacity, utilization, bottlenecks or launch access. Counts in this seed cohort are not evidence of sector-wide supply adequacy. Validate every stage attribution before external use.
+
+Every dependency record is typed `conceptual-process-dependency`. There are deliberately no named supplier-to-customer or capacity relationships in v0.3. A real bottleneck assessment needs documented qualification status, facility/process capability, capacity and utilization, lead time, demand, actual supplier relationships, and mission/launch constraints.
 
 ## Next iterations
-1. Add a versioned facility/capability/evidence schema, qualification and supplier verification statuses.
-2. Ingest complete SoCal seed universe (preserving map provenance), then enrich space-specialized firms and test facilities.
-3. Add demand assumptions and scenarios; only quantify capacity after collecting supplier-reported or independently verified figures.
-4. Add separate publicly documented startup support programs and program-to-company relationships.
+1. Add separately sourced facility-level evidence where publicly appropriate, plus explicit qualification/process evidence records.
+2. Complete one SoCal representative pathway with documented spacecraft integrator, test, and launch-infrastructure records.
+3. Add supplier and program relationships only where public sources establish them; do not estimate capacity until evidence supports it.
 
 ## Tests
 
