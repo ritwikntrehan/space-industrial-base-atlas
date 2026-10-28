@@ -58,6 +58,23 @@ for process in DATA["processes"]:
     process["upstream"] = [p["id"] for p in DATA["processes"] if process["id"] in p["downstream"]]
     process["downstream_labels"] = [next(p["name"] for p in DATA["processes"] if p["id"] == target) for target in process["downstream"]]
 DATA["relationships"] = [{"from_id": p["id"], "to_id": target, "type": "conceptual-process-dependency", "evidence_status": "public-engineering-source", "source": p["evidence"][0]["url"]} for p in DATA["processes"] for target in p["downstream"]]
+# v0.4: individually sourced facilities supporting one Southern California reference path.
+FACILITY_EVIDENCE = [
+    {"id": "jpl-25ft", "organization_id": "nasa-jpl", "name": "NASA JPL 25-Foot Space Simulator", "location_label": "La Cañada Flintridge, CA", "latitude": 34.2014, "longitude": -118.1718, "location_precision": "address-derived", "verification_status": "official-address-and-facility-source", "facility_type": "environmental-test", "capability_ids": ["environmental-test"], "process_ids": ["environmental-test"], "products_services": ["thermal-vacuum, acoustic, vibration and EMI/EMC testing described in the cited JPL account"], "qualification_evidence": "JPL reports spacecraft environmental testing at the facility; mission-specific qualification basis remains unknown.", "source": "https://www.jpl.nasa.gov/images/pia26708-voyager-technologies-griffin-1-completes-environmental-testing-at-nasa-jpl/", "source_date": "2026-10-12", "evidence_classification": "observed", "confidence": "high", "last_verified": "2026-10-28", "unknowns": ["external customer availability", "schedule", "test configuration", "capacity", "commercial terms"]},
+    {"id": "jpl-ep-lab", "organization_id": "nasa-jpl", "name": "NASA JPL Electric Propulsion Laboratory", "location_label": "La Cañada Flintridge, CA", "latitude": 34.2014, "longitude": -118.1718, "location_precision": "address-derived", "verification_status": "official-address-and-facility-source", "facility_type": "propulsion-test", "capability_ids": ["propulsion", "environmental-test"], "process_ids": ["propulsion", "environmental-test"], "products_services": ["vacuum, thermal-vacuum, vibration and shock test capability for electric propulsion work"], "qualification_evidence": "Public facility description documents capability; it does not establish availability for a particular mission.", "source": "https://www.jpl.nasa.gov/go/epl/capabilities/facilities/", "source_date": "2026-10-28", "evidence_classification": "observed", "confidence": "high", "last_verified": "2026-10-28", "unknowns": ["mission applicability", "test slot availability", "capacity", "customer access"]},
+    {"id": "vandenberg-sld30", "organization_id": "us-space-force-sld30", "name": "Vandenberg Space Force Base / Space Launch Delta 30", "location_label": "Vandenberg SFB, CA", "latitude": 34.742, "longitude": -120.572, "location_precision": "base-centroid", "verification_status": "official-installation-source", "facility_type": "launch-infrastructure", "capability_ids": ["launch-integration", "launch-campaign"], "process_ids": ["launch-integration", "launch-campaign"], "products_services": ["West Coast spaceport and test-range support for launch operations"], "qualification_evidence": "Public Space Force description documents range and installation role; it does not establish access for any specific payload.", "source": "https://www.ssc.spaceforce.mil/Program-Offices/SPACE-ACCESS", "source_date": "2026-10-28", "evidence_classification": "observed", "confidence": "high", "last_verified": "2026-10-28", "unknowns": ["launch-provider contract", "payload acceptance", "range approval", "campaign schedule", "available launch opportunity"]},
+]
+DATA["organizations"] = [{"id": c["id"], "name": c["name"], "source": c["source"], "classification": "observed-public-description"} for c in DATA["companies"]] + [
+    {"id": "nasa-jpl", "name": "NASA Jet Propulsion Laboratory", "source": "https://www.jpl.nasa.gov/jpl-and-the-community/directions-and-maps/", "classification": "observed-public-source"},
+    {"id": "us-space-force-sld30", "name": "U.S. Space Force / Space Launch Delta 30", "source": "https://www.ssc.spaceforce.mil/Program-Offices/SPACE-ACCESS", "classification": "observed-public-source"},
+]
+DATA["facilities"].extend(FACILITY_EVIDENCE)
+for facility in FACILITY_EVIDENCE:
+    DATA["relationships"].append({"from_id": facility["organization_id"], "to_id": facility["id"], "type": "organization-operates-facility", "evidence_status": "observed", "source": facility["source"]})
+    for capability in facility["capability_ids"]:
+        DATA["relationships"].append({"from_id": facility["id"], "to_id": capability, "type": "facility-possesses-documented-capability", "evidence_status": "observed", "source": facility["source"]})
+    for process_id in facility["process_ids"]:
+        DATA["relationships"].append({"from_id": facility["id"], "to_id": process_id, "type": "facility-supports-industrial-process", "evidence_status": "observed", "source": facility["source"]})
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "").strip()
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini")
 MAX_PER_HOUR = int(os.getenv("ASK_MAX_PER_HOUR", "24"))
@@ -142,7 +159,7 @@ def get_data(): return DATA
 
 
 @app.get("/healthz")
-def health(): return {"ok": True, "version": "0.3.0", "organizations": len(DATA["companies"]), "facilities": len(DATA.get("facilities", [])), "processes": len(DATA.get("processes", [])), "openai_configured": bool(OPENAI_API_KEY)}
+def health(): return {"ok": True, "version": "0.4.0", "organizations": len(DATA["organizations"]), "facilities": len(DATA.get("facilities", [])), "processes": len(DATA.get("processes", [])), "openai_configured": bool(OPENAI_API_KEY)}
 
 
 @app.post("/api/ask")
@@ -151,6 +168,12 @@ async def ask(payload: AskRequest, request: Request):
     selected_process = process_by_id(payload.process_id)
     if selected_process and (not should_synthesize(question) or not OPENAI_API_KEY):
         return process_answer(selected_process)
+    facility_words = terms(question)
+    facility_matches = [f for f in DATA.get("facilities", []) if any(w in " ".join([f.get("name", ""), f.get("facility_type", ""), " ".join(f.get("capability_ids", [])), " ".join(f.get("process_ids", []))]).lower() for w in facility_words)]
+    facility_intent = bool(facility_words & {"facility", "facilities", "testing", "test", "qualification", "environmental", "launch", "vandenberg", "propulsion"})
+    if facility_matches and facility_intent and not OPENAI_API_KEY:
+        citations = [{"label": f["name"], "url": f["source"]} for f in facility_matches]
+        return {"answer": "Documented facility matches: " + "; ".join(f"{f['name']} ({f['location_label']}; {', '.join(f['products_services'])})" for f in facility_matches) + ". These are documented facility capabilities, not evidence of capacity, availability, mission fit, or a supplier relationship.", "mode": "deterministic-facility", "facilities": facility_matches, "citations": citations, "unknowns": sorted({gap for f in facility_matches for gap in f.get("unknowns", [])}), "limitations": DATA["limitations"]}
     if not should_synthesize(question) or not OPENAI_API_KEY:
         return deterministic_answer(found, payload.stage)
     if not take_slot(request):
