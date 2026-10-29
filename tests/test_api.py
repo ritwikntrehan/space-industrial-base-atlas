@@ -12,7 +12,7 @@ client = TestClient(main.app)
 
 RESPONSE_FIELDS = {
     "answer_text", "citations", "organization_ids", "facility_ids", "process_ids",
-    "suggested_actions", "unknowns", "evidence_limitations", "mode",
+    "program_ids", "suggested_actions", "unknowns", "evidence_limitations", "mode",
 }
 
 
@@ -27,13 +27,22 @@ def ask(question, **extra):
 def test_health_and_data_contract():
     health = client.get("/healthz")
     assert health.status_code == 200
-    assert health.json()["version"] == "0.5.0"
+    assert health.json()["version"] == "0.6.0"
     assert "anthropic_configured" in health.json()
     assert "openai_configured" not in health.json()
     data = client.get("/api/data").json()
     assert len(data["companies"]) >= 18
     assert len(data["processes"]) >= 14
+    assert len(data["programs"]) == 7
     assert len([f for f in data["facilities"] if f.get("verification_status")]) >= 3
+
+
+def test_homepage_is_compact_and_suggested_queries_precede_map():
+    html = client.get("/").text
+    assert "<h1" not in html and "hero-copy" not in html
+    assert html.count('class="prompt"') == 5
+    assert "Where can I find SpaceWERX or SBIR opportunities?" in html
+    assert html.index('id="ask"') < html.index('id="map-section"') < html.index('id="process-section"')
 
 
 def test_facility_question_returns_citations_ids_and_navigation():
@@ -66,12 +75,30 @@ def test_assembly_to_launch_question_selects_complete_relevant_path():
     assert any(c["evidence_classification"] == "conceptual" for c in payload["citations"])
 
 
-def test_program_question_reports_real_coverage_gap():
+def test_program_question_returns_governed_records_and_actions():
     payload = ask("What programs might support my space startup?")
-    assert payload["mode"] == "deterministic-coverage-gap"
+    assert payload["mode"] == "deterministic-program"
     assert not payload["organization_ids"]
-    assert not payload["citations"]
-    assert "does not yet contain" in payload["answer_text"]
+    assert payload["program_ids"]
+    assert payload["citations"]
+    assert any(a["action"] == "filter_programs" for a in payload["suggested_actions"])
+    assert "confirm time-sensitive windows" in payload["answer_text"]
+
+
+def test_spacewerx_query_is_deterministic_and_does_not_claim_every_path_is_open():
+    payload = ask("Where can I find SpaceWERX or SBIR opportunities?")
+    assert payload["mode"] == "deterministic-program"
+    assert "spacewerx-sbir-sttr" in payload["program_ids"]
+    assert "americas-seed-fund-sbir-sttr" in payload["program_ids"]
+    assert len(payload["program_ids"]) == 5
+    assert all(c["url"].startswith("https://") for c in payload["citations"])
+    assert "recurring" in payload["answer_text"]
+
+
+def test_regional_connector_question_returns_socal_deep_tech():
+    payload = ask("What organizations connect Southern California space companies?")
+    assert payload["program_ids"] == ["socal-deep-tech-week"]
+    assert "2027" in payload["answer_text"]
 
 
 def test_selected_process_supports_contextual_follow_up():
@@ -97,9 +124,11 @@ def test_backend_removes_unrecognized_ids_actions_and_citations():
         "organization_ids": ["nasa-jpl", "invented-org"],
         "facility_ids": ["jpl-25ft", "invented-facility"],
         "process_ids": ["integration", "invented-process"],
+        "program_ids": ["spacewerx-sbir-sttr", "invented-program"],
         "suggested_actions": [
             {"action": "highlight_facilities", "label": "Show", "target_ids": ["jpl-25ft", "nasa-jpl", "invented"]},
             {"action": "select_processes", "label": "Bad", "target_ids": ["invented"]},
+            {"action": "filter_programs", "label": "Programs", "target_ids": ["spacewerx-sbir-sttr", "invented"]},
         ],
         "unknowns": [], "evidence_limitations": [], "mode": "test",
     }
@@ -107,8 +136,12 @@ def test_backend_removes_unrecognized_ids_actions_and_citations():
     assert safe["organization_ids"] == ["nasa-jpl"]
     assert safe["facility_ids"] == ["jpl-25ft"]
     assert safe["process_ids"] == ["integration"]
+    assert safe["program_ids"] == ["spacewerx-sbir-sttr"]
     assert len(safe["citations"]) == 1
-    assert safe["suggested_actions"] == [{"action": "highlight_facilities", "label": "Show", "target_ids": ["jpl-25ft"]}]
+    assert safe["suggested_actions"] == [
+        {"action": "highlight_facilities", "label": "Show", "target_ids": ["jpl-25ft"]},
+        {"action": "filter_programs", "label": "Programs", "target_ids": ["spacewerx-sbir-sttr"]},
+    ]
 
 
 def test_claude_messages_synthesis_uses_official_sdk_boundary(monkeypatch):
@@ -154,3 +187,19 @@ def test_request_validation_rejects_unbounded_history_and_short_question():
     turns = [{"role": "user", "content": "context"}] * 7
     assert client.post("/api/ask", json={"question": "x"}).status_code == 422
     assert client.post("/api/ask", json={"question": "valid", "history": turns}).status_code == 422
+
+
+def test_source_manifest_and_program_records_are_governed():
+    root = Path(__file__).resolve().parents[1]
+    manifest = json.loads((root / "data" / "source_manifest.json").read_text())
+    programs = json.loads((root / "data" / "website" / "programs.json").read_text())["programs"]
+    assert len(manifest["sources"]) >= 7
+    required_manifest = {
+        "dataset_name", "provider", "source_url", "access_method", "coverage",
+        "last_publication_date", "last_retrieved_date", "license_or_reuse",
+        "update_frequency", "authentication_required", "ingestion_status", "canonical_tables",
+    }
+    assert all(required_manifest <= source.keys() for source in manifest["sources"])
+    assert any(source["id"] == "sam-opportunities-api" and source["authentication_required"] for source in manifest["sources"])
+    assert all(program["source_url"].startswith("https://") for program in programs)
+    assert all(program["verification_status"] and program["unknowns"] for program in programs)

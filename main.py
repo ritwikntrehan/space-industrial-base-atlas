@@ -18,6 +18,7 @@ from typing import Literal
 
 BASE = Path(__file__).parent
 DATA: dict[str, Any] = json.loads((BASE / "data.json").read_text(encoding="utf-8"))
+DATA["programs"] = json.loads((BASE / "data" / "website" / "programs.json").read_text(encoding="utf-8"))["programs"]
 
 # This is a conceptual reference workflow, not a claim about any program's commercial flow.
 SOURCES = {
@@ -84,13 +85,15 @@ CACHE: OrderedDict[str, tuple[float, dict[str, Any]]] = OrderedDict()
 REQUESTS: dict[str, deque[float]] = defaultdict(deque)
 STOP = {"the", "what", "which", "could", "would", "from", "about", "where", "companies", "there", "that", "with", "have", "this", "are", "for", "who", "and", "does", "can", "how", "our", "into", "some", "a", "an", "in", "of", "to", "is", "it"}
 SYNTHESIS_MARKERS = {"compare", "tradeoff", "prioritize", "scenario", "synthesis", "why", "strategy", "recommend", "risk", "bottleneck", "gap", "across"}
-app = FastAPI(title="Space Industrial Base Atlas", version="0.5.0")
+app = FastAPI(title="Space Industrial Base Atlas", version="0.6.0")
 
 ORGANIZATION_IDS = {o["id"] for o in DATA["organizations"]}
 FACILITY_IDS = {f["id"] for f in DATA["facilities"]}
 PROCESS_IDS = {p["id"] for p in DATA["processes"]}
+PROGRAM_IDS = {p["id"] for p in DATA["programs"]}
 SOURCE_URLS = ({o["source"] for o in DATA["organizations"]}
                | {f["source"] for f in DATA["facilities"]}
+               | {program["source_url"] for program in DATA["programs"]}
                | {source["url"] for source in SOURCES.values()})
 EVIDENCE_LIMITATIONS = DATA["limitations"] if isinstance(DATA["limitations"], list) else [DATA["limitations"]]
 
@@ -114,7 +117,7 @@ class Citation(BaseModel):
 
 
 class InterfaceAction(BaseModel):
-    action: Literal["highlight_facilities", "select_processes", "filter_organizations", "open_records"]
+    action: Literal["highlight_facilities", "select_processes", "filter_organizations", "filter_programs", "open_records"]
     label: str = Field(min_length=1, max_length=120)
     target_ids: list[str] = Field(default_factory=list, max_length=20)
 
@@ -125,6 +128,7 @@ class AssistantResponse(BaseModel):
     organization_ids: list[str] = Field(default_factory=list, max_length=20)
     facility_ids: list[str] = Field(default_factory=list, max_length=20)
     process_ids: list[str] = Field(default_factory=list, max_length=20)
+    program_ids: list[str] = Field(default_factory=list, max_length=20)
     suggested_actions: list[InterfaceAction] = Field(default_factory=list, max_length=8)
     unknowns: list[str] = Field(default_factory=list, max_length=20)
     evidence_limitations: list[str] = Field(default_factory=list, max_length=20)
@@ -167,7 +171,7 @@ def deterministic_answer(found: list[dict[str, Any]], stage: Optional[str]) -> d
     return {
         "answer_text": f"{lead}: {listings}. These are candidate capability matches, not verified supplier relationships.",
         "citations": [citation(c["name"], c["source"]) for c in found[:5]],
-        "organization_ids": ids, "facility_ids": [], "process_ids": [],
+        "organization_ids": ids, "facility_ids": [], "process_ids": [], "program_ids": [],
         "suggested_actions": [action("filter_organizations", "Inspect candidate organizations", ids), action("open_records", "Open related records", ids)],
         "unknowns": ["supplier relationship", "flight qualification", "capacity and availability", "lead time"],
         "evidence_limitations": EVIDENCE_LIMITATIONS, "mode": "deterministic-registry",
@@ -190,7 +194,7 @@ def process_answer(processes: list[dict[str, Any]]) -> dict[str, Any]:
     return {
         "answer_text": f"The reference pathway is {process_summary}. {purpose} This is a conceptual engineering sequence, not a claim about a specific program's commercial flow.",
         "citations": [citation(e["title"], e["url"], "conceptual") for e in source_rows.values()] + [citation(f["name"], f["source"]) for f in facilities],
-        "organization_ids": organization_ids, "facility_ids": [f["id"] for f in facilities], "process_ids": process_ids,
+        "organization_ids": organization_ids, "facility_ids": [f["id"] for f in facilities], "process_ids": process_ids, "program_ids": [],
         "suggested_actions": [action("select_processes", "Trace the production pathway", process_ids)] + ([action("highlight_facilities", "Show documented facilities", [f["id"] for f in facilities])] if facilities else []) + ([action("filter_organizations", "Inspect capability candidates", [c["id"] for c in candidates])] if candidates else []),
         "unknowns": sorted({gap for p in processes for gap in p["evidence_gaps"]}),
         "evidence_limitations": EVIDENCE_LIMITATIONS, "mode": "deterministic-process",
@@ -201,7 +205,7 @@ def coverage_gap_answer(programs: bool = False) -> dict[str, Any]:
     topic = "startup-support program" if programs else "requested topic"
     return {
         "answer_text": f"The Atlas does not yet contain a documented {topic} dataset, so it cannot provide a grounded recommendation from current records. Add authoritative program or domain sources before treating results as coverage.",
-        "citations": [], "organization_ids": [], "facility_ids": [], "process_ids": [], "suggested_actions": [],
+        "citations": [], "organization_ids": [], "facility_ids": [], "process_ids": [], "program_ids": [], "suggested_actions": [],
         "unknowns": [f"authoritative {topic} records", "eligibility and geographic restrictions", "current availability and deadlines"],
         "evidence_limitations": EVIDENCE_LIMITATIONS, "mode": "deterministic-coverage-gap",
     }
@@ -215,7 +219,7 @@ def facility_answer(found: list[dict[str, Any]]) -> dict[str, Any]:
     return {
         "answer_text": f"Documented facility matches: {listings}. The cited capability does not establish access, schedule, capacity, pricing, or mission fit.",
         "citations": [citation(f["name"], f["source"]) for f in found],
-        "organization_ids": organization_ids, "facility_ids": facility_ids, "process_ids": process_ids,
+        "organization_ids": organization_ids, "facility_ids": facility_ids, "process_ids": process_ids, "program_ids": [],
         "suggested_actions": [action("highlight_facilities", "Highlight documented facilities", facility_ids), action("select_processes", "Inspect applicable processes", process_ids), action("open_records", "Inspect facility records", facility_ids)],
         "unknowns": sorted({gap for f in found for gap in f.get("unknowns", [])}),
         "evidence_limitations": EVIDENCE_LIMITATIONS, "mode": "deterministic-facility",
@@ -251,10 +255,58 @@ def relevant_facilities(question: str) -> list[dict[str, Any]]:
     return facilities
 
 
+def relevant_programs(question: str) -> list[dict[str, Any]]:
+    q, words = question.lower(), terms(question)
+    if any(term in q for term in ("connect", "community", "ecosystem", "event")):
+        return [program for program in DATA["programs"] if program["category"] == "regional-ecosystem-network"]
+    if "tacfi" in q:
+        return [program for program in DATA["programs"] if program["id"] == "spacewerx-tacfi-py26-2"]
+    if "stratfi" in q:
+        return [program for program in DATA["programs"] if program["id"] == "spacewerx-stratfi"]
+    if "taba" in q:
+        return [program for program in DATA["programs"] if program["id"] == "spacewerx-taba"]
+    if "spacewerx" in q:
+        return [program for program in DATA["programs"] if program["id"].startswith("spacewerx-") or ("sbir" in q and program["id"] == "americas-seed-fund-sbir-sttr")]
+    if "sbir" in q or "sttr" in q:
+        ids = {"americas-seed-fund-sbir-sttr", "spacewerx-sbir-sttr"}
+        return [program for program in DATA["programs"] if program["id"] in ids]
+    ranked: list[tuple[int, dict[str, Any]]] = []
+    for program in DATA["programs"]:
+        hay = " ".join([
+            program["name"], program["provider"], program["category"], program["description"],
+            program["geography"], " ".join(program["eligibility"]), program["status_detail"],
+        ]).lower()
+        value = sum(3 if word in program["name"].lower() else 1 for word in words if word in hay)
+        if "spacewerx" in q and "spacewerx" in hay:
+            value += 6
+        if any(term in q for term in ("startup", "funding", "grant", "support")) and program["category"] != "regional-ecosystem-network":
+            value += 2
+        if value:
+            ranked.append((value, program))
+    return [program for _, program in sorted(ranked, key=lambda row: (-row[0], row[1]["name"]))[:8]]
+
+
+def program_answer(found: list[dict[str, Any]]) -> dict[str, Any]:
+    ids = [program["id"] for program in found]
+    listings = "; ".join(f"{program['name']} [{program['status']}]: {program['description']} {program['status_detail']}" for program in found[:6])
+    return {
+        "answer_text": f"Documented support and ecosystem matches: {listings} Status labels describe the official pages as reviewed on 2026-10-29; confirm time-sensitive windows at the cited source before acting.",
+        "citations": [citation(program["name"], program["source_url"]) for program in found],
+        "organization_ids": [], "facility_ids": [], "process_ids": [], "program_ids": ids,
+        "suggested_actions": [action("filter_programs", "Inspect program and ecosystem records", ids), action("open_records", "Open related records", ids)],
+        "unknowns": sorted({unknown for program in found for unknown in program["unknowns"]})[:20],
+        "evidence_limitations": EVIDENCE_LIMITATIONS + ["Program status and deadlines can change after the recorded review date."],
+        "mode": "deterministic-program",
+    }
+
+
 def deterministic_route(payload: AskRequest) -> dict[str, Any]:
     question, q = payload.question.strip(), payload.question.lower()
-    program_intent = "startup" in q and any(term in q for term in ("program", "support", "grant", "funding", "accelerator"))
+    program_intent = any(term in q for term in ("program", "support", "grant", "funding", "accelerator", "spacewerx", "sbir", "sttr", "tacfi", "stratfi", "taba", "rocket fund", "ecosystem", "connect", "event"))
     if program_intent:
+        programs = relevant_programs(question)
+        if programs:
+            return program_answer(programs)
         return coverage_gap_answer(programs=True)
     facility_intent = any(term in q for term in ("facility", "facilities", "where can", "where could", "test", "testing", "qualification", "launch site", "spaceport"))
     if facility_intent:
@@ -276,12 +328,14 @@ def validate_response(raw: dict[str, Any]) -> dict[str, Any]:
     parsed.organization_ids = list(dict.fromkeys(x for x in parsed.organization_ids if x in ORGANIZATION_IDS))
     parsed.facility_ids = list(dict.fromkeys(x for x in parsed.facility_ids if x in FACILITY_IDS))
     parsed.process_ids = list(dict.fromkeys(x for x in parsed.process_ids if x in PROCESS_IDS))
+    parsed.program_ids = list(dict.fromkeys(x for x in parsed.program_ids if x in PROGRAM_IDS))
     parsed.citations = [c for c in parsed.citations if c.url in SOURCE_URLS]
     targets = {
         "highlight_facilities": FACILITY_IDS,
         "select_processes": PROCESS_IDS,
         "filter_organizations": ORGANIZATION_IDS,
-        "open_records": ORGANIZATION_IDS | FACILITY_IDS,
+        "filter_programs": PROGRAM_IDS,
+        "open_records": ORGANIZATION_IDS | FACILITY_IDS | PROGRAM_IDS,
     }
     safe_actions = []
     for suggested in parsed.suggested_actions:
@@ -325,7 +379,7 @@ def get_data(): return DATA
 
 
 @app.get("/healthz")
-def health(): return {"ok": True, "version": "0.5.0", "organizations": len(DATA["organizations"]), "facilities": len(DATA.get("facilities", [])), "processes": len(DATA.get("processes", [])), "anthropic_configured": bool(ANTHROPIC_API_KEY)}
+def health(): return {"ok": True, "version": "0.6.0", "organizations": len(DATA["organizations"]), "facilities": len(DATA.get("facilities", [])), "processes": len(DATA.get("processes", [])), "programs": len(DATA["programs"]), "anthropic_configured": bool(ANTHROPIC_API_KEY)}
 
 
 @app.post("/api/ask")

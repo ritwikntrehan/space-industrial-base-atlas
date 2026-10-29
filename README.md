@@ -1,4 +1,4 @@
-# Space Industrial Base Atlas | v0.5
+# Space Industrial Base Atlas | v0.6
 
 Independent Render/FastAPI app adapted conceptually from [SCHTMap](https://github.com/ritwikntrehan/oc-hard-tech-landscape). The original project is not modified.
 
@@ -8,8 +8,9 @@ Independent Render/FastAPI app adapted conceptually from [SCHTMap](https://githu
 - Normalized API objects for organizations, city-level facility labels, capabilities, processes, typed conceptual dependencies, and evidence sources.
 - Interactive city-centroid map and searchable 18-organization Orange County seed registry. City points are not facility-address assertions.
 - A question-first homepage that turns evidence retrieval into validated map, process, and registry navigation actions.
-- One response contract for answer text, citations, organization/facility/process IDs, suggested interface actions, unknowns, and evidence limitations.
-- Deterministic `/api/ask` process, company, stage, facility, and capability retrieval. Anthropic's Messages API is optional and only used for complex synthesis; it is cached, rate-limited, server-side, and falls back deterministically.
+- One response contract for answer text, citations, organization/facility/process/program IDs, suggested interface actions, unknowns, and evidence limitations.
+- Seven governed funding, assistance, and ecosystem records covering federal SBIR/STTR, SpaceWERX paths, Caltech's Rocket Fund, and SoCal Deep Tech Week, with status and eligibility caveats.
+- Deterministic `/api/ask` process, company, stage, facility, capability, and program retrieval. Anthropic's Messages API is optional and only used for complex synthesis; it is cached, rate-limited, server-side, and falls back deterministically.
 - Bounded conversation history for contextual follow-ups. Returned citations, entity IDs, and actions are validated against Atlas data before the browser applies them.
 
 ## Local run
@@ -20,6 +21,18 @@ uvicorn main:app --reload
 ```
 
 Open http://localhost:8000.
+
+## Data build
+
+The versioned data layout separates `data/source`, `data/canonical`, and `data/website`. `data/source_manifest.json` records provider, access, coverage, reuse constraints, update frequency, authentication, and ingestion status.
+
+After changing curated source records, rebuild the canonical and website payloads:
+
+```bash
+python scripts/build_data.py
+```
+
+The builder validates IDs, required evidence fields, statuses, dates, HTTPS sources, eligibility, and unknowns. See `docs/builder-question-audit.md` for the 15-question usefulness audit.
 
 ## Render
 The included Render blueprint installs the official Anthropic Python SDK. Set `ANTHROPIC_API_KEY` in the service's Environment settings, never in Git, logs, browser code, or frontend responses. `ANTHROPIC_MODEL` defaults to `claude-sonnet-5` and can be changed without code edits. Claude access is optional: deterministic, source-linked answers and navigation remain available without credentials.
@@ -34,11 +47,11 @@ Every dependency record is typed `conceptual-process-dependency`. There are deli
 
 ## Current evidence limitations
 
-The Atlas has three individually sourced facility records and an Orange County-centered organization seed cohort. It does not yet have a startup-program database, customer-access terms, facility schedules, capacity, pricing, complete Los Angeles coverage, or verified supplier/customer relationships. The assistant says so instead of filling those gaps with model knowledge.
+The Atlas has three individually sourced facility records, seven program/ecosystem records, and an Orange County-centered organization seed cohort. It does not yet have complete shared-facility access data, live SAM.gov ingestion, people records, facility schedules, capacity, pricing, complete Los Angeles coverage, or verified supplier/customer relationships. The assistant says so instead of filling those gaps with model knowledge.
 
 ## Next iteration
 
-Add a governed ingestion workflow for authoritative facility-access and startup-support program records, including eligibility, geography, effective dates, provenance, and record-expiration checks. This would make founder and facility-access questions more actionable without weakening the evidence boundary.
+Add governed shared-facility access records and credentialed, scheduled SAM.gov opportunity ingestion with expiration handling. Then add a bounded USAspending award-history view for relevant Southern California recipients.
 
 ## Tests
 
