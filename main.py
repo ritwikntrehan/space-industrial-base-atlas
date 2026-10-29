@@ -84,7 +84,7 @@ CACHE: OrderedDict[str, tuple[float, dict[str, Any]]] = OrderedDict()
 REQUESTS: dict[str, deque[float]] = defaultdict(deque)
 STOP = {"the", "what", "which", "could", "would", "from", "about", "where", "companies", "there", "that", "with", "have", "this", "are", "for", "who", "and", "does", "can", "how", "our", "into", "some", "a", "an", "in", "of", "to", "is", "it"}
 SYNTHESIS_MARKERS = {"compare", "tradeoff", "prioritize", "scenario", "synthesis", "why", "strategy", "recommend", "risk", "bottleneck", "gap", "across"}
-app = FastAPI(title="Space Industrial Base Atlas", version="0.7.0")
+app = FastAPI(title="Space Industrial Base Atlas", version="0.8.0")
 
 ORGANIZATION_IDS = {o["id"] for o in DATA["organizations"]}
 FACILITY_IDS = {f["id"] for f in DATA["facilities"]}
@@ -171,13 +171,14 @@ def deterministic_answer(found: list[dict[str, Any]], stage: Optional[str]) -> d
     if not found:
         return coverage_gap_answer()
     lead = f"Registry matches for {stage_name}" if stage_name else "The Atlas found public-description matches"
-    listings = "; ".join(f"{c['name']} ({c['city']}, {c['county']}; {', '.join(c['capabilities'][:3])}; evidence: {c['evidence_status']})" for c in found[:5])
+    listings = "; ".join(f"{c['name']} ({c['city']}, {c['county']}; {', '.join(c['capabilities'][:3])}; evidence: {c['evidence_status']}; profile: {c['profile_level']})" for c in found[:5])
     ids = [c["id"] for c in found]
+    process_ids = list(dict.fromkeys(process_id for company in found for process_id in company["process_ids"]))[:6]
     return {
         "answer_text": f"{lead}: {listings}. Inclusion is based on the cited public description or directory capability tags. Directory-tier rows are preliminary candidates; none of these results establishes a supplier relationship, availability, capacity, pricing, or mission qualification.",
         "citations": [citation(c["name"], c["source"]) for c in found[:5]],
-        "organization_ids": ids, "facility_ids": [], "process_ids": [], "program_ids": [],
-        "suggested_actions": [action("filter_organizations", "Inspect candidate organizations", ids), action("open_records", "Open related records", ids)],
+        "organization_ids": ids, "facility_ids": [], "process_ids": process_ids, "program_ids": [],
+        "suggested_actions": [action("filter_organizations", "Inspect candidate organizations", ids)] + ([action("select_processes", "Connect matches to production processes", process_ids)] if process_ids else []) + [action("open_records", "Open related records", ids)],
         "unknowns": ["supplier relationship", "current operating status for directory-only rows", "flight qualification", "capacity and availability", "lead time"],
         "evidence_limitations": EVIDENCE_LIMITATIONS, "mode": "deterministic-registry",
     }
@@ -384,7 +385,7 @@ def get_data(): return DATA
 
 
 @app.get("/healthz")
-def health(): return {"ok": True, "version": "0.7.0", "organizations": len(DATA["organizations"]), "facilities": len(DATA.get("facilities", [])), "processes": len(DATA.get("processes", [])), "programs": len(DATA["programs"]), "anthropic_configured": bool(ANTHROPIC_API_KEY)}
+def health(): return {"ok": True, "version": "0.8.0", "organizations": len(DATA["organizations"]), "facilities": len(DATA.get("facilities", [])), "profiles": sum(c["profile_level"] == "deep" for c in DATA["companies"]), "processes": len(DATA.get("processes", [])), "programs": len(DATA["programs"]), "anthropic_configured": bool(ANTHROPIC_API_KEY)}
 
 
 @app.post("/api/ask")

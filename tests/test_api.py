@@ -27,7 +27,8 @@ def ask(question, **extra):
 def test_health_and_data_contract():
     health = client.get("/healthz")
     assert health.status_code == 200
-    assert health.json()["version"] == "0.7.0"
+    assert health.json()["version"] == "0.8.0"
+    assert health.json()["profiles"] == 25
     assert "anthropic_configured" in health.json()
     assert "openai_configured" not in health.json()
     data = client.get("/api/data").json()
@@ -90,6 +91,18 @@ def test_import_reconciliation_and_evidence_tiers():
     assert sum(row["evidence_status"] == "curated_2026_source_snapshot" for row in records) == 63
     assert sum(row["evidence_status"] == "secondary_index_requires_primary_verification" for row in records) == 170
     assert all(row["source_urls"] and row["unknowns"] for row in records)
+    profiles = [row for row in records if row["profile_level"] == "deep"]
+    assert len(profiles) == 25
+    assert all(row["profile"] and row["profile"]["sources"] and row["profile"]["last_reviewed"] for row in profiles)
+    assert all("certification_note" in row["profile"] for row in profiles)
+
+
+def test_supplier_matching_explains_evidence_and_connects_processes():
+    payload = ask("I need precision-machined titanium components near Los Angeles")
+    assert payload["organization_ids"] and payload["process_ids"]
+    assert "evidence:" in payload["answer_text"] and "profile:" in payload["answer_text"]
+    assert any(action["action"] == "select_processes" for action in payload["suggested_actions"])
+    assert "capacity and availability" in payload["unknowns"]
 
 
 def test_assembly_to_launch_question_selects_complete_relevant_path():

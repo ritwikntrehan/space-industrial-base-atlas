@@ -61,6 +61,13 @@ def build_organizations() -> tuple[int, int]:
     imported = json.loads(IMPORT.read_text(encoding="utf-8"))
     existing = json.loads(BASE_DATA.read_text(encoding="utf-8"))["companies"]
     existing_by_name = {normalized_name(row["name"]): row for row in existing}
+    official_ids = {row["id"] for row in imported if row["evidence_status"] == "official_current"}
+    curated_priority = [row["id"] for row in imported if row["evidence_status"] == "curated_2026_source_snapshot" and row["industry_role"] in {"direct-space", "direct-or-aerospace", "industrial-supply-base"}]
+    deep_profile_ids = official_ids | set(curated_priority[:8])
+    raw_facilities = json.loads(FACILITY_IMPORT.read_text(encoding="utf-8"))
+    facilities_by_import: dict[str, list[str]] = {}
+    for facility in raw_facilities:
+        facilities_by_import.setdefault(facility["organization_id"], []).append(facility["facility_id"])
     records, crosswalk, seen = [], [], set()
     for row in imported:
         if row["county"] not in COUNTIES or row["evidence_status"] not in EVIDENCE:
@@ -78,6 +85,23 @@ def build_organizations() -> tuple[int, int]:
         processes = process_ids(capabilities)
         description = prior["description"] if prior else f"Source-reported capabilities: {', '.join(capabilities)}."
         unknowns = ["current operating status", "commercial availability", "capacity", "lead time", "mission-specific qualification"]
+        profile_level = "deep" if row["id"] in deep_profile_ids else "discovery"
+        profile = None
+        if profile_level == "deep":
+            materials = [value for value in capabilities if any(term in value.lower() for term in ("material", "composite", "ceramic", "metal", "titanium", "thermal"))]
+            profile = {
+                "products_services": capabilities,
+                "manufacturing_processes": processes,
+                "documented_materials_equipment": materials,
+                "aerospace_space_experience": "Official source-backed space/aerospace activity in this package." if row["evidence_status"] == "official_current" else "Previously curated aerospace or industrial capability evidence; direct current verification remains required.",
+                "certifications_qualifications": [],
+                "certification_note": "No certification or mission-specific qualification is asserted unless separately cited.",
+                "facility_ids": facilities_by_import.get(row["id"], []),
+                "public_customers_programs": [],
+                "sources": sources,
+                "last_reviewed": "2026-10-29",
+                "limitations": unknowns,
+            }
         records.append({
             "id": atlas_id, "import_id": row["id"], "name": row["name"], "city": row["city"],
             "county": row["county"], "industry_role": row["industry_role"], "sector": prior["sector"] if prior else row["industry_role"],
@@ -85,11 +109,13 @@ def build_organizations() -> tuple[int, int]:
             "website": row.get("website") or "", "source_urls": sources, "source": sources[0],
             "evidence_status": row["evidence_status"], "location_precision": row["location_precision"],
             "display_tier": row["atlas_display_tier"], "publication_review_required": bool(row["publication_review_required"]),
-            "unknowns": unknowns, "reviewed_on": "2026-10-29",
+            "unknowns": unknowns, "reviewed_on": "2026-10-29", "profile_level": profile_level, "profile": profile,
         })
         crosswalk.append({"import_id": row["id"], "atlas_id": atlas_id, "decision": "merged-existing-authoritative" if prior else "new-selected-import", "matched_name": row["name"]})
     if len(records) != 250 or {row["county"] for row in records} != COUNTIES:
         raise ValueError("selected organization build must contain 250 records across all seven counties")
+    if sum(row["profile_level"] == "deep" for row in records) != 25:
+        raise ValueError("v0.8 build must produce exactly 25 deep profiles")
     canonical = sorted(records, key=lambda row: (row["county"], row["name"]))
     ORG_CANONICAL.write_text(json.dumps({"schema_version": "2.0", "records": canonical}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     ORG_WEBSITE.write_text(json.dumps({"schema_version": "2.0", "organizations": canonical}, separators=(",", ":"), ensure_ascii=False) + "\n", encoding="utf-8")

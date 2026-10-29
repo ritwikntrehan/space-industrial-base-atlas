@@ -1,4 +1,4 @@
-# Space Industrial Base Atlas | v0.7
+# Space Industrial Base Atlas | v0.8
 
 Independent Render/FastAPI app adapted conceptually from [SCHTMap](https://github.com/ritwikntrehan/oc-hard-tech-landscape). The original project is not modified.
 
@@ -8,6 +8,8 @@ Independent Render/FastAPI app adapted conceptually from [SCHTMap](https://githu
 - Normalized API objects for organizations, city-level facility labels, capabilities, processes, typed conceptual dependencies, and evidence sources.
 - Clustered seven-county discovery map and searchable 250-organization registry with county, industrial-role, capability, and evidence-tier filters.
 - Twenty individually sourced facility/site records. Only separately validated coordinates are treated as specific map points; un-geocoded addresses remain text.
+- Twenty-five reusable evidence dossiers expose products/services, mapped production processes, documented materials, experience basis, linked facilities, source citations, review dates, explicit qualification notes, and unknowns.
+- Transparent supplier-candidate answers explain capability, geography, evidence tier, profile depth, and relevant production processes without opaque scores or capacity claims.
 - A question-first homepage that turns evidence retrieval into validated map, process, and registry navigation actions.
 - One response contract for answer text, citations, organization/facility/process/program IDs, suggested interface actions, unknowns, and evidence limitations.
 - Seven governed funding, assistance, and ecosystem records covering federal SBIR/STTR, SpaceWERX paths, Caltech's Rocket Fund, and SoCal Deep Tech Week, with status and eligibility caveats.
@@ -52,7 +54,7 @@ The Atlas has 250 discovery organizations, 20 individually sourced facility/site
 
 ## Next iteration
 
-v0.8 adds reusable deep profiles for a high-value subset, multi-attribute capability retrieval, transparent candidate matching, and links between profiles, map records, and production processes.
+v0.9 should add date-aware opportunity/community records and one validated, non-destructive public-data refresh path with freshness and change states.
 
 ## Tests
 
