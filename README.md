@@ -18,7 +18,7 @@ Independent Render/FastAPI app adapted conceptually from [SCHTMap](https://githu
 - A shared analysis workspace for builder and ecosystem questions: interpreted objective, pathway requirements, documentation coverage, practical next steps, unknowns, citations, and synchronized map/graph/registry actions.
 - An ecosystem-intelligence preview that reports organization, dossier, and sourced-facility counts by production stage. These are documentation metrics, never claims of regional capacity or supply adequacy.
 - Shareable `?q=` URLs that restore and run the same evidence-bound question.
-- A versioned 30-question audit corpus spanning builders, small companies, buyers, funders, conveners, and adversarial prompts. Six anchor questions are release-gated in the automated tests.
+- A versioned 30-question audit corpus spanning builders, small companies, buyers, funders, conveners, and adversarial prompts. Six anchor questions are release-gated, and every corpus response must provide a specific direct answer plus at least one practical next step.
 
 ## Local run
 
@@ -39,7 +39,7 @@ After changing curated source records, rebuild the canonical and website payload
 python scripts/build_data.py
 ```
 
-The builder validates IDs, required evidence fields, statuses, dates, HTTPS sources, eligibility, unknowns, all seven counties, the 250-record selected import, and the 17/63/170 evidence-tier breakdown. It also writes an explicit imported-ID to Atlas-ID crosswalk. See `docs/builder-question-audit.md` for the usefulness audit.
+The builder validates IDs, required evidence fields, statuses, dates, HTTPS sources, eligibility, unknowns, all seven counties, the 250-record selected import, and the 17/63/170 evidence-tier breakdown. It also writes an explicit imported-ID to Atlas-ID crosswalk. See `docs/builder-question-audit.md` for the usefulness audit and `docs/rahul-demo-runbook.md` for the continuation-demo walkthrough.
 
 ## Render
 The included Render blueprint installs the official Anthropic Python SDK. Set `ANTHROPIC_API_KEY` in the service's Environment settings, never in Git, logs, browser code, or frontend responses. `ANTHROPIC_MODEL` defaults to `claude-sonnet-5` and can be changed without code edits. Claude access is optional: deterministic, source-linked answers and navigation remain available without credentials.

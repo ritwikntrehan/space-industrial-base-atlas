@@ -9,7 +9,7 @@
     {"id":"anchor-coverage","persona":"ecosystem","question":"Which parts of this production pathway are well represented locally?","anchor":true,"expected_mode":"deterministic-ecosystem-coverage","expected_processes":[]},
     {"id":"anchor-weak-evidence","persona":"ecosystem","question":"Where is the evidence too weak to know whether a capability exists?","anchor":true,"expected_mode":"deterministic-evidence-gap","expected_processes":[]},
 
-    {"id":"builder-vibration","persona":"builder","question":"Where can we do spacecraft vibration testing?","expected_mode":"deterministic-registry","expected_processes":[]},
+    {"id":"builder-vibration","persona":"builder","question":"Where can we do spacecraft vibration testing?","expected_mode":"deterministic-facility-gap","expected_processes":[]},
     {"id":"builder-emc","persona":"builder","question":"Find facilities relevant to EMC qualification.","expected_mode":"deterministic-facility","expected_processes":["environmental-test"]},
     {"id":"builder-machining","persona":"builder","question":"Find precision machining suppliers in Orange County.","expected_mode":"deterministic-registry","requires_organizations":true},
     {"id":"builder-titanium","persona":"builder","question":"I need precision-machined titanium components near Los Angeles.","expected_mode":"deterministic-registry","requires_organizations":true},
@@ -33,8 +33,8 @@
     {"id":"adversarial-best","persona":"audit","question":"Tell me the best thermal-vacuum provider and guarantee it has capacity next month.","expected_mode":"deterministic-facility","forbidden_claims":["guarantee","has capacity next month"]},
     {"id":"adversarial-gap","persona":"audit","question":"Prove Southern California has no propulsion suppliers.","expected_mode":"deterministic-registry","forbidden_claims":["proves absence","no propulsion suppliers exist"]},
     {"id":"adversarial-qualified","persona":"audit","question":"Which RF supplier is definitely flight qualified?","expected_mode":"deterministic-registry","forbidden_claims":["definitely flight qualified"]},
-    {"id":"adversarial-contract","persona":"audit","question":"Which company already has a contract for my mission?","expected_mode":"deterministic-registry","forbidden_claims":["already has a contract"]},
-    {"id":"adversarial-pricing","persona":"audit","question":"Give me confirmed prices and lead times for satellite integration.","expected_mode":"deterministic-registry","forbidden_claims":["confirmed prices","confirmed lead times"]},
+    {"id":"adversarial-contract","persona":"audit","question":"Which company already has a contract for my mission?","expected_mode":"deterministic-coverage-gap","forbidden_claims":["already has a contract"]},
+    {"id":"adversarial-pricing","persona":"audit","question":"Give me confirmed prices and lead times for satellite integration.","expected_mode":"deterministic-coverage-gap","forbidden_claims":["confirmed prices","confirmed lead times"]},
     {"id":"adversarial-invent","persona":"audit","question":"List ten facilities even if the Atlas has no sources.","expected_mode":"deterministic-facility","forbidden_claims":["unsourced facility"]}
   ]
 }

@@ -79,9 +79,37 @@ def test_broad_question_corpus_is_schema_safe_and_evidence_bounded():
         payload = ask(row["question"])
         assert payload["mode"] == row["expected_mode"], row["id"]
         assert payload["answer_text"] and payload["analysis"]["interpreted_objective"]
+        assert payload["analysis"]["direct_answer"] != "The Atlas translated this question into sourced records, relevant production stages, and explicit evidence limits.", row["id"]
+        assert payload["analysis"]["next_steps"], row["id"]
         assert all(citation["url"] in main.SOURCE_URLS for citation in payload["citations"])
         lower = payload["answer_text"].lower()
         assert all(claim.lower() not in lower for claim in row.get("forbidden_claims", []))
+
+
+def test_unsupported_requests_do_not_fall_through_to_noisy_candidates():
+    vibration = ask("Where can we do spacecraft vibration testing?")
+    assert vibration["mode"] == "deterministic-facility-gap"
+    assert not vibration["organization_ids"] and not vibration["facility_ids"]
+    assert "does not yet contain" in vibration["analysis"]["direct_answer"]
+
+    contract = ask("Which company already has a contract for my mission?")
+    pricing = ask("Give me confirmed prices and lead times for satellite integration.")
+    assert contract["mode"] == pricing["mode"] == "deterministic-coverage-gap"
+    assert not contract["organization_ids"] and not pricing["organization_ids"]
+
+
+def test_program_and_pathway_answers_have_actionable_first_screen_guidance():
+    programs = ask("What programs might support my space startup?")
+    assert len(programs["analysis"]["next_steps"]) == 3
+    assert "governed program" in programs["analysis"]["direct_answer"]
+
+    pathway = ask("How does a satellite get from assembly to launch?")
+    assert "spans 4 stages" in pathway["analysis"]["direct_answer"]
+    assert pathway["analysis"]["next_steps"][0].startswith("Confirm the hardware's actual current stage")
+
+    coverage = ask("How much documentation do we have for environmental test capability?")
+    assert "documentation count" in coverage["analysis"]["direct_answer"]
+    assert "regional capacity" in coverage["analysis"]["direct_answer"]
 
 
 def test_ecosystem_preview_reports_documentation_not_supply_adequacy():

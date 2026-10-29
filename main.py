@@ -220,7 +220,8 @@ def coverage_signal(process_id: str) -> dict[str, Any]:
 
 def build_analysis(question: str, response: dict[str, Any]) -> dict[str, Any]:
     q = question.lower()
-    ecosystem = any(term in q for term in ("well represented", "coverage", "evidence too weak", "weak evidence", "ecosystem", "region", "locally"))
+    mode = response.get("mode", "")
+    ecosystem = any(term in q for term in ("well represented", "coverage", "documentation", "evidence too weak", "weak evidence", "ecosystem", "region", "locally"))
     perspective = "ecosystem" if ecosystem else "builder"
     objective = question.strip().rstrip("?")
     direct_answer = "The Atlas translated this question into sourced records, relevant production stages, and explicit evidence limits."
@@ -273,14 +274,52 @@ def build_analysis(question: str, response: dict[str, Any]) -> dict[str, Any]:
             "Inspect each cited record and separate first-party evidence from directory-tier discovery leads.",
             "Confirm product fit, flight heritage or qualification basis, capacity, lead time, and procurement availability directly with candidates.",
         ]
-    elif ecosystem and response.get("mode") == "deterministic-evidence-gap":
+    elif mode == "deterministic-program":
+        count = len(response.get("program_ids", []))
+        direct_answer = f"The Atlas found {count} governed program or ecosystem record{'s' if count != 1 else ''} relevant to this request; eligibility, timing, and fit still need confirmation at the cited official source."
+        next_steps = [
+            "Compare the documented eligibility and status against your company, technology maturity, funding need, and desired timeline.",
+            "Open the official source for each plausible path and confirm the current solicitation, application window, sponsor, and required supporting evidence.",
+            "Choose one primary path and record the next external action: contact, topic review, application milestone, or event registration check.",
+        ]
+    elif mode in {"deterministic-coverage-gap", "deterministic-facility-gap"}:
+        direct_answer = response["answer_text"].split(". ", 1)[0].rstrip(".") + "."
+        next_steps = [
+            "Do not treat an empty Atlas result as proof that the capability or commercial option does not exist.",
+            "Define the missing evidence needed to answer the question, including capability, location, access, qualification, availability, and source provenance.",
+            "Use an authoritative operator, procurement, or program source before making a shortlist or decision.",
+        ]
+    elif ecosystem and mode == "deterministic-evidence-gap":
         direct_answer = "Prioritize the highlighted stages for evidence validation; sparse Atlas coverage does not prove that a capability is absent locally."
-    elif ecosystem:
+    elif ecosystem and mode == "deterministic-ecosystem-coverage":
         direct_answer = "The highlighted stages have the strongest documentation in the current Atlas, but record density is not evidence of regional capacity or supply adequacy."
+    elif ecosystem and mode == "deterministic-facility":
+        count = len(response.get("facility_ids", []))
+        direct_answer = f"The current Atlas documents {count} sourced facilit{'ies' if count != 1 else 'y'} relevant to this capability; that is a documentation count, not a measure of regional capacity or customer access."
+        next_steps = [
+            "Review what each source actually documents and separate test equipment, test execution, and mission-qualification evidence.",
+            "List the capability, geography, access, qualification, and availability fields that remain undocumented.",
+            "Validate those fields with facility operators before drawing a regional strength or gap conclusion.",
+        ]
+    elif mode == "deterministic-process" and process_ids:
+        first = process_by_id(process_ids[0])
+        last = process_by_id(process_ids[-1])
+        direct_answer = f"The reference pathway spans {len(process_ids)} stages from {first['name'] if first else process_ids[0]} through {last['name'] if last else process_ids[-1]}; use it to plan interfaces and evidence, not as a claim about one program's commercial flow."
+        next_steps = [
+            "Confirm the hardware's actual current stage and the authority responsible for accepting the next stage transition.",
+            "Freeze the required inputs, interfaces, configuration, and acceptance evidence for that transition.",
+            "Use the linked records as a verification shortlist, then confirm exact fit, access, qualification basis, capacity, and schedule directly.",
+        ]
     elif response.get("facility_ids"):
         direct_answer = f"The Atlas found {len(response['facility_ids'])} sourced facility record{'s' if len(response['facility_ids']) != 1 else ''} relevant to this request, subject to direct verification of access and fit."
     elif response.get("organization_ids"):
-        direct_answer = f"The Atlas found {len(response['organization_ids'])} public-description candidate{'s' if len(response['organization_ids']) != 1 else ''}; review the evidence before treating any record as a qualified supplier."
+        count = len(response["organization_ids"])
+        if "definitely" in q and "qualified" in q:
+            direct_answer = f"The Atlas found {count} public-description candidates, but its current evidence cannot establish that any candidate is definitely flight-qualified for this requirement."
+        elif "prove" in q and "no " in q:
+            direct_answer = f"The Atlas found {count} public-description candidates, so it cannot support a claim of absence; each candidate still requires direct capability and qualification verification."
+        else:
+            direct_answer = f"The Atlas found {count} public-description candidate{'s' if count != 1 else ''}; review the evidence before treating any record as a qualified supplier."
     return {
         "interpreted_objective": objective,
         "direct_answer": direct_answer,
@@ -358,13 +397,13 @@ def ecosystem_coverage_answer(weak_only: bool = False) -> dict[str, Any]:
     }
 
 
-def coverage_gap_answer(programs: bool = False) -> dict[str, Any]:
-    topic = "startup-support program" if programs else "requested topic"
+def coverage_gap_answer(programs: bool = False, topic: Optional[str] = None, mode: str = "deterministic-coverage-gap") -> dict[str, Any]:
+    topic = topic or ("startup-support program" if programs else "requested topic")
     return {
-        "answer_text": f"The Atlas does not yet contain a documented {topic} dataset, so it cannot provide a grounded recommendation from current records. Add authoritative program or domain sources before treating results as coverage.",
+        "answer_text": f"The Atlas does not yet contain enough governed evidence for {topic}, so it cannot provide a grounded recommendation from current records. Add authoritative program or domain sources before treating results as coverage.",
         "citations": [], "organization_ids": [], "facility_ids": [], "process_ids": [], "program_ids": [], "suggested_actions": [],
         "unknowns": [f"authoritative {topic} records", "eligibility and geographic restrictions", "current availability and deadlines"],
-        "evidence_limitations": EVIDENCE_LIMITATIONS, "mode": "deterministic-coverage-gap",
+        "evidence_limitations": EVIDENCE_LIMITATIONS, "mode": mode,
     }
 
 
@@ -472,6 +511,10 @@ def program_answer(found: list[dict[str, Any]]) -> dict[str, Any]:
 
 def deterministic_route(payload: AskRequest) -> dict[str, Any]:
     question, q = payload.question.strip(), payload.question.lower()
+    if "contract" in q and any(term in q for term in ("my mission", "already has", "current supplier")):
+        return coverage_gap_answer(topic="mission-specific supplier-contract relationship")
+    if any(term in q for term in ("confirmed prices", "confirmed pricing", "confirmed lead times", "guaranteed lead time")):
+        return coverage_gap_answer(topic="verified commercial pricing and lead-time")
     if any(term in q for term in ("evidence too weak", "weak evidence", "too weak to know", "where is the evidence", "least documented", "regional bottleneck")):
         return ecosystem_coverage_answer(weak_only=True)
     if any(term in q for term in ("well represented", "best represented", "strongest coverage", "strongest evidence coverage", "coverage by process", "represented locally")):
@@ -495,6 +538,10 @@ def deterministic_route(payload: AskRequest) -> dict[str, Any]:
                     action("open_records", "Inspect facility records", response["facility_ids"]),
                 ]
             return response
+        return coverage_gap_answer(
+            topic="sourced facility record matching this test request",
+            mode="deterministic-facility-gap",
+        )
     follow_up = any(term in q.split() for term in ("it", "this", "that", "requirements", "inputs", "evidence"))
     selected = process_by_id(payload.process_id) if payload.process_id and follow_up else None
     processes = [selected] if selected else relevant_processes(question)
