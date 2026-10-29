@@ -140,6 +140,7 @@ class CoverageSignal(BaseModel):
 
 class AnalysisWorkspace(BaseModel):
     interpreted_objective: str = ""
+    direct_answer: str = ""
     perspective: Literal["builder", "ecosystem", "mixed"] = "mixed"
     requirements: list[AnalysisRequirement] = Field(default_factory=list, max_length=12)
     coverage: list[CoverageSignal] = Field(default_factory=list, max_length=14)
@@ -222,6 +223,7 @@ def build_analysis(question: str, response: dict[str, Any]) -> dict[str, Any]:
     ecosystem = any(term in q for term in ("well represented", "coverage", "evidence too weak", "weak evidence", "ecosystem", "region", "locally"))
     perspective = "ecosystem" if ecosystem else "builder"
     objective = question.strip().rstrip("?")
+    direct_answer = "The Atlas translated this question into sourced records, relevant production stages, and explicit evidence limits."
     process_ids = response.get("process_ids", [])
     requirements = []
     for process_id in process_ids[:8]:
@@ -242,31 +244,46 @@ def build_analysis(question: str, response: dict[str, Any]) -> dict[str, Any]:
     if ecosystem:
         next_steps.append("Prioritize validation where records rely on secondary indexes or where no individually sourced facility is documented.")
     if any(term in q for term in ("thermal-vacuum", "thermal vacuum")):
+        count = len(response.get("facility_ids", []))
+        direct_answer = f"The Atlas has {count} sourced thermal-vacuum facility record{'s' if count != 1 else ''} relevant to this request; access, chamber fit, schedule, and mission qualification still require direct confirmation."
         next_steps = [
             "Define the hardware envelope, temperature and pressure profiles, instrumentation, cleanliness constraints, and whether this is qualification or acceptance testing.",
             "Review the sourced facility record, then confirm customer access, chamber fit, schedule, configuration, and commercial terms directly with the operator.",
             "Prepare the test plan, success criteria, configuration record, and required test-report evidence before reserving a slot.",
         ]
     elif "communications payload" in q:
+        direct_answer = "Start by freezing the communications payload interfaces and verification basis; the Atlas has mapped the production stages and current Southern California evidence relevant to that work."
         next_steps = [
             "Freeze the payload's frequency band, link budget, antenna, power, data, mechanical, thermal, and ground-segment interfaces.",
             "Define functional, EMC/RF, environmental, and acceptance evidence required for payload and spacecraft integration.",
             "Use the highlighted records to create a verification shortlist, then confirm exact capability, qualification basis, access, capacity, and schedule with each candidate.",
         ]
     elif any(term in q for term in ("completed assembly", "assembly is complete", "finished assembly", "what comes next")):
+        direct_answer = "After assembly, close functional and interface verification, complete the applicable environmental acceptance work, and prepare the launch-integration evidence package."
         next_steps = [
             "Freeze the as-built configuration and close outstanding functional, interface, workmanship, and acceptance records.",
             "Confirm the mission-specific environmental verification matrix, including qualification-versus-acceptance levels and retest rules.",
             "Align transport, launch-provider interface approval, range documentation, campaign schedule, and operational-readiness evidence.",
         ]
     elif "rf systems" in q or "rf components" in q:
+        count = len(response.get("organization_ids", []))
+        direct_answer = f"The Atlas found {count} public-description candidate{'s' if count != 1 else ''} relevant to RF systems; these are discovery leads, not verified qualified suppliers."
         next_steps = [
             "Specify the RF function, frequency band, performance, environmental, interface, and qualification requirements before shortlisting candidates.",
             "Inspect each cited record and separate first-party evidence from directory-tier discovery leads.",
             "Confirm product fit, flight heritage or qualification basis, capacity, lead time, and procurement availability directly with candidates.",
         ]
+    elif ecosystem and response.get("mode") == "deterministic-evidence-gap":
+        direct_answer = "Prioritize the highlighted stages for evidence validation; sparse Atlas coverage does not prove that a capability is absent locally."
+    elif ecosystem:
+        direct_answer = "The highlighted stages have the strongest documentation in the current Atlas, but record density is not evidence of regional capacity or supply adequacy."
+    elif response.get("facility_ids"):
+        direct_answer = f"The Atlas found {len(response['facility_ids'])} sourced facility record{'s' if len(response['facility_ids']) != 1 else ''} relevant to this request, subject to direct verification of access and fit."
+    elif response.get("organization_ids"):
+        direct_answer = f"The Atlas found {len(response['organization_ids'])} public-description candidate{'s' if len(response['organization_ids']) != 1 else ''}; review the evidence before treating any record as a qualified supplier."
     return {
         "interpreted_objective": objective,
+        "direct_answer": direct_answer,
         "perspective": perspective,
         "requirements": requirements,
         "coverage": [coverage_signal(pid) for pid in process_ids],

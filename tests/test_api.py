@@ -52,6 +52,8 @@ def test_homepage_is_compact_and_suggested_queries_precede_map():
     assert 'id="intelligence-section"' in html and 'id="workspace"' in html and 'id="share"' in html
     assert 'id="next-steps"' in html and "View pathway and evidence analysis" in html
     assert html.index('id="next-steps"') < html.index('class="analysis-details"')
+    assert 'id="direct-answer"' in html and "scrollBelowHeader" in html
+    assert 'id="intel-weak"' in html and 'class="intel-matrix"' in html
 
 
 def test_six_anchor_questions_share_the_analysis_contract():
@@ -62,6 +64,7 @@ def test_six_anchor_questions_share_the_analysis_contract():
         payload = ask(row["question"])
         assert payload["mode"] == row["expected_mode"]
         assert payload["analysis"]["interpreted_objective"]
+        assert payload["analysis"]["direct_answer"]
         assert payload["analysis"]["perspective"] in {"builder", "ecosystem", "mixed"}
         assert "not market capacity" in payload["analysis"]["evidence_note"]
         assert all(process in payload["process_ids"] for process in row.get("expected_processes", []))
