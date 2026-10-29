@@ -12,7 +12,7 @@ client = TestClient(main.app)
 
 RESPONSE_FIELDS = {
     "answer_text", "citations", "organization_ids", "facility_ids", "process_ids",
-    "program_ids", "suggested_actions", "unknowns", "evidence_limitations", "mode",
+    "program_ids", "suggested_actions", "unknowns", "evidence_limitations", "mode", "analysis",
 }
 
 
@@ -27,7 +27,7 @@ def ask(question, **extra):
 def test_health_and_data_contract():
     health = client.get("/healthz")
     assert health.status_code == 200
-    assert health.json()["version"] == "0.8.0"
+    assert health.json()["version"] == "0.9.0"
     assert health.json()["profiles"] == 25
     assert "anthropic_configured" in health.json()
     assert "openai_configured" not in health.json()
@@ -44,10 +44,47 @@ def test_health_and_data_contract():
 def test_homepage_is_compact_and_suggested_queries_precede_map():
     html = client.get("/").text
     assert "<h1" not in html and "hero-copy" not in html
-    assert html.count('class="prompt"') >= 5
-    assert "Where can I find SpaceWERX or SBIR opportunities?" in html
+    assert html.count('class="prompt"') >= 6
+    assert "I need thermal-vacuum testing." in html
+    assert "Where is the evidence too weak to know whether a capability exists?" in html
     assert "county-filter" in html and "evidence-filter" in html and "leaflet.markercluster" in html
     assert html.index('id="ask"') < html.index('id="map-section"') < html.index('id="process-section"')
+    assert 'id="intelligence-section"' in html and 'id="workspace"' in html and 'id="share"' in html
+
+
+def test_six_anchor_questions_share_the_analysis_contract():
+    corpus = json.loads((Path(__file__).resolve().parents[1] / "data" / "question_corpus.json").read_text())
+    anchors = [row for row in corpus["questions"] if row.get("anchor")]
+    assert len(anchors) == 6
+    for row in anchors:
+        payload = ask(row["question"])
+        assert payload["mode"] == row["expected_mode"]
+        assert payload["analysis"]["interpreted_objective"]
+        assert payload["analysis"]["perspective"] in {"builder", "ecosystem", "mixed"}
+        assert "not market capacity" in payload["analysis"]["evidence_note"]
+        assert all(process in payload["process_ids"] for process in row.get("expected_processes", []))
+        if row.get("requires_organizations"):
+            assert payload["organization_ids"]
+
+
+def test_broad_question_corpus_is_schema_safe_and_evidence_bounded():
+    corpus = json.loads((Path(__file__).resolve().parents[1] / "data" / "question_corpus.json").read_text())
+    assert len(corpus["questions"]) >= 30
+    for row in corpus["questions"]:
+        payload = ask(row["question"])
+        assert payload["mode"] == row["expected_mode"], row["id"]
+        assert payload["answer_text"] and payload["analysis"]["interpreted_objective"]
+        assert all(citation["url"] in main.SOURCE_URLS for citation in payload["citations"])
+        lower = payload["answer_text"].lower()
+        assert all(claim.lower() not in lower for claim in row.get("forbidden_claims", []))
+
+
+def test_ecosystem_preview_reports_documentation_not_supply_adequacy():
+    data = client.get("/api/data").json()
+    preview = data["ecosystem_intelligence"]
+    assert len(preview["coverage"]) == len(data["processes"])
+    assert sum(preview["evidence_tiers"].values()) == len(data["companies"])
+    assert "not regional capacity" in preview["note"]
 
 
 def test_facility_question_returns_citations_ids_and_navigation():

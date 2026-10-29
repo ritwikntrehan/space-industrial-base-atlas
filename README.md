@@ -1,4 +1,4 @@
-# Space Industrial Base Atlas | v0.8
+# Space Industrial Base Atlas | v0.9
 
 Independent Render/FastAPI app adapted conceptually from [SCHTMap](https://github.com/ritwikntrehan/oc-hard-tech-landscape). The original project is not modified.
 
@@ -15,6 +15,10 @@ Independent Render/FastAPI app adapted conceptually from [SCHTMap](https://githu
 - Seven governed funding, assistance, and ecosystem records covering federal SBIR/STTR, SpaceWERX paths, Caltech's Rocket Fund, and SoCal Deep Tech Week, with status and eligibility caveats.
 - Deterministic `/api/ask` process, company, stage, facility, capability, and program retrieval. Anthropic's Messages API is optional and only used for complex synthesis; it is cached, rate-limited, server-side, and falls back deterministically.
 - Bounded conversation history for contextual follow-ups. Returned citations, entity IDs, and actions are validated against Atlas data before the browser applies them.
+- A shared analysis workspace for builder and ecosystem questions: interpreted objective, pathway requirements, documentation coverage, practical next steps, unknowns, citations, and synchronized map/graph/registry actions.
+- An ecosystem-intelligence preview that reports organization, dossier, and sourced-facility counts by production stage. These are documentation metrics, never claims of regional capacity or supply adequacy.
+- Shareable `?q=` URLs that restore and run the same evidence-bound question.
+- A versioned 30-question audit corpus spanning builders, small companies, buyers, funders, conveners, and adversarial prompts. Six anchor questions are release-gated in the automated tests.
 
 ## Local run
 
@@ -52,9 +56,9 @@ Every dependency record is typed `conceptual-process-dependency`. There are deli
 
 The Atlas has 250 discovery organizations, 20 individually sourced facility/site records, and seven program/ecosystem records. Of the selected organizations, 17 have first-party verification in the supplied research package, 63 are previously curated source snapshots, and 170 are directory/sector candidates requiring primary verification. It does not assert supplier availability, capacity, pricing, qualification, or customer relationships.
 
-## Next iteration
+## Demo boundary
 
-v0.9 should add date-aware opportunity/community records and one validated, non-destructive public-data refresh path with freshness and change states.
+v0.9 is the Rahul Singh / SoCal Deep Tech continuation demo. It demonstrates the interaction and evidence-governance harness using existing sourced records. Broader data acquisition, a community correction workflow, procurement-grade validation, and quantitative bottleneck analysis remain continuation decisions rather than hidden claims in this release.
 
 ## Tests
 

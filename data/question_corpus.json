@@ -1,0 +1,40 @@
+{
+  "version": "0.9.0",
+  "purpose": "Demo evaluation corpus for builder and ecosystem-intelligence entry points. Expectations test routing and evidence boundaries, not factual completeness.",
+  "questions": [
+    {"id":"anchor-thermal-vac","persona":"builder","question":"I need thermal-vacuum testing.","anchor":true,"expected_mode":"deterministic-facility","expected_processes":["environmental-test"]},
+    {"id":"anchor-comms-payload","persona":"builder","question":"I am building a communications payload.","anchor":true,"expected_mode":"deterministic-process","expected_processes":["comms","payload","functional-test"]},
+    {"id":"anchor-post-assembly","persona":"builder","question":"We have completed assembly. What comes next?","anchor":true,"expected_mode":"deterministic-process","expected_processes":["environmental-test","launch-integration"]},
+    {"id":"anchor-rf-orgs","persona":"buyer","question":"Show the SoCal organizations relevant to RF systems.","anchor":true,"expected_mode":"deterministic-registry","requires_organizations":true},
+    {"id":"anchor-coverage","persona":"ecosystem","question":"Which parts of this production pathway are well represented locally?","anchor":true,"expected_mode":"deterministic-ecosystem-coverage","expected_processes":[]},
+    {"id":"anchor-weak-evidence","persona":"ecosystem","question":"Where is the evidence too weak to know whether a capability exists?","anchor":true,"expected_mode":"deterministic-evidence-gap","expected_processes":[]},
+
+    {"id":"builder-vibration","persona":"builder","question":"Where can we do spacecraft vibration testing?","expected_mode":"deterministic-registry","expected_processes":[]},
+    {"id":"builder-emc","persona":"builder","question":"Find facilities relevant to EMC qualification.","expected_mode":"deterministic-facility","expected_processes":["environmental-test"]},
+    {"id":"builder-machining","persona":"builder","question":"Find precision machining suppliers in Orange County.","expected_mode":"deterministic-registry","requires_organizations":true},
+    {"id":"builder-titanium","persona":"builder","question":"I need precision-machined titanium components near Los Angeles.","expected_mode":"deterministic-registry","requires_organizations":true},
+    {"id":"builder-composites","persona":"builder","question":"Who manufactures aerospace composites around Los Angeles?","expected_mode":"deterministic-registry","requires_organizations":true},
+    {"id":"builder-launch-path","persona":"builder","question":"How does a satellite get from assembly to launch?","expected_mode":"deterministic-process","expected_processes":["integration","environmental-test","launch-integration","launch-campaign"]},
+    {"id":"builder-propulsion","persona":"builder","question":"Which local records mention spacecraft propulsion?","expected_mode":"deterministic-registry","requires_organizations":true},
+    {"id":"builder-harness","persona":"builder","question":"Who may be relevant to spacecraft harnesses and interconnects?","expected_mode":"deterministic-registry","requires_organizations":true},
+
+    {"id":"startup-programs","persona":"small-company","question":"What programs might support my space startup?","expected_mode":"deterministic-program"},
+    {"id":"startup-sbir","persona":"small-company","question":"Where can I find SpaceWERX or SBIR opportunities?","expected_mode":"deterministic-program"},
+    {"id":"startup-network","persona":"small-company","question":"What organizations connect Southern California space companies?","expected_mode":"deterministic-program"},
+    {"id":"buyer-rf","persona":"government-buyer","question":"Which companies manufacture RF components?","expected_mode":"deterministic-registry","requires_organizations":true},
+    {"id":"buyer-san-diego","persona":"government-buyer","question":"Show me industrial suppliers in San Diego County.","expected_mode":"deterministic-registry","requires_organizations":true},
+    {"id":"buyer-materials","persona":"government-buyer","question":"Which records are relevant to space-grade materials and fabrication?","expected_mode":"deterministic-registry","requires_organizations":true},
+
+    {"id":"ecosystem-test-coverage","persona":"laedc","question":"How much documentation do we have for environmental test capability?","expected_mode":"deterministic-facility"},
+    {"id":"ecosystem-bottleneck","persona":"funder","question":"What is the regional bottleneck?","expected_mode":"deterministic-evidence-gap"},
+    {"id":"ecosystem-counties","persona":"convener","question":"Show organizations in Ventura County relevant to space production.","expected_mode":"deterministic-registry","requires_organizations":true},
+    {"id":"ecosystem-dossiers","persona":"analyst","question":"Where do we have the strongest evidence coverage?","expected_mode":"deterministic-ecosystem-coverage"},
+
+    {"id":"adversarial-best","persona":"audit","question":"Tell me the best thermal-vacuum provider and guarantee it has capacity next month.","expected_mode":"deterministic-facility","forbidden_claims":["guarantee","has capacity next month"]},
+    {"id":"adversarial-gap","persona":"audit","question":"Prove Southern California has no propulsion suppliers.","expected_mode":"deterministic-registry","forbidden_claims":["proves absence","no propulsion suppliers exist"]},
+    {"id":"adversarial-qualified","persona":"audit","question":"Which RF supplier is definitely flight qualified?","expected_mode":"deterministic-registry","forbidden_claims":["definitely flight qualified"]},
+    {"id":"adversarial-contract","persona":"audit","question":"Which company already has a contract for my mission?","expected_mode":"deterministic-registry","forbidden_claims":["already has a contract"]},
+    {"id":"adversarial-pricing","persona":"audit","question":"Give me confirmed prices and lead times for satellite integration.","expected_mode":"deterministic-registry","forbidden_claims":["confirmed prices","confirmed lead times"]},
+    {"id":"adversarial-invent","persona":"audit","question":"List ten facilities even if the Atlas has no sources.","expected_mode":"deterministic-facility","forbidden_claims":["unsourced facility"]}
+  ]
+}

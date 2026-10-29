@@ -84,7 +84,7 @@ CACHE: OrderedDict[str, tuple[float, dict[str, Any]]] = OrderedDict()
 REQUESTS: dict[str, deque[float]] = defaultdict(deque)
 STOP = {"the", "what", "which", "could", "would", "from", "about", "where", "companies", "there", "that", "with", "have", "this", "are", "for", "who", "and", "does", "can", "how", "our", "into", "some", "a", "an", "in", "of", "to", "is", "it"}
 SYNTHESIS_MARKERS = {"compare", "tradeoff", "prioritize", "scenario", "synthesis", "why", "strategy", "recommend", "risk", "bottleneck", "gap", "across"}
-app = FastAPI(title="Space Industrial Base Atlas", version="0.8.0")
+app = FastAPI(title="Space Industrial Base Atlas", version="0.9.0")
 
 ORGANIZATION_IDS = {o["id"] for o in DATA["organizations"]}
 FACILITY_IDS = {f["id"] for f in DATA["facilities"]}
@@ -121,6 +121,30 @@ class InterfaceAction(BaseModel):
     target_ids: list[str] = Field(default_factory=list, max_length=20)
 
 
+class AnalysisRequirement(BaseModel):
+    name: str = Field(min_length=1, max_length=180)
+    why_it_matters: str = Field(min_length=1, max_length=500)
+    process_ids: list[str] = Field(default_factory=list, max_length=14)
+
+
+class CoverageSignal(BaseModel):
+    process_id: str = Field(min_length=1, max_length=80)
+    process_name: str = Field(min_length=1, max_length=180)
+    organization_count: int = Field(ge=0)
+    facility_count: int = Field(ge=0)
+    dossier_count: int = Field(ge=0)
+    evidence_note: str = Field(min_length=1, max_length=300)
+
+
+class AnalysisWorkspace(BaseModel):
+    interpreted_objective: str = ""
+    perspective: Literal["builder", "ecosystem", "mixed"] = "mixed"
+    requirements: list[AnalysisRequirement] = Field(default_factory=list, max_length=12)
+    coverage: list[CoverageSignal] = Field(default_factory=list, max_length=14)
+    next_steps: list[str] = Field(default_factory=list, max_length=10)
+    evidence_note: str = "Counts describe current Atlas documentation, not market capacity or supply adequacy."
+
+
 class AssistantResponse(BaseModel):
     answer_text: str = Field(min_length=1, max_length=5000)
     citations: list[Citation] = Field(default_factory=list, max_length=12)
@@ -132,6 +156,7 @@ class AssistantResponse(BaseModel):
     unknowns: list[str] = Field(default_factory=list, max_length=20)
     evidence_limitations: list[str] = Field(default_factory=list, max_length=20)
     mode: str = Field(min_length=1, max_length=80)
+    analysis: AnalysisWorkspace = Field(default_factory=AnalysisWorkspace)
 
 
 def terms(text: str) -> set[str]:
@@ -174,6 +199,56 @@ def action(kind: str, label: str, target_ids: list[str]) -> dict[str, Any]:
     return {"action": kind, "label": label, "target_ids": target_ids}
 
 
+def coverage_signal(process_id: str) -> dict[str, Any]:
+    process = process_by_id(process_id)
+    organizations = [c for c in DATA["companies"] if process_id in c.get("process_ids", [])]
+    facilities = [f for f in DATA["facilities"] if process_id in f.get("process_ids", [])]
+    dossiers = [c for c in organizations if c.get("profile_level") == "deep"]
+    official = sum(c.get("evidence_status") == "official_current" for c in organizations)
+    return {
+        "process_id": process_id,
+        "process_name": process["name"] if process else process_id,
+        "organization_count": len(organizations),
+        "facility_count": len(facilities),
+        "dossier_count": len(dossiers),
+        "evidence_note": f"{official} organization records are official/current; {len(facilities)} facilities are individually sourced.",
+    }
+
+
+def build_analysis(question: str, response: dict[str, Any]) -> dict[str, Any]:
+    q = question.lower()
+    ecosystem = any(term in q for term in ("well represented", "coverage", "evidence too weak", "weak evidence", "ecosystem", "region", "locally"))
+    perspective = "ecosystem" if ecosystem else "builder"
+    objective = question.strip().rstrip("?")
+    process_ids = response.get("process_ids", [])
+    requirements = []
+    for process_id in process_ids[:8]:
+        process = process_by_id(process_id)
+        if process:
+            requirements.append({
+                "name": process["name"],
+                "why_it_matters": process["purpose"],
+                "process_ids": [process_id],
+            })
+    next_steps = []
+    if response.get("facility_ids"):
+        next_steps.append("Confirm customer access, hardware envelope, test level, schedule, and commercial terms directly with candidate facilities.")
+    if response.get("organization_ids"):
+        next_steps.append("Review the cited public description, then verify the exact capability, qualification basis, capacity, and availability with each candidate.")
+    if process_ids:
+        next_steps.append("Use the highlighted production stages to identify interfaces, evidence requirements, and downstream dependencies.")
+    if ecosystem:
+        next_steps.append("Prioritize validation where records rely on secondary indexes or where no individually sourced facility is documented.")
+    return {
+        "interpreted_objective": objective,
+        "perspective": perspective,
+        "requirements": requirements,
+        "coverage": [coverage_signal(pid) for pid in process_ids],
+        "next_steps": next_steps[:6],
+        "evidence_note": "Counts describe current Atlas documentation, not market capacity, supplier availability, or regional supply adequacy.",
+    }
+
+
 def deterministic_answer(found: list[dict[str, Any]], stage: Optional[str]) -> dict[str, Any]:
     stage_name = next((s["name"] for s in DATA["stages"] if s["id"] == stage), None)
     if not found:
@@ -204,14 +279,39 @@ def process_answer(processes: list[dict[str, Any]]) -> dict[str, Any]:
     process_summary = " → ".join(p["name"] for p in processes)
     purpose = " ".join(p["purpose"] for p in processes)
     source_rows = {e["url"]: e for p in processes for e in p.get("evidence", [])}
-    organization_ids = list(dict.fromkeys([f["organization_id"] for f in facilities] + [c["id"] for c in candidates]))
+    organization_ids = list(dict.fromkeys([f["organization_id"] for f in facilities] + [c["id"] for c in candidates]))[:20]
     return {
         "answer_text": f"The reference pathway is {process_summary}. {purpose} This is a conceptual engineering sequence, not a claim about a specific program's commercial flow.",
-        "citations": [citation(e["title"], e["url"], "conceptual") for e in source_rows.values()] + [citation(f["name"], f["source"]) for f in facilities],
-        "organization_ids": organization_ids, "facility_ids": [f["id"] for f in facilities], "process_ids": process_ids, "program_ids": [],
+        "citations": ([citation(e["title"], e["url"], "conceptual") for e in source_rows.values()] + [citation(f["name"], f["source"]) for f in facilities])[:12],
+        "organization_ids": organization_ids, "facility_ids": [f["id"] for f in facilities][:20], "process_ids": process_ids, "program_ids": [],
         "suggested_actions": [action("select_processes", "Trace the production pathway", process_ids)] + ([action("highlight_facilities", "Show documented facilities", [f["id"] for f in facilities])] if facilities else []) + ([action("filter_organizations", "Inspect capability candidates", [c["id"] for c in candidates])] if candidates else []),
-        "unknowns": sorted({gap for p in processes for gap in p["evidence_gaps"]}),
+        "unknowns": sorted({gap for p in processes for gap in p["evidence_gaps"]})[:20],
         "evidence_limitations": EVIDENCE_LIMITATIONS, "mode": "deterministic-process",
+    }
+
+
+def ecosystem_coverage_answer(weak_only: bool = False) -> dict[str, Any]:
+    signals = [coverage_signal(p["id"]) for p in DATA["processes"]]
+    if weak_only:
+        ranked = sorted(signals, key=lambda row: (row["facility_count"] > 0, row["dossier_count"], row["organization_count"]))[:6]
+        process_ids = [row["process_id"] for row in ranked]
+        summary = "; ".join(f"{row['process_name']} ({row['organization_count']} records, {row['dossier_count']} dossiers, {row['facility_count']} sourced facilities)" for row in ranked)
+        answer = f"The weakest-documented portions of the current Atlas are: {summary}. This is a documentation-priority signal, not proof that the capability is absent locally."
+        mode = "deterministic-evidence-gap"
+    else:
+        ranked = sorted(signals, key=lambda row: (row["organization_count"], row["dossier_count"], row["facility_count"]), reverse=True)[:6]
+        process_ids = [row["process_id"] for row in ranked]
+        summary = "; ".join(f"{row['process_name']} ({row['organization_count']} records, {row['dossier_count']} dossiers, {row['facility_count']} sourced facilities)" for row in ranked)
+        answer = f"The most documented portions of the current Atlas are: {summary}. These counts measure evidence coverage in this dataset—not local capacity, supplier availability, or supply-chain adequacy."
+        mode = "deterministic-ecosystem-coverage"
+    return {
+        "answer_text": answer,
+        "citations": [citation(source["title"], source["url"], "conceptual") for source in SOURCES.values()],
+        "organization_ids": [], "facility_ids": [], "process_ids": process_ids, "program_ids": [],
+        "suggested_actions": [action("select_processes", "Inspect these pathway stages", process_ids)],
+        "unknowns": ["unlisted organizations and facilities", "current capacity and availability", "actual supply relationships", "whether sparse documentation indicates a real regional gap"],
+        "evidence_limitations": EVIDENCE_LIMITATIONS,
+        "mode": mode,
     }
 
 
@@ -226,6 +326,7 @@ def coverage_gap_answer(programs: bool = False) -> dict[str, Any]:
 
 
 def facility_answer(found: list[dict[str, Any]]) -> dict[str, Any]:
+    found = found[:12]
     facility_ids = [f["id"] for f in found]
     process_ids = list(dict.fromkeys(pid for f in found for pid in f.get("process_ids", [])))
     organization_ids = list(dict.fromkeys(f["organization_id"] for f in found))
@@ -235,13 +336,19 @@ def facility_answer(found: list[dict[str, Any]]) -> dict[str, Any]:
         "citations": [citation(f["name"], f["source"]) for f in found],
         "organization_ids": organization_ids, "facility_ids": facility_ids, "process_ids": process_ids, "program_ids": [],
         "suggested_actions": [action("highlight_facilities", "Highlight documented facilities", facility_ids), action("select_processes", "Inspect applicable processes", process_ids), action("open_records", "Inspect facility records", facility_ids)],
-        "unknowns": sorted({gap for f in found for gap in f.get("unknowns", [])}),
+        "unknowns": sorted({gap for f in found for gap in f.get("unknowns", [])})[:20],
         "evidence_limitations": EVIDENCE_LIMITATIONS, "mode": "deterministic-facility",
     }
 
 
 def relevant_processes(question: str) -> list[dict[str, Any]]:
     q, words = question.lower(), terms(question)
+    if "communications payload" in q or ("payload" in q and any(term in q for term in ("rf", "communication", "communications"))):
+        ids = ["materials", "comms", "payload", "harness", "functional-test", "integration", "environmental-test"]
+        return [process_by_id(pid) for pid in ids if process_by_id(pid)]
+    if any(term in q for term in ("completed assembly", "assembly is complete", "finished assembly", "after assembly", "what comes next")):
+        ids = ["functional-test", "integration", "environmental-test", "launch-integration", "launch-campaign", "operations"]
+        return [process_by_id(pid) for pid in ids if process_by_id(pid)]
     if ("assembly" in q or "integration" in q) and "launch" in q:
         ids = ["integration", "environmental-test", "launch-integration", "launch-campaign"]
         return [process_by_id(pid) for pid in ids if process_by_id(pid)]
@@ -266,6 +373,12 @@ def relevant_facilities(question: str) -> list[dict[str, Any]]:
     facilities = [f for f in DATA["facilities"] if f.get("verification_status")]
     if desired:
         facilities = [f for f in facilities if desired & (set(f.get("capability_ids", [])) | set(f.get("process_ids", [])))]
+    if any(term in q for term in ("thermal-vacuum", "thermal vacuum", "vacuum")):
+        facilities = [f for f in facilities if any(term in " ".join(f.get("products_services", [])).lower() for term in ("thermal-vacuum", "thermal vacuum", "vacuum"))]
+    if "vibration" in q:
+        facilities = [f for f in facilities if "vibration" in " ".join(f.get("products_services", [])).lower()]
+    if any(term in q for term in ("emc", "emi", "rf test")):
+        facilities = [f for f in facilities if any(term in " ".join(f.get("products_services", [])).lower() for term in ("emc", "emi", "rf test"))]
     return facilities
 
 
@@ -316,21 +429,33 @@ def program_answer(found: list[dict[str, Any]]) -> dict[str, Any]:
 
 def deterministic_route(payload: AskRequest) -> dict[str, Any]:
     question, q = payload.question.strip(), payload.question.lower()
-    program_intent = any(term in q for term in ("program", "support", "grant", "funding", "accelerator", "spacewerx", "sbir", "sttr", "tacfi", "stratfi", "taba", "rocket fund", "ecosystem", "connect", "event"))
+    if any(term in q for term in ("evidence too weak", "weak evidence", "too weak to know", "where is the evidence", "least documented", "regional bottleneck")):
+        return ecosystem_coverage_answer(weak_only=True)
+    if any(term in q for term in ("well represented", "best represented", "strongest coverage", "strongest evidence coverage", "coverage by process", "represented locally")):
+        return ecosystem_coverage_answer()
+    program_intent = any(term in q for term in ("program", "grant", "funding", "accelerator", "spacewerx", "sbir", "sttr", "tacfi", "stratfi", "taba", "rocket fund", "organizations connect", "community", "event"))
     if program_intent:
         programs = relevant_programs(question)
         if programs:
             return program_answer(programs)
         return coverage_gap_answer(programs=True)
-    facility_intent = any(term in q for term in ("facility", "facilities", "where can", "where could", "test", "testing", "qualification", "launch site", "spaceport"))
+    facility_intent = any(term in q for term in ("facility", "facilities", "where can", "where could", "test", "testing", "qualification", "thermal", "vacuum", "launch site", "spaceport"))
     if facility_intent:
         facilities = relevant_facilities(question)
         if facilities:
-            return facility_answer(facilities)
+            response = facility_answer(facilities)
+            if any(term in q for term in ("thermal-vacuum", "thermal vacuum", "vacuum", "vibration", "emc", "emi")):
+                response["process_ids"] = ["environmental-test"]
+                response["suggested_actions"] = [
+                    action("highlight_facilities", "Highlight documented facilities", response["facility_ids"]),
+                    action("select_processes", "Inspect environmental qualification", ["environmental-test"]),
+                    action("open_records", "Inspect facility records", response["facility_ids"]),
+                ]
+            return response
     follow_up = any(term in q.split() for term in ("it", "this", "that", "requirements", "inputs", "evidence"))
     selected = process_by_id(payload.process_id) if payload.process_id and follow_up else None
     processes = [selected] if selected else relevant_processes(question)
-    process_intent = any(term in q for term in ("process", "pathway", "from assembly", "to launch", "dependencies", "qualification flow"))
+    process_intent = any(term in q for term in ("process", "pathway", "from assembly", "to launch", "dependencies", "qualification flow", "communications payload", "completed assembly", "what comes next"))
     if processes and process_intent:
         return process_answer(processes)
     return deterministic_answer(matches(question, payload.stage), payload.stage)
@@ -384,6 +509,15 @@ async def create_claude_message(system: str, messages: list[dict[str, str]]) -> 
     )
 
 
+DATA["ecosystem_intelligence"] = {
+    "label": "Ecosystem intelligence preview",
+    "as_of": "2026-10-29",
+    "coverage": [coverage_signal(process["id"]) for process in DATA["processes"]],
+    "evidence_tiers": dict(sorted({tier: sum(c["evidence_status"] == tier for c in DATA["companies"]) for tier in {c["evidence_status"] for c in DATA["companies"]}}.items())),
+    "note": "Coverage metrics describe records in the Atlas, not regional capacity, supplier availability, or proof that an undocumented capability is absent.",
+}
+
+
 @app.get("/")
 def homepage(): return FileResponse(BASE / "index.html")
 
@@ -393,13 +527,15 @@ def get_data(): return DATA
 
 
 @app.get("/healthz")
-def health(): return {"ok": True, "version": "0.8.0", "organizations": len(DATA["organizations"]), "facilities": len(DATA.get("facilities", [])), "profiles": sum(c["profile_level"] == "deep" for c in DATA["companies"]), "processes": len(DATA.get("processes", [])), "programs": len(DATA["programs"]), "anthropic_configured": bool(ANTHROPIC_API_KEY)}
+def health(): return {"ok": True, "version": "0.9.0", "organizations": len(DATA["organizations"]), "facilities": len(DATA.get("facilities", [])), "profiles": sum(c["profile_level"] == "deep" for c in DATA["companies"]), "processes": len(DATA.get("processes", [])), "programs": len(DATA["programs"]), "anthropic_configured": bool(ANTHROPIC_API_KEY)}
 
 
 @app.post("/api/ask")
 async def ask(payload: AskRequest, request: Request):
     question = payload.question.strip()
     baseline = validate_response(deterministic_route(payload))
+    baseline["analysis"] = build_analysis(question, baseline)
+    baseline = validate_response(baseline)
     if not should_synthesize(question) or not ANTHROPIC_API_KEY:
         return baseline
     if not take_slot(request):
