@@ -239,6 +239,30 @@ def build_analysis(question: str, response: dict[str, Any]) -> dict[str, Any]:
         next_steps.append("Use the highlighted production stages to identify interfaces, evidence requirements, and downstream dependencies.")
     if ecosystem:
         next_steps.append("Prioritize validation where records rely on secondary indexes or where no individually sourced facility is documented.")
+    if any(term in q for term in ("thermal-vacuum", "thermal vacuum")):
+        next_steps = [
+            "Define the hardware envelope, temperature and pressure profiles, instrumentation, cleanliness constraints, and whether this is qualification or acceptance testing.",
+            "Review the sourced facility record, then confirm customer access, chamber fit, schedule, configuration, and commercial terms directly with the operator.",
+            "Prepare the test plan, success criteria, configuration record, and required test-report evidence before reserving a slot.",
+        ]
+    elif "communications payload" in q:
+        next_steps = [
+            "Freeze the payload's frequency band, link budget, antenna, power, data, mechanical, thermal, and ground-segment interfaces.",
+            "Define functional, EMC/RF, environmental, and acceptance evidence required for payload and spacecraft integration.",
+            "Use the highlighted records to create a verification shortlist, then confirm exact capability, qualification basis, access, capacity, and schedule with each candidate.",
+        ]
+    elif any(term in q for term in ("completed assembly", "assembly is complete", "finished assembly", "what comes next")):
+        next_steps = [
+            "Freeze the as-built configuration and close outstanding functional, interface, workmanship, and acceptance records.",
+            "Confirm the mission-specific environmental verification matrix, including qualification-versus-acceptance levels and retest rules.",
+            "Align transport, launch-provider interface approval, range documentation, campaign schedule, and operational-readiness evidence.",
+        ]
+    elif "rf systems" in q or "rf components" in q:
+        next_steps = [
+            "Specify the RF function, frequency band, performance, environmental, interface, and qualification requirements before shortlisting candidates.",
+            "Inspect each cited record and separate first-party evidence from directory-tier discovery leads.",
+            "Confirm product fit, flight heritage or qualification basis, capacity, lead time, and procurement availability directly with candidates.",
+        ]
     return {
         "interpreted_objective": objective,
         "perspective": perspective,

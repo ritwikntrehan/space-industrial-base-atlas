@@ -50,6 +50,8 @@ def test_homepage_is_compact_and_suggested_queries_precede_map():
     assert "county-filter" in html and "evidence-filter" in html and "leaflet.markercluster" in html
     assert html.index('id="ask"') < html.index('id="map-section"') < html.index('id="process-section"')
     assert 'id="intelligence-section"' in html and 'id="workspace"' in html and 'id="share"' in html
+    assert 'id="next-steps"' in html and "View pathway and evidence analysis" in html
+    assert html.index('id="next-steps"') < html.index('class="analysis-details"')
 
 
 def test_six_anchor_questions_share_the_analysis_contract():
