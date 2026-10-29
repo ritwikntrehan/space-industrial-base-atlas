@@ -249,6 +249,11 @@ def test_claude_messages_synthesis_uses_official_sdk_boundary(monkeypatch):
     assert payload["citations"][0]["url"] == main.SOURCES["nasa-verification"]["url"]
 
 
+def test_synthesis_parser_accepts_fenced_or_prefaced_json_objects():
+    assert main.parse_json_object('```json\n{"answer_text":"ok"}\n```')["answer_text"] == "ok"
+    assert main.parse_json_object('Result:\n{"answer_text":"ok"}\nDone')["answer_text"] == "ok"
+
+
 def test_claude_api_error_falls_back_to_complete_deterministic_schema(monkeypatch):
     main.CACHE.clear()
     monkeypatch.setattr(main, "ANTHROPIC_API_KEY", "test-key")

@@ -528,10 +528,35 @@ async def create_claude_message(system: str, messages: list[dict[str, str]]) -> 
     client = AsyncAnthropic(api_key=ANTHROPIC_API_KEY, timeout=35.0, max_retries=1)
     return await client.messages.create(
         model=ANTHROPIC_MODEL,
-        max_tokens=650,
+        max_tokens=1200,
         system=system,
         messages=messages,
     )
+
+
+def parse_json_object(text: str) -> dict[str, Any]:
+    """Accept a bare or fenced JSON object and reject all non-object output."""
+    candidate = text.strip()
+    if candidate.startswith("```"):
+        candidate = re.sub(r"^```(?:json)?\s*", "", candidate, count=1, flags=re.IGNORECASE)
+        candidate = re.sub(r"\s*```$", "", candidate, count=1)
+    try:
+        parsed = json.loads(candidate)
+        if isinstance(parsed, dict):
+            return parsed
+    except json.JSONDecodeError:
+        pass
+    decoder = json.JSONDecoder()
+    for index, character in enumerate(candidate):
+        if character != "{":
+            continue
+        try:
+            parsed, _ = decoder.raw_decode(candidate[index:])
+            if isinstance(parsed, dict):
+                return parsed
+        except json.JSONDecodeError:
+            continue
+    raise json.JSONDecodeError("No complete JSON object in model output", candidate, 0)
 
 
 DATA["ecosystem_intelligence"] = {
@@ -571,13 +596,13 @@ async def ask(payload: AskRequest, request: Request):
     if cached and cached[0] > time.time():
         response = dict(cached[1]); response["mode"] = "claude-cached"; return response
     context = {"retrieved_response": baseline, "limitations": DATA["limitations"]}
-    system = """You are the synthesis layer for an evidence-bound space industrial intelligence system. Use only the supplied retrieved response. Keep observed facts distinct from analytical matches and conceptual process dependencies. Never invent supplier relationships, production capacity, qualification, lead time, backlog, launch contracts, programs, or bottlenecks. Sparse coverage is not proof of a gap. Return JSON only with exactly: {\"answer_text\": string, \"citations\": [{\"label\": string, \"url\": string, \"evidence_classification\": \"observed\"|\"analytical\"|\"conceptual\"}], \"unknowns\": [string]}. Keep the answer under 220 words."""
+    system = """You are the synthesis layer for an evidence-bound space industrial intelligence system. Use only the supplied retrieved response. Keep observed facts distinct from analytical matches and conceptual process dependencies. Never invent supplier relationships, production capacity, qualification, lead time, backlog, launch contracts, programs, or bottlenecks. Sparse coverage is not proof of a gap. Respond directly without extended analysis. Return one JSON object only, without Markdown fences or commentary, with exactly: {\"answer_text\": string, \"citations\": [{\"label\": string, \"url\": string, \"evidence_classification\": \"observed\"|\"analytical\"|\"conceptual\"}], \"unknowns\": [string]}. Keep the answer under 220 words."""
     conversation = [{"role": turn.role, "content": turn.content} for turn in payload.history]
     conversation.append({"role": "user", "content": f"Question: {question}\n\nRetrieved Atlas context:\n{json.dumps(context, ensure_ascii=False)}"})
     try:
         message = await create_claude_message(system, conversation)
         output_text = "".join(block.text for block in message.content if getattr(block, "type", None) == "text")
-        parsed = json.loads(output_text)
+        parsed = parse_json_object(output_text)
         result = baseline | {
             "answer_text": str(parsed.get("answer_text") or "").strip(),
             "citations": parsed.get("citations", []),
