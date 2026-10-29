@@ -149,13 +149,21 @@ def score(company: dict[str, Any], words: set[str], stage: Optional[str]) -> int
 def matches(question: str, stage: Optional[str]) -> list[dict[str, Any]]:
     words, q = terms(question), question.lower()
     county_names = ["Los Angeles", "Orange", "San Diego", "Ventura", "Riverside", "San Bernardino", "Santa Barbara"]
-    requested_counties = [county for county in county_names if county.lower() in q]
+    if any(phrase in q for phrase in ("near los angeles", "around los angeles")):
+        requested_counties = ["Los Angeles", "Orange", "Ventura"]
+    else:
+        requested_counties = [county for county in county_names if county.lower() in q]
     pool = [c for c in DATA["companies"] if not requested_counties or c["county"] in requested_counties]
     ranked = sorted(pool, key=lambda c: (-score(c, words, stage), c["name"]))
     relevant = [c for c in ranked if score(c, words, stage) > 0]
     if not relevant and stage:
         relevant = [c for c in ranked if stage in c["stages"]]
-    return relevant[:8]
+    capability_coverage = []
+    for word in sorted(words):
+        candidates = [c for c in ranked if word in " ".join(c["capabilities"]).lower()]
+        if candidates:
+            capability_coverage.append(candidates[0])
+    return list({c["id"]: c for c in capability_coverage + relevant}.values())[:8]
 
 
 def citation(label: str, url: str, classification: str = "observed") -> dict[str, str]:
@@ -175,11 +183,11 @@ def deterministic_answer(found: list[dict[str, Any]], stage: Optional[str]) -> d
     ids = [c["id"] for c in found]
     process_ids = list(dict.fromkeys(process_id for company in found for process_id in company["process_ids"]))[:6]
     return {
-        "answer_text": f"{lead}: {listings}. Inclusion is based on the cited public description or directory capability tags. Directory-tier rows are preliminary candidates; none of these results establishes a supplier relationship, availability, capacity, pricing, or mission qualification.",
+        "answer_text": f"{lead}: {listings}. Inclusion is based on the cited public description or directory capability tags, and an individual candidate may satisfy only part of a multi-attribute request. Directory-tier rows are preliminary candidates; none of these results establishes a supplier relationship, availability, capacity, pricing, or mission qualification.",
         "citations": [citation(c["name"], c["source"]) for c in found[:5]],
         "organization_ids": ids, "facility_ids": [], "process_ids": process_ids, "program_ids": [],
         "suggested_actions": [action("filter_organizations", "Inspect candidate organizations", ids)] + ([action("select_processes", "Connect matches to production processes", process_ids)] if process_ids else []) + [action("open_records", "Open related records", ids)],
-        "unknowns": ["supplier relationship", "current operating status for directory-only rows", "flight qualification", "capacity and availability", "lead time"],
+        "unknowns": ["complete match to every requested material and process", "supplier relationship", "current operating status for directory-only rows", "flight qualification", "capacity and availability", "lead time"],
         "evidence_limitations": EVIDENCE_LIMITATIONS, "mode": "deterministic-registry",
     }
 

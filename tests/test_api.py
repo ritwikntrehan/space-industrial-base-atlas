@@ -100,7 +100,9 @@ def test_import_reconciliation_and_evidence_tiers():
 def test_supplier_matching_explains_evidence_and_connects_processes():
     payload = ask("I need precision-machined titanium components near Los Angeles")
     assert payload["organization_ids"] and payload["process_ids"]
+    assert "SOCAL-laube-titanium-mill-products" in payload["organization_ids"]
     assert "evidence:" in payload["answer_text"] and "profile:" in payload["answer_text"]
+    assert "may satisfy only part" in payload["answer_text"]
     assert any(action["action"] == "select_processes" for action in payload["suggested_actions"])
     assert "capacity and availability" in payload["unknowns"]
 
