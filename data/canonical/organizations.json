@@ -9518,7 +9518,9 @@
         "Titanium products",
         "Waterjet cutting"
       ],
-      "process_ids": [],
+      "process_ids": [
+        "materials"
+      ],
       "website": "",
       "source_urls": [
         "https://www.noramark.com/directory/industries/aerospace/california/page/5/"

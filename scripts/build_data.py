@@ -31,7 +31,7 @@ SOURCE_OVERRIDES = {
 }
 
 PROCESS_TERMS = {
-    "materials": ("material", "coating", "ceramic", "composite", "metal", "alloy"),
+    "materials": ("material", "coating", "ceramic", "composite", "metal", "alloy", "titanium"),
     "structures": ("structure", "machining", "forming", "fabrication", "composite", "tooling"),
     "avionics": ("avionic", "comput", "sensor", "electronic", "pcb"),
     "power": ("power", "battery", "solar"),
