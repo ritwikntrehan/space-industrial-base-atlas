@@ -529,7 +529,6 @@ async def create_claude_message(system: str, messages: list[dict[str, str]]) -> 
     return await client.messages.create(
         model=ANTHROPIC_MODEL,
         max_tokens=650,
-        temperature=0,
         system=system,
         messages=messages,
     )
