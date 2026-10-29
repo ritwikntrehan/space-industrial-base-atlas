@@ -10,10 +10,10 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.11
-      - key: OPENAI_API_KEY
+      - key: ANTHROPIC_API_KEY
         sync: false
-      - key: OPENAI_MODEL
-        value: gpt-5-mini
+      - key: ANTHROPIC_MODEL
+        value: claude-sonnet-5
       - key: ASK_MAX_PER_HOUR
         value: "24"
       - key: ASK_CACHE_SECONDS

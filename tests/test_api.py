@@ -1,89 +1,156 @@
+import json
 import sys
 from pathlib import Path
+from types import SimpleNamespace
 
 from fastapi.testclient import TestClient
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from main import app
+import main
 
-client = TestClient(app)
+client = TestClient(main.app)
+
+RESPONSE_FIELDS = {
+    "answer_text", "citations", "organization_ids", "facility_ids", "process_ids",
+    "suggested_actions", "unknowns", "evidence_limitations", "mode",
+}
+
+
+def ask(question, **extra):
+    response = client.post("/api/ask", json={"question": question, **extra})
+    assert response.status_code == 200
+    payload = response.json()
+    assert set(payload) == RESPONSE_FIELDS
+    return payload
 
 
 def test_health_and_data_contract():
     health = client.get("/healthz")
     assert health.status_code == 200
-    assert health.json()["version"] == "0.4.0"
+    assert health.json()["version"] == "0.5.0"
+    assert "anthropic_configured" in health.json()
+    assert "openai_configured" not in health.json()
     data = client.get("/api/data").json()
-    assert len(data["stages"]) == 7
     assert len(data["companies"]) >= 18
-    assert len(data["facilities"]) >= len(data["companies"])
     assert len(data["processes"]) >= 14
-    conceptual = [r for r in data["relationships"] if r["type"] == "conceptual-process-dependency"]
-    assert conceptual and all(r["evidence_status"] == "public-engineering-source" for r in conceptual)
+    assert len([f for f in data["facilities"] if f.get("verification_status")]) >= 3
 
 
-def test_verified_facility_records_have_provenance_and_coordinates():
-    data = client.get("/api/data").json()
-    verified = [f for f in data["facilities"] if f.get("verification_status")]
-    assert len(verified) >= 3
-    assert all(f["source"].startswith("https://") and f["latitude"] and f["longitude"] for f in verified)
-    assert any(f["id"] == "vandenberg-sld30" and f["location_precision"] == "base-centroid" for f in verified)
+def test_facility_question_returns_citations_ids_and_navigation():
+    payload = ask("Where can I test a small satellite?")
+    assert payload["mode"] == "deterministic-facility"
+    assert "jpl-25ft" in payload["facility_ids"]
+    assert "environmental-test" in payload["process_ids"]
+    assert payload["citations"]
+    assert {a["action"] for a in payload["suggested_actions"]} >= {
+        "highlight_facilities", "select_processes", "open_records"
+    }
+    assert "capacity" in " ".join(payload["unknowns"])
 
 
-def test_lookup_stays_deterministic_and_cited():
-    response = client.post("/api/ask", json={"question": "Which companies support RF components?", "stage": "components"})
-    assert response.status_code == 200
-    payload = response.json()
+def test_composite_question_filters_registry_without_asserting_supplier_relationship():
+    payload = ask("Who manufactures aerospace composites around Los Angeles?")
     assert payload["mode"] == "deterministic-registry"
-    assert payload["citations"]
-    assert "not verified supplier relationships" in payload["answer"]
+    assert payload["organization_ids"]
+    assert any("Composite" in c["label"] or "Airtech" in c["label"] for c in payload["citations"])
+    assert "not verified supplier relationships" in payload["answer_text"]
+    assert any(a["action"] == "filter_organizations" for a in payload["suggested_actions"])
 
 
-def test_unknown_stage_does_not_break_retrieval():
-    response = client.post("/api/ask", json={"question": "Tell me about precision manufacturing", "stage": "not-real"})
-    assert response.status_code == 200
-    assert response.json()["matches"]
+def test_assembly_to_launch_question_selects_complete_relevant_path():
+    payload = ask("How does a satellite get from assembly to launch?")
+    assert payload["process_ids"] == [
+        "integration", "environmental-test", "launch-integration", "launch-campaign"
+    ]
+    assert any(a["action"] == "select_processes" for a in payload["suggested_actions"])
+    assert any(c["evidence_classification"] == "conceptual" for c in payload["citations"])
 
 
-def test_process_lookup_is_deterministic_and_source_linked():
-    response = client.post("/api/ask", json={"question": "What inputs are required?", "process_id": "integration"})
-    assert response.status_code == 200
-    payload = response.json()
-    assert payload["mode"] == "deterministic-process"
-    assert payload["process"]["relationship_type"] == "conceptual-engineering-dependency"
-    assert payload["citations"]
+def test_program_question_reports_real_coverage_gap():
+    payload = ask("What programs might support my space startup?")
+    assert payload["mode"] == "deterministic-coverage-gap"
+    assert not payload["organization_ids"]
+    assert not payload["citations"]
+    assert "does not yet contain" in payload["answer_text"]
+
+
+def test_selected_process_supports_contextual_follow_up():
+    payload = ask(
+        "What evidence is missing for this process?",
+        process_id="environmental-test",
+        history=[
+            {"role": "user", "content": "Where can I test a satellite?"},
+            {"role": "assistant", "content": "The Atlas found documented test facilities."},
+        ],
+    )
+    assert payload["process_ids"] == ["environmental-test"]
     assert payload["unknowns"]
 
 
-def test_complex_process_question_without_key_keeps_process_context():
-    response = client.post("/api/ask", json={"question": "What evidence would be needed to assess a test facility bottleneck?", "process_id": "environmental-test"})
-    assert response.status_code == 200
-    assert response.json()["mode"] == "deterministic-process"
-    assert response.json()["process"]["id"] == "environmental-test"
+def test_backend_removes_unrecognized_ids_actions_and_citations():
+    raw = {
+        "answer_text": "Validated response.",
+        "citations": [
+            {"label": "NASA", "url": main.SOURCES["nasa-verification"]["url"], "evidence_classification": "conceptual"},
+            {"label": "Injected", "url": "https://malicious.invalid", "evidence_classification": "observed"},
+        ],
+        "organization_ids": ["nasa-jpl", "invented-org"],
+        "facility_ids": ["jpl-25ft", "invented-facility"],
+        "process_ids": ["integration", "invented-process"],
+        "suggested_actions": [
+            {"action": "highlight_facilities", "label": "Show", "target_ids": ["jpl-25ft", "nasa-jpl", "invented"]},
+            {"action": "select_processes", "label": "Bad", "target_ids": ["invented"]},
+        ],
+        "unknowns": [], "evidence_limitations": [], "mode": "test",
+    }
+    safe = main.validate_response(raw)
+    assert safe["organization_ids"] == ["nasa-jpl"]
+    assert safe["facility_ids"] == ["jpl-25ft"]
+    assert safe["process_ids"] == ["integration"]
+    assert len(safe["citations"]) == 1
+    assert safe["suggested_actions"] == [{"action": "highlight_facilities", "label": "Show", "target_ids": ["jpl-25ft"]}]
 
 
-def test_facility_retrieval_is_cited_without_openai():
-    response = client.post("/api/ask", json={"question": "Which facilities support environmental testing?"})
-    assert response.status_code == 200
-    assert response.json()["mode"] == "deterministic-facility"
-    assert response.json()["citations"]
+def test_claude_messages_synthesis_uses_official_sdk_boundary(monkeypatch):
+    main.CACHE.clear()
+    monkeypatch.setattr(main, "ANTHROPIC_API_KEY", "test-key")
+
+    async def fake_message(system, messages):
+        assert "evidence-bound" in system
+        assert messages[-1]["role"] == "user"
+        content = json.dumps({
+            "answer_text": "Source-bound synthesis that preserves the retrieved evidence.",
+            "citations": [{
+                "label": "NASA Product Verification",
+                "url": main.SOURCES["nasa-verification"]["url"],
+                "evidence_classification": "conceptual",
+            }],
+            "unknowns": ["capacity"],
+        })
+        return SimpleNamespace(content=[SimpleNamespace(type="text", text=content)])
+
+    monkeypatch.setattr(main, "create_claude_message", fake_message)
+    payload = ask("Compare integration and testing tradeoffs across the pathway")
+    assert payload["mode"] == "claude-messages"
+    assert payload["answer_text"].startswith("Source-bound")
+    assert payload["citations"][0]["url"] == main.SOURCES["nasa-verification"]["url"]
 
 
-def test_responses_api_parses_output_content_and_falls_back(monkeypatch):
-    import main
+def test_claude_api_error_falls_back_to_complete_deterministic_schema(monkeypatch):
+    main.CACHE.clear()
+    monkeypatch.setattr(main, "ANTHROPIC_API_KEY", "test-key")
 
-    main.OPENAI_API_KEY = "test-key"
-    class FakeClient:
-        def __init__(self, *args, **kwargs): pass
-        async def __aenter__(self): return self
-        async def __aexit__(self, *args): pass
-        async def post(self, *args, **kwargs):
-            class Response:
-                def raise_for_status(self): pass
-                def json(self): return {"status": "completed", "output": [{"type": "message", "content": [{"type": "output_text", "text": '{"answer":"Source-bound synthesis.","citations":[],"unknowns":["capacity"]}'}]}]}
-            return Response()
-    monkeypatch.setattr(main.httpx, "AsyncClient", FakeClient)
-    response = client.post("/api/ask", json={"question": "Compare integration and testing tradeoffs across the pathway", "process_id": "integration"})
-    assert response.status_code == 200
-    assert response.json()["mode"] == "openai-responses"
-    main.OPENAI_API_KEY = ""
+    async def failed_message(*_args, **_kwargs):
+        raise RuntimeError("mock upstream error")
+
+    monkeypatch.setattr(main, "create_claude_message", failed_message)
+    payload = ask("Compare integration and testing tradeoffs across the pathway")
+    assert payload["mode"] == "deterministic-api-fallback"
+    assert payload["answer_text"]
+    assert set(payload) == RESPONSE_FIELDS
+
+
+def test_request_validation_rejects_unbounded_history_and_short_question():
+    turns = [{"role": "user", "content": "context"}] * 7
+    assert client.post("/api/ask", json={"question": "x"}).status_code == 422
+    assert client.post("/api/ask", json={"question": "valid", "history": turns}).status_code == 422

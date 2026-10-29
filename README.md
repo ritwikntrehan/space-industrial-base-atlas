@@ -1,4 +1,4 @@
-# Space Industrial Base Atlas | v0.3
+# Space Industrial Base Atlas | v0.5
 
 Independent Render/FastAPI app adapted conceptually from [SCHTMap](https://github.com/ritwikntrehan/oc-hard-tech-landscape). The original project is not modified.
 
@@ -7,7 +7,10 @@ Independent Render/FastAPI app adapted conceptually from [SCHTMap](https://githu
 - Select a process to inspect generic upstream/downstream dependencies, potential controls, candidate public capability matches, cited engineering evidence, and missing information.
 - Normalized API objects for organizations, city-level facility labels, capabilities, processes, typed conceptual dependencies, and evidence sources.
 - Interactive city-centroid map and searchable 18-organization Orange County seed registry. City points are not facility-address assertions.
-- Deterministic `/api/ask` process, company, stage and capability retrieval. OpenAI Responses API is optional and only used for synthesis; it is cached, rate-limited and falls back deterministically.
+- A question-first homepage that turns evidence retrieval into validated map, process, and registry navigation actions.
+- One response contract for answer text, citations, organization/facility/process IDs, suggested interface actions, unknowns, and evidence limitations.
+- Deterministic `/api/ask` process, company, stage, facility, and capability retrieval. Anthropic's Messages API is optional and only used for complex synthesis; it is cached, rate-limited, server-side, and falls back deterministically.
+- Bounded conversation history for contextual follow-ups. Returned citations, entity IDs, and actions are validated against Atlas data before the browser applies them.
 
 ## Local run
 
@@ -19,7 +22,9 @@ uvicorn main:app --reload
 Open http://localhost:8000.
 
 ## Render
-Create a **new GitHub repository** and push these files. In Render, create a **new Blueprint** from that repository; it will read `render.yaml` and deploy to an independent Render web service. Set `OPENAI_API_KEY` in that **new service's** Environment settings, never in Git or browser code. OpenAI access is optional: deterministic registry answers remain available without it.
+The included Render blueprint installs the official Anthropic Python SDK. Set `ANTHROPIC_API_KEY` in the service's Environment settings, never in Git, logs, browser code, or frontend responses. `ANTHROPIC_MODEL` defaults to `claude-sonnet-5` and can be changed without code edits. Claude access is optional: deterministic, source-linked answers and navigation remain available without credentials.
+
+Do not expose the key through a `PUBLIC_` variable or add it to `index.html`. The browser only calls `/api/ask`; the server decides whether synthesis is needed.
 
 ## Data quality and interpretation
 
@@ -27,10 +32,13 @@ The dependency graph is a generic engineering reference model grounded in NASA s
 
 Every dependency record is typed `conceptual-process-dependency`. There are deliberately no named supplier-to-customer or capacity relationships in v0.3. A real bottleneck assessment needs documented qualification status, facility/process capability, capacity and utilization, lead time, demand, actual supplier relationships, and mission/launch constraints.
 
-## Next iterations
-1. Add separately sourced facility-level evidence where publicly appropriate, plus explicit qualification/process evidence records.
-2. Complete one SoCal representative pathway with documented spacecraft integrator, test, and launch-infrastructure records.
-3. Add supplier and program relationships only where public sources establish them; do not estimate capacity until evidence supports it.
+## Current evidence limitations
+
+The Atlas has three individually sourced facility records and an Orange County-centered organization seed cohort. It does not yet have a startup-program database, customer-access terms, facility schedules, capacity, pricing, complete Los Angeles coverage, or verified supplier/customer relationships. The assistant says so instead of filling those gaps with model knowledge.
+
+## Next iteration
+
+Add a governed ingestion workflow for authoritative facility-access and startup-support program records, including eligibility, geography, effective dates, provenance, and record-expiration checks. This would make founder and facility-access questions more actionable without weakening the evidence boundary.
 
 ## Tests
 
