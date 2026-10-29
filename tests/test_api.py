@@ -257,7 +257,10 @@ def test_claude_api_error_falls_back_to_complete_deterministic_schema(monkeypatc
         raise RuntimeError("mock upstream error")
 
     monkeypatch.setattr(main, "create_claude_message", failed_message)
-    payload = ask("Compare integration and testing tradeoffs across the pathway")
+    response = client.post("/api/ask", json={"question": "Compare integration and testing tradeoffs across the pathway"})
+    assert response.status_code == 200
+    assert response.headers["X-Atlas-Synthesis-Error"] == "RuntimeError"
+    payload = response.json()
     assert payload["mode"] == "deterministic-api-fallback"
     assert payload["answer_text"]
     assert set(payload) == RESPONSE_FIELDS

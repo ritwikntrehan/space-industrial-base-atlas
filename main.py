@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import logging
 import os
 import re
 import time
@@ -17,6 +18,7 @@ from pydantic import BaseModel, Field
 from typing import Literal
 
 BASE = Path(__file__).parent
+LOGGER = logging.getLogger("atlas.synthesis")
 DATA: dict[str, Any] = json.loads((BASE / "data.json").read_text(encoding="utf-8"))
 DATA["programs"] = json.loads((BASE / "data" / "website" / "programs.json").read_text(encoding="utf-8"))["programs"]
 DATA["companies"] = json.loads((BASE / "data" / "website" / "organizations.json").read_text(encoding="utf-8"))["organizations"]
@@ -587,6 +589,7 @@ async def ask(payload: AskRequest, request: Request):
         CACHE[cache_key] = (time.time() + CACHE_TTL, result)
         while len(CACHE) > 128: CACHE.popitem(last=False)
         return result
-    except Exception:
+    except Exception as exc:
+        LOGGER.exception("Anthropic synthesis failed (%s): %s", type(exc).__name__, exc)
         baseline["mode"] = "deterministic-api-fallback"
-        return baseline
+        return JSONResponse(baseline, headers={"X-Atlas-Synthesis-Error": type(exc).__name__})
