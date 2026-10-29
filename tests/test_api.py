@@ -53,6 +53,8 @@ def test_homepage_is_compact_and_suggested_queries_precede_map():
     assert 'id="next-steps"' in html and "View pathway and evidence analysis" in html
     assert html.index('id="next-steps"') < html.index('class="analysis-details"')
     assert 'id="direct-answer"' in html and "scrollBelowHeader" in html
+    assert 'aria-busy="false"' in html
+    assert "function showLoading()" in html and "function finishLoading()" in html
     assert 'id="intel-weak"' in html and 'class="intel-matrix"' in html
     assert "event.key==='Enter'" in html and "!event.shiftKey" in html and "Ask a follow-up or refine the requirement" in html
 
