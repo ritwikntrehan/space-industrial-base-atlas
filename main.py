@@ -84,7 +84,7 @@ MAX_PER_HOUR = int(os.getenv("ASK_MAX_PER_HOUR", "24"))
 CACHE_TTL = int(os.getenv("ASK_CACHE_SECONDS", "21600"))
 CACHE: OrderedDict[str, tuple[float, dict[str, Any]]] = OrderedDict()
 REQUESTS: dict[str, deque[float]] = defaultdict(deque)
-STOP = {"the", "what", "which", "could", "would", "from", "about", "where", "companies", "there", "that", "with", "have", "this", "are", "for", "who", "and", "does", "can", "how", "our", "into", "some", "a", "an", "in", "of", "to", "is", "it"}
+STOP = {"the", "what", "which", "could", "would", "from", "about", "where", "companies", "organizations", "records", "relevant", "show", "local", "socal", "near", "around", "need", "los", "angeles", "there", "that", "with", "have", "this", "are", "for", "who", "and", "does", "can", "how", "our", "into", "some", "a", "an", "i", "in", "of", "to", "is", "it"}
 SYNTHESIS_MARKERS = {"compare", "tradeoff", "prioritize", "scenario", "synthesis", "why", "strategy", "recommend", "risk", "bottleneck", "gap", "across"}
 app = FastAPI(title="Space Industrial Base Atlas", version="0.9.0")
 
@@ -164,14 +164,30 @@ class AssistantResponse(BaseModel):
 
 def terms(text: str) -> set[str]:
     aliases = {"composites": "composite", "machined": "machining", "manufactures": "manufacturing", "manufacturers": "manufacturing", "suppliers": "supplier", "spacecraft": "spacecraft", "satellites": "satellite"}
-    return {aliases.get(word, word) for word in re.findall(r"[a-z0-9]+", text.lower()) if word not in STOP}
+    normalized = {aliases.get(word, word) for word in re.findall(r"[a-z0-9]+", text.lower()) if word not in STOP}
+    if "rf" in normalized:
+        normalized.update(("antenna", "communications", "microwave"))
+    return normalized
+
+
+def contains_term(haystack: str, word: str) -> bool:
+    """Keep short technical terms such as RF from matching inside unrelated words such as RFID."""
+    if len(word) <= 2:
+        return re.search(rf"\b{re.escape(word)}\b", haystack) is not None
+    return word in haystack
+
+
+def candidate_quality(company: dict[str, Any]) -> int:
+    evidence = {"official_current": 3, "curated_2026_source_snapshot": 2}.get(company["evidence_status"], 0)
+    role = {"direct-space": 3, "direct-or-aerospace": 3, "industrial-supply-base": 2, "ecosystem": 1}.get(company["industry_role"], 0)
+    return evidence + role + (2 if company.get("profile_level") == "deep" else 0)
 
 
 def score(company: dict[str, Any], words: set[str], stage: Optional[str]) -> int:
     name, place = company["name"].lower(), f"{company['city']} {company['county']}".lower()
     capability = " ".join(company["capabilities"]).lower()
     context = f"{company['sector']} {company['industry_role']} {company['description']} {' '.join(company['stages'])}".lower()
-    return sum((5 if word in capability else 3 if word in name else 2 if word in place else 1) for word in words if word in f"{name} {place} {capability} {context}") + (4 if stage and stage in company["stages"] else 0)
+    return sum((5 if contains_term(capability, word) else 3 if contains_term(name, word) else 2 if contains_term(place, word) else 1) for word in words if contains_term(f"{name} {place} {capability} {context}", word)) + (4 if stage and stage in company["stages"] else 0)
 
 
 def matches(question: str, stage: Optional[str]) -> list[dict[str, Any]]:
@@ -182,13 +198,13 @@ def matches(question: str, stage: Optional[str]) -> list[dict[str, Any]]:
     else:
         requested_counties = [county for county in county_names if county.lower() in q]
     pool = [c for c in DATA["companies"] if not requested_counties or c["county"] in requested_counties]
-    ranked = sorted(pool, key=lambda c: (-score(c, words, stage), c["name"]))
+    ranked = sorted(pool, key=lambda c: (-score(c, words, stage), -candidate_quality(c), c["name"]))
     relevant = [c for c in ranked if score(c, words, stage) > 0]
     if not relevant and stage:
         relevant = [c for c in ranked if stage in c["stages"]]
     capability_coverage = []
     for word in sorted(words):
-        candidates = [c for c in ranked if word in " ".join(c["capabilities"]).lower()]
+        candidates = [c for c in ranked if contains_term(" ".join(c["capabilities"]).lower(), word)]
         if candidates:
             capability_coverage.append(candidates[0])
     return list({c["id"]: c for c in capability_coverage + relevant}.values())[:8]
@@ -200,6 +216,26 @@ def citation(label: str, url: str, classification: str = "observed") -> dict[str
 
 def action(kind: str, label: str, target_ids: list[str]) -> dict[str, Any]:
     return {"action": kind, "label": label, "target_ids": target_ids}
+
+
+def response_candidates(response: dict[str, Any], limit: int = 3, preferred_words: Optional[set[str]] = None) -> list[dict[str, Any]]:
+    by_id = {company["id"]: company for company in DATA["companies"]}
+    candidates = [by_id[organization_id] for organization_id in response.get("organization_ids", []) if organization_id in by_id]
+    if preferred_words:
+        frequency = {
+            word: sum(contains_term(" ".join(company["capabilities"]).lower(), word) for company in candidates)
+            for word in preferred_words
+        }
+        candidates.sort(key=lambda company: (
+            -sum((1 / frequency[word]) for word in preferred_words if frequency[word] and contains_term(" ".join(company["capabilities"]).lower(), word)),
+            -candidate_quality(company),
+            company["name"],
+        ))
+    return candidates[:limit]
+
+
+def candidate_preview(candidates: list[dict[str, Any]]) -> str:
+    return "; ".join(f"{company['name']} ({company['city']}: {', '.join(company['capabilities'][:2])})" for company in candidates)
 
 
 def coverage_signal(process_id: str) -> dict[str, Any]:
@@ -268,9 +304,10 @@ def build_analysis(question: str, response: dict[str, Any]) -> dict[str, Any]:
         ]
     elif "rf systems" in q or "rf components" in q:
         count = len(response.get("organization_ids", []))
-        direct_answer = f"The Atlas found {count} public-description candidate{'s' if count != 1 else ''} relevant to RF systems; these are discovery leads, not verified qualified suppliers."
+        preview = candidate_preview(response_candidates(response, preferred_words=terms(question)))
+        direct_answer = f"Current Atlas RF matches include {preview}. These are {count} public-description discovery leads, not verified qualified suppliers."
         next_steps = [
-            "Specify the RF function, frequency band, performance, environmental, interface, and qualification requirements before shortlisting candidates.",
+            "Compare these candidates against the exact RF function, frequency band, performance, environmental, interface, and qualification requirements.",
             "Inspect each cited record and separate first-party evidence from directory-tier discovery leads.",
             "Confirm product fit, flight heritage or qualification basis, capacity, lead time, and procurement availability directly with candidates.",
         ]
@@ -314,12 +351,19 @@ def build_analysis(question: str, response: dict[str, Any]) -> dict[str, Any]:
         direct_answer = f"The Atlas found {len(response['facility_ids'])} sourced facility record{'s' if len(response['facility_ids']) != 1 else ''} relevant to this request, subject to direct verification of access and fit."
     elif response.get("organization_ids"):
         count = len(response["organization_ids"])
+        candidates = response_candidates(response, preferred_words=terms(question))
+        preview = candidate_preview(candidates)
         if "definitely" in q and "qualified" in q:
-            direct_answer = f"The Atlas found {count} public-description candidates, but its current evidence cannot establish that any candidate is definitely flight-qualified for this requirement."
+            direct_answer = f"Candidates in the current Atlas include {preview}, but its evidence cannot establish that any candidate is definitely flight-qualified for this requirement."
         elif "prove" in q and "no " in q:
-            direct_answer = f"The Atlas found {count} public-description candidates, so it cannot support a claim of absence; each candidate still requires direct capability and qualification verification."
+            direct_answer = f"The Atlas found candidates including {preview}, so it cannot support a claim of absence; each still requires direct capability and qualification verification."
         else:
-            direct_answer = f"The Atlas found {count} public-description candidate{'s' if count != 1 else ''}; review the evidence before treating any record as a qualified supplier."
+            direct_answer = f"Current Atlas records cover parts of this request through {preview}. These are {count} public-description candidates; the cited evidence does not yet show that one candidate satisfies the full requirement."
+        next_steps = [
+            f"Compare {', '.join(company['name'] for company in candidates)} against the exact technical, geographic, and procurement requirement.",
+            "Open each cited record and prioritize current first-party evidence over curated snapshots or directory-tier leads.",
+            "Confirm capability fit, qualification basis, capacity, availability, lead time, and commercial terms directly before shortlisting.",
+        ]
     return {
         "interpreted_objective": objective,
         "direct_answer": direct_answer,

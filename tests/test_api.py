@@ -54,6 +54,7 @@ def test_homepage_is_compact_and_suggested_queries_precede_map():
     assert html.index('id="next-steps"') < html.index('class="analysis-details"')
     assert 'id="direct-answer"' in html and "scrollBelowHeader" in html
     assert 'id="intel-weak"' in html and 'class="intel-matrix"' in html
+    assert "event.key==='Enter'" in html and "!event.shiftKey" in html and "Ask a follow-up or refine the requirement" in html
 
 
 def test_six_anchor_questions_share_the_analysis_contract():
@@ -149,9 +150,21 @@ def test_large_directory_builder_queries_are_deterministic_and_evidence_bounded(
     assert "preliminary candidates" in machining["answer_text"]
     rf = ask("Which companies manufacture RF components?")
     assert rf["organization_ids"] and rf["citations"]
+    assert "RFID systems" not in rf["analysis"]["direct_answer"]
+    assert main.DATA["companies"][next(i for i, company in enumerate(main.DATA["companies"]) if company["id"] == rf["organization_ids"][0])]["name"] in rf["analysis"]["direct_answer"]
     san_diego = ask("Show me industrial suppliers in San Diego County")
     assert san_diego["organization_ids"]
     assert all(org_id in main.ORGANIZATION_IDS for org_id in san_diego["organization_ids"])
+
+
+def test_candidate_discovery_answers_name_and_explain_leading_matches():
+    question = "Show the SoCal organizations relevant to RF systems."
+    payload = ask(question)
+    candidates = main.response_candidates(payload, preferred_words=main.terms(question))
+    assert all(candidate["name"] in payload["analysis"]["direct_answer"] for candidate in candidates)
+    assert all(candidate["capabilities"][0] in payload["analysis"]["direct_answer"] for candidate in candidates)
+    assert len(payload["analysis"]["next_steps"]) == 3
+    assert "exact RF function" in payload["analysis"]["next_steps"][0]
 
 
 def test_import_reconciliation_and_evidence_tiers():
