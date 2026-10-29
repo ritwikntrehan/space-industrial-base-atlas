@@ -1,0 +1,170 @@
+{
+  "created": "2026-10-29",
+  "files": [
+    {
+      "path": "DATA_AUDIT.md",
+      "sha256": "18f7ad7e837018179cbe61281ed018ee07d7c2f6cca947f608f0b2525b421d95",
+      "bytes": 5955
+    },
+    {
+      "path": "INTEGRATION.md",
+      "sha256": "766f3fc9aa716c40aa752f287e658a1b61ac680c3ee3b7d91c083d4052c02bf2",
+      "bytes": 4400
+    },
+    {
+      "path": "README.md",
+      "sha256": "9755e9d2df2162436ee26bd3d97b9307ef51edafcee2ed99ff39567e97b8136a",
+      "bytes": 3103
+    },
+    {
+      "path": "canonical/evidence_index.json",
+      "sha256": "e9a0965ce008b36ec1a714635aaac4fe1f8143958f777860f701c69adae51f07",
+      "bytes": 130443
+    },
+    {
+      "path": "canonical/organizations.json",
+      "sha256": "08f03b0b9fd7c955eaff7347266d117503d21a170029de7c08507d440f463288",
+      "bytes": 481199
+    },
+    {
+      "path": "capabilities.csv",
+      "sha256": "a0781e0d7a881f451ed3442e01e1af71bf8463d1b024f1ff5f8b1623bb255575",
+      "bytes": 170346
+    },
+    {
+      "path": "facilities.csv",
+      "sha256": "497d2dca5f83aa3bdde428485834fa4d687531bfcd17866e364b172f43521671",
+      "bytes": 7699
+    },
+    {
+      "path": "locations.csv",
+      "sha256": "0f6c1917b7f05f579d407c29b0f7188cb9b9a95e3533b5b9f6f9d34c0874e34e",
+      "bytes": 92241
+    },
+    {
+      "path": "organizations.csv",
+      "sha256": "f903e70c34e3fbb914d84e8ed25df53f26e1a4977dd6f2070a0de3b0f47cb50f",
+      "bytes": 232008
+    },
+    {
+      "path": "qa/build_log.txt",
+      "sha256": "982746c19d9c4b1a2684742e08f48552c6ee8148915a1f68fcf81669bc4d0cca",
+      "bytes": 9443
+    },
+    {
+      "path": "qa/builder_question_audit.csv",
+      "sha256": "b1e52da9b7d7842246b03530fc37fb98de59f19dc283c5399784ddeb0e2f5bf0",
+      "bytes": 3001
+    },
+    {
+      "path": "qa/demo_250_audit.json",
+      "sha256": "fe75767c1716cc3a84e0c25a6537d0d4495af53bfd64895415a490236606ea37",
+      "bytes": 2648
+    },
+    {
+      "path": "qa/demo_250_county_coverage.csv",
+      "sha256": "8fb7e74aab0c5c1bbdada77b44761601d0736db9891560e483432317b68a12bf",
+      "bytes": 366
+    },
+    {
+      "path": "qa/summary.json",
+      "sha256": "982746c19d9c4b1a2684742e08f48552c6ee8148915a1f68fcf81669bc4d0cca",
+      "bytes": 9443
+    },
+    {
+      "path": "relationships.json",
+      "sha256": "ede9829f4f19c06a7c20d83803d4747f598239da2c59cfde7f830da169430884",
+      "bytes": 378797
+    },
+    {
+      "path": "scripts/build_package.py",
+      "sha256": "80906f5a973d2f1aa5b588b871f0846f99d3264ce69dff16ce6d9f8b3260f43f",
+      "bytes": 22167
+    },
+    {
+      "path": "scripts/check_package.py",
+      "sha256": "5f220ea6e1b1590b3ce008cf639e82197a9ac07d2f0ca132521d1cfdde87cae0",
+      "bytes": 3015
+    },
+    {
+      "path": "scripts/refresh_schtmap.py",
+      "sha256": "6d9c14b44550c4afdec5e4d0eeb7ef7e17746ddafb08a1d667b1c7462f578522",
+      "bytes": 1051
+    },
+    {
+      "path": "scripts/write_manifest.py",
+      "sha256": "cbcb0a592a62e2f8c5474755ec7bffbadab5b1050b5ef4ccfc201152da6a5ffe",
+      "bytes": 12015
+    },
+    {
+      "path": "source/current_discovery.psv",
+      "sha256": "cd326691ca3df54b724683fc5985b60fabe776370b678e4ab37dfeec5596cc64",
+      "bytes": 9255
+    },
+    {
+      "path": "source/nasa_2019_supplier_leads.psv",
+      "sha256": "d210541d5b3b23d0f1b3412119c821f7442f74b172f29fcd93ae27026f96dec9",
+      "bytes": 3887
+    },
+    {
+      "path": "source/official_current_2026.psv",
+      "sha256": "0dae28ff605043486a96c735b08760342997bf7dd27789c1ab5337c709b12226",
+      "bytes": 1044
+    },
+    {
+      "path": "source/official_facilities_2026.psv",
+      "sha256": "9872e7cd4aa29bd737b125124bcb20f88fd8f1425c855d909200b8bc0761486d",
+      "bytes": 2084
+    },
+    {
+      "path": "source/schtmap_100_extract.psv",
+      "sha256": "6f7006394275c16f1a77d4e83e721a8d5e1737f2af0857ecb1f9e3da270fc6cf",
+      "bytes": 11788
+    },
+    {
+      "path": "source/second_pass_manufacturers_2026.psv",
+      "sha256": "eed534072f6840f68343c35872023856499ad6a384d6d3c439ea51328ade09f6",
+      "bytes": 28471
+    },
+    {
+      "path": "source/second_pass_official_companies_2026.psv",
+      "sha256": "132a3c3ebee7f5d39ebd4065d460cf4ad3f7709107685859bda6a6f8a3d35c5e",
+      "bytes": 2496
+    },
+    {
+      "path": "source/second_pass_official_facilities_2026.psv",
+      "sha256": "40c6c26773bb9aba3832216a99192f9e52a58622cff85ddb87e807a42ce72d54",
+      "bytes": 2379
+    },
+    {
+      "path": "source/second_pass_sector_2026.psv",
+      "sha256": "3d3d2d20cd7d75ecdb33defa9790955998eda1957bbfecf4d86f10b8a662e32c",
+      "bytes": 5490
+    },
+    {
+      "path": "source_manifest.json",
+      "sha256": "0c6fb568a42c43c2f9407d45c920cd65e9bb0919847175f3a56e385654b48153",
+      "bytes": 18512
+    },
+    {
+      "path": "website/candidate_organizations.json",
+      "sha256": "cbceed77d778359301aa451218bb0656ecbcef1573956012c4c7d66dadebf3c0",
+      "bytes": 124635
+    },
+    {
+      "path": "website/demo_250_organizations.csv",
+      "sha256": "259b4b9d5949fea13908fa173d3deb56a141df361173e80c86920f4b005fbfbf",
+      "bytes": 82013
+    },
+    {
+      "path": "website/demo_250_organizations.json",
+      "sha256": "35701c64768abd7861dc199774cd35c758963219030bca6ee0996986984fa269",
+      "bytes": 155658
+    },
+    {
+      "path": "website/verified_facilities.json",
+      "sha256": "0e0eb3df24840b52315b229381f1e2c2529f0d74fdaf37f378c4a4fb1b772b43",
+      "bytes": 13300
+    }
+  ]
+}

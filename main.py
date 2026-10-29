@@ -19,6 +19,7 @@ from typing import Literal
 BASE = Path(__file__).parent
 DATA: dict[str, Any] = json.loads((BASE / "data.json").read_text(encoding="utf-8"))
 DATA["programs"] = json.loads((BASE / "data" / "website" / "programs.json").read_text(encoding="utf-8"))["programs"]
+DATA["companies"] = json.loads((BASE / "data" / "website" / "organizations.json").read_text(encoding="utf-8"))["organizations"]
 
 # This is a conceptual reference workflow, not a claim about any program's commercial flow.
 SOURCES = {
@@ -50,10 +51,10 @@ CAPABILITY_MAP = {
     "launch": ["launch-integration", "launch-campaign"], "operations": ["operations", "comms"],
 }
 for company in DATA["companies"]:
-    company["id"] = re.sub(r"[^a-z0-9]+", "-", company["name"].lower()).strip("-")
-    company["capability_ids"] = sorted({cap for stage in company["stages"] for cap in CAPABILITY_MAP.get(stage, [])})
+    company["stages"] = company.get("process_ids", [])
+    company["capability_ids"] = company.get("process_ids", [])
 DATA["evidence_sources"] = list(SOURCES.values())
-DATA["facilities"] = [{"id": f"{c['id']}-city", "organization_id": c["id"], "location_label": c["city"], "location_precision": "city", "status": "observed-location-label", "source": c["source"]} for c in DATA["companies"]]
+DATA["facilities"] = []
 DATA["capabilities"] = [{"id": p[0], "name": p[1]} for p in PROCESS_MODEL]
 DATA["processes"] = [{"id": p[0], "name": p[1], "purpose": p[2], "inputs": p[3], "upstream": [], "downstream": p[4], "downstream_labels": [], "capability_ids": p[5], "requirements": p[6], "evidence_gaps": p[7], "evidence": [SOURCES[p[8]]], "relationship_type": "conceptual-engineering-dependency", "evidence_status": "public-engineering-source"} for p in PROCESS_MODEL]
 for process in DATA["processes"]:
@@ -66,10 +67,8 @@ FACILITY_EVIDENCE = [
     {"id": "jpl-ep-lab", "organization_id": "nasa-jpl", "name": "NASA JPL Electric Propulsion Laboratory", "location_label": "La Cañada Flintridge, CA", "latitude": 34.2014, "longitude": -118.1718, "location_precision": "address-derived", "verification_status": "official-address-and-facility-source", "facility_type": "propulsion-test", "capability_ids": ["propulsion", "environmental-test"], "process_ids": ["propulsion", "environmental-test"], "products_services": ["vacuum, thermal-vacuum, vibration and shock test capability for electric propulsion work"], "qualification_evidence": "Public facility description documents capability; it does not establish availability for a particular mission.", "source": "https://www.jpl.nasa.gov/go/epl/capabilities/facilities/", "source_date": "2026-10-28", "evidence_classification": "observed", "confidence": "high", "last_verified": "2026-10-28", "unknowns": ["mission applicability", "test slot availability", "capacity", "customer access"]},
     {"id": "vandenberg-sld30", "organization_id": "us-space-force-sld30", "name": "Vandenberg Space Force Base / Space Launch Delta 30", "location_label": "Vandenberg SFB, CA", "latitude": 34.742, "longitude": -120.572, "location_precision": "base-centroid", "verification_status": "official-installation-source", "facility_type": "launch-infrastructure", "capability_ids": ["launch-integration", "launch-campaign"], "process_ids": ["launch-integration", "launch-campaign"], "products_services": ["West Coast spaceport and test-range support for launch operations"], "qualification_evidence": "Public Space Force description documents range and installation role; it does not establish access for any specific payload.", "source": "https://www.ssc.spaceforce.mil/Program-Offices/SPACE-ACCESS", "source_date": "2026-10-28", "evidence_classification": "observed", "confidence": "high", "last_verified": "2026-10-28", "unknowns": ["launch-provider contract", "payload acceptance", "range approval", "campaign schedule", "available launch opportunity"]},
 ]
-DATA["organizations"] = [{"id": c["id"], "name": c["name"], "source": c["source"], "classification": "observed-public-description"} for c in DATA["companies"]] + [
-    {"id": "nasa-jpl", "name": "NASA Jet Propulsion Laboratory", "source": "https://www.jpl.nasa.gov/jpl-and-the-community/directions-and-maps/", "classification": "observed-public-source"},
-    {"id": "us-space-force-sld30", "name": "U.S. Space Force / Space Launch Delta 30", "source": "https://www.ssc.spaceforce.mil/Program-Offices/SPACE-ACCESS", "classification": "observed-public-source"},
-]
+FACILITY_EVIDENCE = json.loads((BASE / "data" / "website" / "facilities.json").read_text(encoding="utf-8"))["facilities"]
+DATA["organizations"] = [{"id": c["id"], "name": c["name"], "source": c["source"], "classification": c["evidence_status"]} for c in DATA["companies"]]
 DATA["facilities"].extend(FACILITY_EVIDENCE)
 for facility in FACILITY_EVIDENCE:
     DATA["relationships"].append({"from_id": facility["organization_id"], "to_id": facility["id"], "type": "organization-operates-facility", "evidence_status": "observed", "source": facility["source"]})
@@ -85,13 +84,13 @@ CACHE: OrderedDict[str, tuple[float, dict[str, Any]]] = OrderedDict()
 REQUESTS: dict[str, deque[float]] = defaultdict(deque)
 STOP = {"the", "what", "which", "could", "would", "from", "about", "where", "companies", "there", "that", "with", "have", "this", "are", "for", "who", "and", "does", "can", "how", "our", "into", "some", "a", "an", "in", "of", "to", "is", "it"}
 SYNTHESIS_MARKERS = {"compare", "tradeoff", "prioritize", "scenario", "synthesis", "why", "strategy", "recommend", "risk", "bottleneck", "gap", "across"}
-app = FastAPI(title="Space Industrial Base Atlas", version="0.6.0")
+app = FastAPI(title="Space Industrial Base Atlas", version="0.7.0")
 
 ORGANIZATION_IDS = {o["id"] for o in DATA["organizations"]}
 FACILITY_IDS = {f["id"] for f in DATA["facilities"]}
 PROCESS_IDS = {p["id"] for p in DATA["processes"]}
 PROGRAM_IDS = {p["id"] for p in DATA["programs"]}
-SOURCE_URLS = ({o["source"] for o in DATA["organizations"]}
+SOURCE_URLS = ({url for company in DATA["companies"] for url in company["source_urls"]}
                | {f["source"] for f in DATA["facilities"]}
                | {program["source_url"] for program in DATA["programs"]}
                | {source["url"] for source in SOURCES.values()})
@@ -136,17 +135,23 @@ class AssistantResponse(BaseModel):
 
 
 def terms(text: str) -> set[str]:
-    return set(re.findall(r"[a-z0-9]+", text.lower())) - STOP
+    aliases = {"composites": "composite", "machined": "machining", "manufactures": "manufacturing", "manufacturers": "manufacturing", "suppliers": "supplier", "spacecraft": "spacecraft", "satellites": "satellite"}
+    return {aliases.get(word, word) for word in re.findall(r"[a-z0-9]+", text.lower()) if word not in STOP}
 
 
 def score(company: dict[str, Any], words: set[str], stage: Optional[str]) -> int:
-    hay = " ".join([company["name"], company["city"], company["sector"], company["description"], " ".join(company["stages"])]).lower()
-    return sum(3 if word in company["name"].lower() else 1 for word in words if word in hay) + (4 if stage and stage in company["stages"] else 0)
+    name, place = company["name"].lower(), f"{company['city']} {company['county']}".lower()
+    capability = " ".join(company["capabilities"]).lower()
+    context = f"{company['sector']} {company['industry_role']} {company['description']} {' '.join(company['stages'])}".lower()
+    return sum((5 if word in capability else 3 if word in name else 2 if word in place else 1) for word in words if word in f"{name} {place} {capability} {context}") + (4 if stage and stage in company["stages"] else 0)
 
 
 def matches(question: str, stage: Optional[str]) -> list[dict[str, Any]]:
-    words = terms(question)
-    ranked = sorted(DATA["companies"], key=lambda c: (-score(c, words, stage), c["name"]))
+    words, q = terms(question), question.lower()
+    county_names = ["Los Angeles", "Orange", "San Diego", "Ventura", "Riverside", "San Bernardino", "Santa Barbara"]
+    requested_counties = [county for county in county_names if county.lower() in q]
+    pool = [c for c in DATA["companies"] if not requested_counties or c["county"] in requested_counties]
+    ranked = sorted(pool, key=lambda c: (-score(c, words, stage), c["name"]))
     relevant = [c for c in ranked if score(c, words, stage) > 0]
     if not relevant and stage:
         relevant = [c for c in ranked if stage in c["stages"]]
@@ -166,14 +171,14 @@ def deterministic_answer(found: list[dict[str, Any]], stage: Optional[str]) -> d
     if not found:
         return coverage_gap_answer()
     lead = f"Registry matches for {stage_name}" if stage_name else "The Atlas found public-description matches"
-    listings = "; ".join(f"{c['name']} ({c['city']}: {c['description']})" for c in found[:5])
+    listings = "; ".join(f"{c['name']} ({c['city']}, {c['county']}; {', '.join(c['capabilities'][:3])}; evidence: {c['evidence_status']})" for c in found[:5])
     ids = [c["id"] for c in found]
     return {
-        "answer_text": f"{lead}: {listings}. These are candidate capability matches, not verified supplier relationships.",
+        "answer_text": f"{lead}: {listings}. Inclusion is based on the cited public description or directory capability tags. Directory-tier rows are preliminary candidates; none of these results establishes a supplier relationship, availability, capacity, pricing, or mission qualification.",
         "citations": [citation(c["name"], c["source"]) for c in found[:5]],
         "organization_ids": ids, "facility_ids": [], "process_ids": [], "program_ids": [],
         "suggested_actions": [action("filter_organizations", "Inspect candidate organizations", ids), action("open_records", "Open related records", ids)],
-        "unknowns": ["supplier relationship", "flight qualification", "capacity and availability", "lead time"],
+        "unknowns": ["supplier relationship", "current operating status for directory-only rows", "flight qualification", "capacity and availability", "lead time"],
         "evidence_limitations": EVIDENCE_LIMITATIONS, "mode": "deterministic-registry",
     }
 
@@ -379,7 +384,7 @@ def get_data(): return DATA
 
 
 @app.get("/healthz")
-def health(): return {"ok": True, "version": "0.6.0", "organizations": len(DATA["organizations"]), "facilities": len(DATA.get("facilities", [])), "processes": len(DATA.get("processes", [])), "programs": len(DATA["programs"]), "anthropic_configured": bool(ANTHROPIC_API_KEY)}
+def health(): return {"ok": True, "version": "0.7.0", "organizations": len(DATA["organizations"]), "facilities": len(DATA.get("facilities", [])), "processes": len(DATA.get("processes", [])), "programs": len(DATA["programs"]), "anthropic_configured": bool(ANTHROPIC_API_KEY)}
 
 
 @app.post("/api/ask")

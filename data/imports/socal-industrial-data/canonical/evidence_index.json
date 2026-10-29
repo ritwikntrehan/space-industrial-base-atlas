@@ -1,0 +1,3774 @@
+{
+  "OC-001": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:1",
+      "location": "Orange"
+    }
+  ],
+  "OC-002": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:2",
+      "location": "Irvine"
+    }
+  ],
+  "OC-003": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:3",
+      "location": "Huntington Beach"
+    }
+  ],
+  "OC-004": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:4",
+      "location": "Irvine"
+    }
+  ],
+  "OC-005": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:5",
+      "location": "Huntington Beach"
+    }
+  ],
+  "OC-006": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:6",
+      "location": "Huntington Beach"
+    }
+  ],
+  "OC-007": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:7",
+      "location": "Garden Grove"
+    }
+  ],
+  "OC-008": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:8",
+      "location": "Irvine"
+    }
+  ],
+  "OC-009": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:9",
+      "location": "Irvine"
+    }
+  ],
+  "OC-010": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:10",
+      "location": "Irvine"
+    }
+  ],
+  "OC-011": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:11",
+      "location": "Santa Ana"
+    }
+  ],
+  "OC-012": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:12",
+      "location": "Huntington Beach"
+    }
+  ],
+  "OC-089": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:13",
+      "location": "Irvine"
+    }
+  ],
+  "OC-013": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:14",
+      "location": "Los Alamitos"
+    }
+  ],
+  "OC-014": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:15",
+      "location": "Seal Beach"
+    }
+  ],
+  "OC-015": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:16",
+      "location": "Irvine"
+    }
+  ],
+  "OC-016": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:17",
+      "location": "Garden Grove"
+    }
+  ],
+  "OC-017": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:18",
+      "location": "Lake Forest"
+    }
+  ],
+  "OC-100": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:19",
+      "location": "Irvine"
+    }
+  ],
+  "OC-018": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:20",
+      "location": "Los Alamitos"
+    }
+  ],
+  "OC-088": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:21",
+      "location": "Irvine"
+    }
+  ],
+  "OC-019": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:22",
+      "location": "Cypress"
+    }
+  ],
+  "OC-096": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:23",
+      "location": "Santa Ana"
+    }
+  ],
+  "OC-020": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:24",
+      "location": "Tustin"
+    }
+  ],
+  "OC-021": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:25",
+      "location": "Newport Beach"
+    }
+  ],
+  "OC-098": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:26",
+      "location": "Costa Mesa"
+    }
+  ],
+  "OC-095": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:27",
+      "location": "Laguna Hills"
+    }
+  ],
+  "OC-023": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:28",
+      "location": "Irvine"
+    }
+  ],
+  "OC-024": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:29",
+      "location": "Huntington Beach"
+    }
+  ],
+  "OC-025": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:30",
+      "location": "Huntington Beach"
+    }
+  ],
+  "OC-026": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:31",
+      "location": "Laguna Niguel"
+    }
+  ],
+  "OC-027": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:32",
+      "location": "Foothill Ranch"
+    }
+  ],
+  "OC-028": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:33",
+      "location": "Irvine"
+    }
+  ],
+  "OC-029": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:34",
+      "location": "Garden Grove"
+    }
+  ],
+  "OC-030": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:35",
+      "location": "Huntington Beach"
+    }
+  ],
+  "OC-031": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:36",
+      "location": "Irvine"
+    }
+  ],
+  "OC-032": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:37",
+      "location": "Huntington Beach"
+    },
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:35",
+      "location": "Huntington Beach"
+    }
+  ],
+  "OC-033": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:38",
+      "location": "Garden Grove"
+    }
+  ],
+  "OC-034": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:39",
+      "location": "Irvine"
+    }
+  ],
+  "OC-035": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:40",
+      "location": "Orange"
+    }
+  ],
+  "OC-036": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:41",
+      "location": "Orange"
+    }
+  ],
+  "OC-037": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:42",
+      "location": "Santa Ana"
+    }
+  ],
+  "OC-091": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:43",
+      "location": "Aliso Viejo"
+    }
+  ],
+  "OC-038": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:44",
+      "location": "Irvine"
+    }
+  ],
+  "OC-094": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:45",
+      "location": "Irvine"
+    }
+  ],
+  "OC-039": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:46",
+      "location": "Brea"
+    }
+  ],
+  "OC-040": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:47",
+      "location": "Costa Mesa"
+    }
+  ],
+  "OC-041": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:48",
+      "location": "Huntington Beach"
+    }
+  ],
+  "OC-099": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:49",
+      "location": "Irvine"
+    }
+  ],
+  "OC-042": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:50",
+      "location": "Huntington Beach"
+    }
+  ],
+  "OC-043": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:51",
+      "location": "Aliso Viejo"
+    }
+  ],
+  "OC-044": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:52",
+      "location": "Huntington Beach"
+    }
+  ],
+  "OC-045": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:53",
+      "location": "Irvine"
+    }
+  ],
+  "OC-093": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:54",
+      "location": "Irvine"
+    }
+  ],
+  "OC-046": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:55",
+      "location": "Irvine"
+    }
+  ],
+  "OC-047": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:56",
+      "location": "Cypress"
+    }
+  ],
+  "OC-048": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:57",
+      "location": "Irvine"
+    }
+  ],
+  "OC-049": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:58",
+      "location": "Irvine"
+    }
+  ],
+  "OC-050": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:59",
+      "location": "Irvine"
+    }
+  ],
+  "OC-051": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:60",
+      "location": "Huntington Beach"
+    }
+  ],
+  "OC-052": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:61",
+      "location": "Santa Ana"
+    }
+  ],
+  "OC-053": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:62",
+      "location": "Irvine"
+    }
+  ],
+  "OC-022": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:63",
+      "location": "Irvine"
+    }
+  ],
+  "OC-054": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:64",
+      "location": "Irvine"
+    }
+  ],
+  "OC-055": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:65",
+      "location": "Laguna Hills"
+    }
+  ],
+  "OC-056": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:66",
+      "location": "Santa Ana"
+    }
+  ],
+  "OC-057": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:67",
+      "location": "Irvine"
+    }
+  ],
+  "OC-058": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:68",
+      "location": "Anaheim"
+    }
+  ],
+  "OC-059": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:69",
+      "location": "Santa Ana"
+    }
+  ],
+  "OC-060": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:70",
+      "location": "Lake Forest"
+    }
+  ],
+  "OC-061": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:71",
+      "location": "Newport Beach"
+    }
+  ],
+  "OC-062": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:72",
+      "location": "Irvine"
+    }
+  ],
+  "OC-063": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:73",
+      "location": "Huntington Beach"
+    }
+  ],
+  "OC-064": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:74",
+      "location": "Fountain Valley"
+    }
+  ],
+  "OC-065": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:75",
+      "location": "Cypress"
+    }
+  ],
+  "OC-066": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:76",
+      "location": "Cypress"
+    }
+  ],
+  "OC-067": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:77",
+      "location": "Cypress"
+    }
+  ],
+  "OC-068": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:78",
+      "location": "Orange"
+    }
+  ],
+  "OC-069": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:79",
+      "location": "Anaheim"
+    }
+  ],
+  "OC-070": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:80",
+      "location": "Garden Grove"
+    }
+  ],
+  "OC-071": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:81",
+      "location": "Irvine"
+    }
+  ],
+  "OC-072": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:82",
+      "location": "Costa Mesa"
+    }
+  ],
+  "OC-073": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:83",
+      "location": "Irvine"
+    }
+  ],
+  "OC-074": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:84",
+      "location": "Santa Ana"
+    }
+  ],
+  "OC-075": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:85",
+      "location": "Fullerton"
+    }
+  ],
+  "OC-076": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:86",
+      "location": "Irvine"
+    }
+  ],
+  "OC-090": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:87",
+      "location": "Irvine"
+    }
+  ],
+  "OC-077": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:88",
+      "location": "Irvine"
+    }
+  ],
+  "OC-078": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:89",
+      "location": "Irvine"
+    }
+  ],
+  "OC-092": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:90",
+      "location": "Irvine"
+    }
+  ],
+  "OC-079": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:91",
+      "location": "Santa Ana"
+    }
+  ],
+  "OC-080": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:92",
+      "location": "Irvine"
+    }
+  ],
+  "OC-081": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:93",
+      "location": "Huntington Beach"
+    }
+  ],
+  "OC-097": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:94",
+      "location": "Santa Ana"
+    },
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:10",
+      "location": "Anaheim"
+    }
+  ],
+  "OC-082": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:95",
+      "location": "Irvine"
+    }
+  ],
+  "OC-083": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:96",
+      "location": "Cypress"
+    }
+  ],
+  "OC-084": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:97",
+      "location": "Tustin"
+    }
+  ],
+  "OC-085": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:98",
+      "location": "Huntington Beach"
+    }
+  ],
+  "OC-086": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:99",
+      "location": "Huntington Beach"
+    }
+  ],
+  "OC-087": [
+    {
+      "source_id": "schtmap_2026",
+      "source_url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "extract_ref": "source/schtmap_100_extract.psv:100",
+      "location": "Irvine"
+    }
+  ],
+  "SOCAL-astronic-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:1",
+      "location": "Aliso Viejo"
+    }
+  ],
+  "SOCAL-accurate-technology": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:2",
+      "location": "Anaheim"
+    }
+  ],
+  "SOCAL-anixter-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:3",
+      "location": "Anaheim"
+    }
+  ],
+  "SOCAL-astro-tek-industries-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:4",
+      "location": "Anaheim"
+    },
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:91",
+      "location": "Anaheim"
+    }
+  ],
+  "SOCAL-bisco-industries-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:5",
+      "location": "Anaheim"
+    }
+  ],
+  "SOCAL-canyon-composites-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:6",
+      "location": "Anaheim"
+    }
+  ],
+  "SOCAL-cummins-aerospace": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:7",
+      "location": "Anaheim"
+    }
+  ],
+  "SOCAL-moeller-manufacturing-supply-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:8",
+      "location": "Anaheim"
+    }
+  ],
+  "SOCAL-superior-jig-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:9",
+      "location": "Anaheim"
+    }
+  ],
+  "SOCAL-dcx-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:11",
+      "location": "Bell Gardens"
+    }
+  ],
+  "SOCAL-metal-surfaces-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:12",
+      "location": "Bell Gardens"
+    },
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:43",
+      "location": "Bell Gardens"
+    }
+  ],
+  "SOCAL-kirkhill-ta-company": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:13",
+      "location": "Brea"
+    }
+  ],
+  "SOCAL-wire-cut-company-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:14",
+      "location": "Buena Park"
+    }
+  ],
+  "SOCAL-senior-operations-llc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:15",
+      "location": "Burbank"
+    }
+  ],
+  "SOCAL-cooper-interconnect": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:16",
+      "location": "Camarillo"
+    }
+  ],
+  "SOCAL-ducworks-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:17",
+      "location": "Camarillo"
+    }
+  ],
+  "SOCAL-hi-temp-insulation-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:18",
+      "location": "Camarillo"
+    }
+  ],
+  "SOCAL-mistras-group-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:19",
+      "location": "Cudahy"
+    }
+  ],
+  "SOCAL-tayco-engineering-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:20",
+      "location": "Cypress"
+    }
+  ],
+  "SOCAL-astro-pak-corporation": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:21",
+      "location": "Downey"
+    }
+  ],
+  "SOCAL-mouser-electronics-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:22",
+      "location": "El Cajon"
+    }
+  ],
+  "SOCAL-carlisle-interconnect-technologies-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:23",
+      "location": "El Segundo"
+    }
+  ],
+  "SOCAL-herber-aircraft-service-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:24",
+      "location": "El Segundo"
+    }
+  ],
+  "SOCAL-raytheon-space-airborne-systems": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:25",
+      "location": "El Segundo"
+    }
+  ],
+  "SOCAL-ami-metals-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:26",
+      "location": "Fontana"
+    }
+  ],
+  "SOCAL-tri-net-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:27",
+      "location": "Fontana"
+    }
+  ],
+  "SOCAL-arrow-electronics-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:28",
+      "location": "Foothill Ranch"
+    }
+  ],
+  "SOCAL-omni-metal-finishing-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:29",
+      "location": "Fountain Valley"
+    }
+  ],
+  "SOCAL-aero-engineering-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:30",
+      "location": "Fullerton"
+    }
+  ],
+  "SOCAL-saint-gobain-performance-plastics": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:31",
+      "location": "Garden Grove"
+    }
+  ],
+  "SOCAL-qual-pro-corporation": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:32",
+      "location": "Gardena"
+    },
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:36",
+      "location": "Gardena"
+    }
+  ],
+  "SOCAL-glenair-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:33",
+      "location": "Glendale"
+    },
+    {
+      "source_id": "official_primary_secondpass_2026",
+      "source_url": "https://www.glenair.com/about/",
+      "extract_ref": "source/second_pass_official_companies_2026.psv:6",
+      "location": "Glendale"
+    }
+  ],
+  "SOCAL-aerodynamic-engineering-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:34",
+      "location": "Huntington Beach"
+    }
+  ],
+  "SOCAL-leda-corporation": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:36",
+      "location": "Huntington Beach"
+    }
+  ],
+  "SOCAL-bodycote-thermal-processing": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:37",
+      "location": "Huntington Park"
+    }
+  ],
+  "SOCAL-aremac-heat-treating-llc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:38",
+      "location": "Industry"
+    }
+  ],
+  "SOCAL-california-hydroforming-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:39",
+      "location": "Industry"
+    }
+  ],
+  "SOCAL-consolidated-precision-products": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:40",
+      "location": "Industry"
+    },
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:134",
+      "location": "Rancho Cucamonga"
+    }
+  ],
+  "SOCAL-corland-company": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:41",
+      "location": "Inglewood"
+    }
+  ],
+  "SOCAL-fmh-aerospace-corporation": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:42",
+      "location": "Irvine"
+    }
+  ],
+  "SOCAL-meggitt-orange-county-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:43",
+      "location": "Irvine"
+    }
+  ],
+  "SOCAL-mk-products-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:44",
+      "location": "Irvine"
+    }
+  ],
+  "SOCAL-pcc-rollmet-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:45",
+      "location": "Irvine"
+    }
+  ],
+  "SOCAL-keystone-engineering-company": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:46",
+      "location": "Long Beach"
+    }
+  ],
+  "SOCAL-rbh-aerospace-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:47",
+      "location": "Long Beach"
+    }
+  ],
+  "SOCAL-arrowhead-products-corporation": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:48",
+      "location": "Los Alamitos"
+    }
+  ],
+  "SOCAL-carlton-forge-works": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:49",
+      "location": "Los Angeles"
+    }
+  ],
+  "SOCAL-national-technical-systems": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:50",
+      "location": "Los Angeles"
+    },
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:78",
+      "location": "Santa Clarita"
+    }
+  ],
+  "SOCAL-pioneer-broach-company-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:51",
+      "location": "Los Angeles"
+    }
+  ],
+  "SOCAL-teledyne-reynolds-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:52",
+      "location": "Los Angeles"
+    }
+  ],
+  "SOCAL-roncelli-plastics-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:53",
+      "location": "Monrovia"
+    }
+  ],
+  "SOCAL-innovative-engineering-solutions-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:54",
+      "location": "Murrieta"
+    }
+  ],
+  "SOCAL-allan-aircraft-supply-company-llc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:55",
+      "location": "North Hollywood"
+    }
+  ],
+  "SOCAL-laurel-sheet-metal-products": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:56",
+      "location": "North Hollywood"
+    }
+  ],
+  "SOCAL-allied-mechanical-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:57",
+      "location": "Ontario"
+    }
+  ],
+  "SOCAL-jcm-engineering-corporation": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:58",
+      "location": "Ontario"
+    }
+  ],
+  "SOCAL-quality-tech-manufacturing-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:59",
+      "location": "Ontario"
+    }
+  ],
+  "SOCAL-rickard-specialty-metals-engineering": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:60",
+      "location": "Ontario"
+    },
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:147",
+      "location": "Santa Fe Springs"
+    }
+  ],
+  "SOCAL-sierra-tool-sales-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:61",
+      "location": "Ontario"
+    }
+  ],
+  "SOCAL-uline-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:62",
+      "location": "Ontario"
+    }
+  ],
+  "SOCAL-upland-fab-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:63",
+      "location": "Ontario"
+    }
+  ],
+  "SOCAL-altemp-alloys-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:64",
+      "location": "Orange"
+    }
+  ],
+  "SOCAL-cirtech-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:65",
+      "location": "Orange"
+    }
+  ],
+  "SOCAL-coastal-component-industries-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:66",
+      "location": "Orange"
+    }
+  ],
+  "SOCAL-cytec-engineered-materials": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:67",
+      "location": "Orange"
+    }
+  ],
+  "SOCAL-rite-tech-resources-llc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:68",
+      "location": "Orange"
+    }
+  ],
+  "SOCAL-ametek-programmable-power-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:69",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-ata-engineering": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:70",
+      "location": "San Diego"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/second_pass_sector_2026.psv:2",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-swiss-devco": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:71",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-spira-manufacturing-corporation": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:72",
+      "location": "San Fernando"
+    }
+  ],
+  "SOCAL-airgas-usa-llc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:73",
+      "location": "Santa Ana"
+    }
+  ],
+  "SOCAL-cb-manufacturing-engineering-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:74",
+      "location": "Santa Ana"
+    }
+  ],
+  "SOCAL-international-seal-company-freudenberg-nok": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:75",
+      "location": "Santa Ana"
+    }
+  ],
+  "SOCAL-pioneer-circuits-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:76",
+      "location": "Santa Ana"
+    }
+  ],
+  "SOCAL-transpak-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:77",
+      "location": "Santa Ana"
+    }
+  ],
+  "SOCAL-packaging-systems-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:79",
+      "location": "Santa Clarita"
+    }
+  ],
+  "SOCAL-woodward-hrt-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:80",
+      "location": "Santa Clarita"
+    }
+  ],
+  "SOCAL-california-metal-supply-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:81",
+      "location": "Santa Fe Springs"
+    }
+  ],
+  "SOCAL-lefiell-manufacturing-company": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:82",
+      "location": "Santa Fe Springs"
+    }
+  ],
+  "SOCAL-mcmaster-carr-supply-company": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:83",
+      "location": "Santa Fe Springs"
+    }
+  ],
+  "SOCAL-precision-tube-bending": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:84",
+      "location": "Santa Fe Springs"
+    }
+  ],
+  "SOCAL-steven-label-corporation": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:85",
+      "location": "Santa Fe Springs"
+    }
+  ],
+  "SOCAL-votaw-precision-technologies-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:86",
+      "location": "Santa Fe Springs"
+    }
+  ],
+  "SOCAL-dpa-components-international": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:87",
+      "location": "Simi Valley"
+    }
+  ],
+  "SOCAL-amro-fabricating-corporation": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:88",
+      "location": "South El Monte"
+    }
+  ],
+  "SOCAL-hoefner-corporation": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:89",
+      "location": "South El Monte"
+    }
+  ],
+  "SOCAL-vacco-industries": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:90",
+      "location": "South El Monte"
+    },
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:73",
+      "location": "South El Monte"
+    },
+    {
+      "source_id": "official_primary_secondpass_2026",
+      "source_url": "https://www.vacco.com/index.php/about/facility",
+      "extract_ref": "source/second_pass_official_companies_2026.psv:3",
+      "location": "South El Monte"
+    }
+  ],
+  "SOCAL-shultz-steel-company": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:91",
+      "location": "South Gate"
+    }
+  ],
+  "SOCAL-ms-aerospace-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:92",
+      "location": "Sylmar"
+    }
+  ],
+  "SOCAL-quallion-llc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:93",
+      "location": "Sylmar"
+    }
+  ],
+  "SOCAL-kavlico-corporation": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:94",
+      "location": "Thousand Oaks"
+    }
+  ],
+  "SOCAL-amratec-engineering": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:95",
+      "location": "Torrance"
+    }
+  ],
+  "SOCAL-beranek-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:96",
+      "location": "Torrance"
+    }
+  ],
+  "SOCAL-creative-pathways-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:97",
+      "location": "Torrance"
+    }
+  ],
+  "SOCAL-dasco-engineering-corporation": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:98",
+      "location": "Torrance"
+    }
+  ],
+  "SOCAL-plasma-tech-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:99",
+      "location": "Torrance"
+    }
+  ],
+  "SOCAL-r-b-machine": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:100",
+      "location": "Upland"
+    }
+  ],
+  "SOCAL-adept-fasteners-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:101",
+      "location": "Valencia"
+    }
+  ],
+  "SOCAL-advanced-manufacturing-solutions": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:102",
+      "location": "Valencia"
+    }
+  ],
+  "SOCAL-avion-tool-manufacturing-machining-center-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:103",
+      "location": "Valencia"
+    }
+  ],
+  "SOCAL-kirkhill-ta-aerospace-company": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:104",
+      "location": "Valencia"
+    }
+  ],
+  "SOCAL-ppg-industries": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:105",
+      "location": "Valencia"
+    }
+  ],
+  "SOCAL-rah-industries-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:106",
+      "location": "Valencia"
+    }
+  ],
+  "SOCAL-tri-tek-electronics": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:107",
+      "location": "Valencia"
+    }
+  ],
+  "SOCAL-wesco-aircraft-hardware-corporation": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:108",
+      "location": "Valencia"
+    }
+  ],
+  "SOCAL-hampton-scott-group": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:109",
+      "location": "Westchester"
+    }
+  ],
+  "SOCAL-jri-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:110",
+      "location": "Westlake Village"
+    }
+  ],
+  "SOCAL-mws-wire-industries": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:111",
+      "location": "Westlake Village"
+    }
+  ],
+  "SOCAL-avent-inc": [
+    {
+      "source_id": "nasa_esd_2019",
+      "source_url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "extract_ref": "source/nasa_2019_supplier_leads.psv:112",
+      "location": "Woodland Hills"
+    }
+  ],
+  "SOCAL-abl-space-systems": [
+    {
+      "source_id": "defdex_2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/current_discovery.psv:1",
+      "location": "El Segundo"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/second_pass_sector_2026.psv:20",
+      "location": "El Segundo"
+    }
+  ],
+  "SOCAL-aibot": [
+    {
+      "source_id": "defdex_2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/current_discovery.psv:2",
+      "location": "Long Beach"
+    }
+  ],
+  "SOCAL-airship-industries": [
+    {
+      "source_id": "defdex_2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/current_discovery.psv:3",
+      "location": "Los Angeles"
+    }
+  ],
+  "SOCAL-amca": [
+    {
+      "source_id": "defdex_2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/current_discovery.psv:4",
+      "location": "El Segundo"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/second_pass_sector_2026.psv:21",
+      "location": "El Segundo"
+    }
+  ],
+  "SOCAL-ampaire": [
+    {
+      "source_id": "defdex_2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/current_discovery.psv:5",
+      "location": "Long Beach"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/second_pass_sector_2026.psv:22",
+      "location": "Long Beach"
+    }
+  ],
+  "SOCAL-antares-nuclear": [
+    {
+      "source_id": "defdex_2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/current_discovery.psv:6",
+      "location": "Torrance"
+    }
+  ],
+  "SOCAL-anysignal": [
+    {
+      "source_id": "defdex_2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/current_discovery.psv:7",
+      "location": "Torrance"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/second_pass_sector_2026.psv:23",
+      "location": "Torrance"
+    }
+  ],
+  "SOCAL-apex": [
+    {
+      "source_id": "defdex_2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/current_discovery.psv:8",
+      "location": "Los Angeles"
+    }
+  ],
+  "SOCAL-argo-space": [
+    {
+      "source_id": "defdex_2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/current_discovery.psv:9",
+      "location": "El Segundo"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/second_pass_sector_2026.psv:25",
+      "location": "El Segundo"
+    }
+  ],
+  "SOCAL-atlas-motion": [
+    {
+      "source_id": "defdex_2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/current_discovery.psv:10",
+      "location": "Los Angeles"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/second_pass_sector_2026.psv:26",
+      "location": "Los Angeles"
+    }
+  ],
+  "SOCAL-blue-robotics": [
+    {
+      "source_id": "defdex_2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/current_discovery.psv:11",
+      "location": "Torrance"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/second_pass_sector_2026.psv:28",
+      "location": "Torrance"
+    }
+  ],
+  "SOCAL-boeing": [
+    {
+      "source_id": "defdex_2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/current_discovery.psv:12",
+      "location": "El Segundo"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/second_pass_sector_2026.psv:29",
+      "location": "El Segundo"
+    },
+    {
+      "source_id": "official_primary_secondpass_2026",
+      "source_url": "https://www.boeing.com/features/2026/02/boeing-expands-satellite-production-to-meet-rising-demand",
+      "extract_ref": "source/second_pass_official_companies_2026.psv:9",
+      "location": "El Segundo"
+    }
+  ],
+  "SOCAL-northrop-grumman": [
+    {
+      "source_id": "defdex_2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/current_discovery.psv:13",
+      "location": "Redondo Beach"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/second_pass_sector_2026.psv:30",
+      "location": "Redondo Beach"
+    },
+    {
+      "source_id": "official_primary_secondpass_2026",
+      "source_url": "https://www.northropgrumman.com/what-we-do/space/missions/proliferated-space-systems/classic-mission-modern-twist",
+      "extract_ref": "source/second_pass_official_companies_2026.psv:10",
+      "location": "Redondo Beach"
+    }
+  ],
+  "SOCAL-rtx": [
+    {
+      "source_id": "defdex_2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/current_discovery.psv:14",
+      "location": "El Segundo"
+    }
+  ],
+  "SOCAL-lockheed-martin": [
+    {
+      "source_id": "defdex_2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/current_discovery.psv:15",
+      "location": "Palmdale"
+    }
+  ],
+  "SOCAL-l3harris-aerojet-rocketdyne": [
+    {
+      "source_id": "defdex_2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/current_discovery.psv:16",
+      "location": "Canoga Park"
+    }
+  ],
+  "SOCAL-spacex": [
+    {
+      "source_id": "defdex_2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/current_discovery.psv:17",
+      "location": "Hawthorne"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/second_pass_sector_2026.psv:31",
+      "location": "Hawthorne"
+    },
+    {
+      "source_id": "official_primary_secondpass_2026",
+      "source_url": "https://www.spacex.com/careers/jobs?employmentType=intern&employmentTypes=Intern",
+      "extract_ref": "source/second_pass_official_companies_2026.psv:11",
+      "location": "Hawthorne"
+    }
+  ],
+  "SOCAL-space-systems-command": [
+    {
+      "source_id": "defdex_2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/current_discovery.psv:18",
+      "location": "El Segundo"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/second_pass_sector_2026.psv:32",
+      "location": "El Segundo"
+    }
+  ],
+  "SOCAL-spacewerx": [
+    {
+      "source_id": "defdex_2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/current_discovery.psv:19",
+      "location": "Los Angeles"
+    }
+  ],
+  "SOCAL-the-aerospace-corporation": [
+    {
+      "source_id": "defdex_2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/current_discovery.psv:20",
+      "location": "El Segundo"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/second_pass_sector_2026.psv:33",
+      "location": "El Segundo"
+    }
+  ],
+  "SOCAL-jet-propulsion-laboratory": [
+    {
+      "source_id": "defdex_2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/current_discovery.psv:21",
+      "location": "La Cañada Flintridge"
+    }
+  ],
+  "SOCAL-astrolab": [
+    {
+      "source_id": "spaceindex_2026",
+      "source_url": "https://mcp.spaceindex.io/states/california",
+      "extract_ref": "source/current_discovery.psv:22",
+      "location": "Hawthorne"
+    }
+  ],
+  "SOCAL-charter-space": [
+    {
+      "source_id": "spaceindex_2026",
+      "source_url": "https://mcp.spaceindex.io/states/california",
+      "extract_ref": "source/current_discovery.psv:23",
+      "location": "El Segundo"
+    }
+  ],
+  "SOCAL-epsilon3": [
+    {
+      "source_id": "spaceindex_2026",
+      "source_url": "https://mcp.spaceindex.io/states/california",
+      "extract_ref": "source/current_discovery.psv:24",
+      "location": "Los Angeles"
+    }
+  ],
+  "SOCAL-gitai": [
+    {
+      "source_id": "spaceindex_2026",
+      "source_url": "https://mcp.spaceindex.io/states/california",
+      "extract_ref": "source/current_discovery.psv:25",
+      "location": "Torrance"
+    }
+  ],
+  "SOCAL-geooptics": [
+    {
+      "source_id": "spaceindex_2026",
+      "source_url": "https://mcp.spaceindex.io/states/california",
+      "extract_ref": "source/current_discovery.psv:26",
+      "location": "Pasadena"
+    }
+  ],
+  "SOCAL-hadrian": [
+    {
+      "source_id": "spaceindex_2026",
+      "source_url": "https://mcp.spaceindex.io/states/california",
+      "extract_ref": "source/current_discovery.psv:27",
+      "location": "Torrance"
+    }
+  ],
+  "SOCAL-impulse-space": [
+    {
+      "source_id": "spaceindex_2026",
+      "source_url": "https://mcp.spaceindex.io/states/california",
+      "extract_ref": "source/current_discovery.psv:28",
+      "location": "Redondo Beach"
+    }
+  ],
+  "SOCAL-innoflight": [
+    {
+      "source_id": "spaceindex_2026",
+      "source_url": "https://mcp.spaceindex.io/states/california",
+      "extract_ref": "source/current_discovery.psv:29",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-inversion-space": [
+    {
+      "source_id": "spaceindex_2026",
+      "source_url": "https://mcp.spaceindex.io/states/california",
+      "extract_ref": "source/current_discovery.psv:30",
+      "location": "Los Angeles"
+    }
+  ],
+  "SOCAL-k2-space": [
+    {
+      "source_id": "spaceindex_2026",
+      "source_url": "https://mcp.spaceindex.io/states/california",
+      "extract_ref": "source/current_discovery.psv:31",
+      "location": "Torrance"
+    }
+  ],
+  "SOCAL-kratos-defense-security-solutions": [
+    {
+      "source_id": "spaceindex_2026",
+      "source_url": "https://mcp.spaceindex.io/states/california",
+      "extract_ref": "source/current_discovery.psv:32",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-long-wall": [
+    {
+      "source_id": "spaceindex_2026",
+      "source_url": "https://mcp.spaceindex.io/states/california",
+      "extract_ref": "source/current_discovery.psv:33",
+      "location": "Long Beach"
+    }
+  ],
+  "SOCAL-3h-communication-systems": [
+    {
+      "source_id": "spaceindex_2026",
+      "source_url": "https://mcp.spaceindex.io/states/california",
+      "extract_ref": "source/current_discovery.psv:34",
+      "location": "Irvine"
+    }
+  ],
+  "SOCAL-general-atomics": [
+    {
+      "source_id": "sdedc_aerospace",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/current_discovery.psv:35",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-collins-aerospace": [
+    {
+      "source_id": "sdedc_aerospace",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/current_discovery.psv:36",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-carbon-by-design": [
+    {
+      "source_id": "sdedc_aerospace",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/current_discovery.psv:37",
+      "location": "San Diego"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/second_pass_sector_2026.psv:5",
+      "location": "San Diego"
+    },
+    {
+      "source_id": "official_primary_secondpass_2026",
+      "source_url": "https://www.carbonbydesign.com/about-carbon-by-design/",
+      "extract_ref": "source/second_pass_official_companies_2026.psv:1",
+      "location": "Carlsbad"
+    }
+  ],
+  "SOCAL-blue-sky-network": [
+    {
+      "source_id": "sdedc_aerospace",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/current_discovery.psv:38",
+      "location": "San Diego"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/second_pass_sector_2026.psv:3",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-bmt-aerospace": [
+    {
+      "source_id": "sdedc_aerospace",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/current_discovery.psv:39",
+      "location": "San Diego"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/second_pass_sector_2026.psv:4",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-dart-aerospace": [
+    {
+      "source_id": "sdedc_aerospace",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/current_discovery.psv:40",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-aevex-aerospace": [
+    {
+      "source_id": "sdedc_aerospace",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/current_discovery.psv:41",
+      "location": "San Diego"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/second_pass_sector_2026.psv:1",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-malin-space-science-systems": [
+    {
+      "source_id": "sdedc_aerospace",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/current_discovery.psv:42",
+      "location": "San Diego"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/second_pass_sector_2026.psv:7",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-planck-aerosystems": [
+    {
+      "source_id": "sdedc_aerospace",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/current_discovery.psv:43",
+      "location": "San Diego"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/second_pass_sector_2026.psv:8",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-nikkiso-america": [
+    {
+      "source_id": "sdedc_aerospace",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/current_discovery.psv:44",
+      "location": "San Diego"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/second_pass_sector_2026.psv:9",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-sungear-inc": [
+    {
+      "source_id": "sdedc_aerospace",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/current_discovery.psv:45",
+      "location": "San Diego"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/second_pass_sector_2026.psv:10",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-space-micro": [
+    {
+      "source_id": "sdedc_aerospace",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/current_discovery.psv:46",
+      "location": "San Diego"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/second_pass_sector_2026.psv:11",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-shield-ai": [
+    {
+      "source_id": "sdedc_aerospace",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/current_discovery.psv:47",
+      "location": "San Diego"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/second_pass_sector_2026.psv:13",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-skysafe": [
+    {
+      "source_id": "sdedc_aerospace",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/current_discovery.psv:48",
+      "location": "San Diego"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/second_pass_sector_2026.psv:12",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-airborne-systems-north-america-of-ca": [
+    {
+      "source_id": "santa_ana_chamber_2026",
+      "source_url": "https://santaanachamber.com/list/category/manufacturers-aerospace-284?dm=True&o=",
+      "extract_ref": "source/current_discovery.psv:49",
+      "location": "Santa Ana"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://santaanachamber.com/list/category/manufacturers-aerospace-284?dm=True&o=",
+      "extract_ref": "source/second_pass_sector_2026.psv:34",
+      "location": "Santa Ana"
+    }
+  ],
+  "SOCAL-qed-inc": [
+    {
+      "source_id": "santa_ana_chamber_2026",
+      "source_url": "https://santaanachamber.com/list/category/manufacturers-aerospace-284?dm=True&o=",
+      "extract_ref": "source/current_discovery.psv:50",
+      "location": "Santa Ana"
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://santaanachamber.com/list/category/manufacturers-aerospace-284?dm=True&o=",
+      "extract_ref": "source/second_pass_sector_2026.psv:35",
+      "location": "Santa Ana"
+    }
+  ],
+  "SOCAL-cal-draulics-inc": [
+    {
+      "source_id": "corona_chamber_2026",
+      "source_url": "https://member.mychamber.org/member-directory/Search/manufacturers-aerospace-662204",
+      "extract_ref": "source/current_discovery.psv:51",
+      "location": "Corona"
+    }
+  ],
+  "SOCAL-laminated-shim-co-inc": [
+    {
+      "source_id": "corona_chamber_2026",
+      "source_url": "https://member.mychamber.org/member-directory/Search/manufacturers-aerospace-662204",
+      "extract_ref": "source/current_discovery.psv:52",
+      "location": "Corona"
+    }
+  ],
+  "SOCAL-westech-products": [
+    {
+      "source_id": "corona_chamber_2026",
+      "source_url": "https://member.mychamber.org/member-directory/Search/manufacturers-aerospace-662204",
+      "extract_ref": "source/current_discovery.psv:53",
+      "location": "Corona"
+    }
+  ],
+  "SOCAL-almex-usa-inc": [
+    {
+      "source_id": "corona_chamber_2026",
+      "source_url": "https://member.mychamber.org/member-directory/Search/manufacturers-aerospace-662204",
+      "extract_ref": "source/current_discovery.psv:54",
+      "location": "Buena Park"
+    }
+  ],
+  "SOCAL-circor-aerospace-inc": [
+    {
+      "source_id": "corona_chamber_2026",
+      "source_url": "https://member.mychamber.org/member-directory/Search/manufacturers-aerospace-662204",
+      "extract_ref": "source/current_discovery.psv:55",
+      "location": "Corona"
+    }
+  ],
+  "SOCAL-american-precision-consulting-llc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:1",
+      "location": "Temecula"
+    }
+  ],
+  "SOCAL-surface-engineering-technologies-llc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:2",
+      "location": "Torrance"
+    }
+  ],
+  "SOCAL-versatech-precision-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:3",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-savage-machining-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:4",
+      "location": "Simi Valley"
+    }
+  ],
+  "SOCAL-ipa-werks-llc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:5",
+      "location": "San Marcos"
+    }
+  ],
+  "SOCAL-helical-machining-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:6",
+      "location": "Sun Valley"
+    }
+  ],
+  "SOCAL-salsa-prototype-specialties": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:7",
+      "location": "Ventura"
+    }
+  ],
+  "SOCAL-novus-autonomous-systems-llc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:8",
+      "location": "Gardena"
+    }
+  ],
+  "SOCAL-superior-metal-shapes-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:9",
+      "location": "Chino"
+    }
+  ],
+  "SOCAL-nitrex-metal-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:10",
+      "location": "Corona"
+    }
+  ],
+  "SOCAL-aluminum-die-casting-co-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:11",
+      "location": "Mira Loma"
+    }
+  ],
+  "SOCAL-all-ways-metal-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:12",
+      "location": "Gardena"
+    }
+  ],
+  "SOCAL-kenwalt-die-casting-co": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:13",
+      "location": "Arlington Heights"
+    }
+  ],
+  "SOCAL-andrews-hi-tec-corporation": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:14",
+      "location": "South El Monte"
+    }
+  ],
+  "SOCAL-modus-advanced-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:15",
+      "location": "Carlsbad"
+    }
+  ],
+  "SOCAL-dieform-llc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:16",
+      "location": "Chino"
+    }
+  ],
+  "SOCAL-omni-engineering-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:17",
+      "location": "Beaumont"
+    }
+  ],
+  "SOCAL-fabcon-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:18",
+      "location": "Valencia"
+    }
+  ],
+  "SOCAL-hi-rel-plastics-molding": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:19",
+      "location": "Riverside"
+    }
+  ],
+  "SOCAL-delta-hi-tech": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:20",
+      "location": "Chatsworth"
+    }
+  ],
+  "SOCAL-verdugo-tool-engineering-co-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:21",
+      "location": "Chatsworth"
+    }
+  ],
+  "SOCAL-precision-waterjet-laser": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:22",
+      "location": "Anaheim"
+    }
+  ],
+  "SOCAL-california-sealing-solutions": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:23",
+      "location": "Irvine"
+    }
+  ],
+  "SOCAL-west-coast-machining-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:24",
+      "location": "Santa Fe Springs"
+    }
+  ],
+  "SOCAL-cemcoat-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:25",
+      "location": "Los Angeles"
+    }
+  ],
+  "SOCAL-mechanical-metal-finishing": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:26",
+      "location": "Gardena"
+    }
+  ],
+  "SOCAL-abc-sheet-metal": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:27",
+      "location": "Anaheim"
+    }
+  ],
+  "SOCAL-accurate-plating": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:28",
+      "location": "Los Angeles"
+    }
+  ],
+  "SOCAL-precision-machining-fab": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:29",
+      "location": "Anaheim"
+    }
+  ],
+  "SOCAL-electrolurgy-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:30",
+      "location": "Irvine"
+    }
+  ],
+  "SOCAL-3d-cam": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:31",
+      "location": "Chatsworth"
+    }
+  ],
+  "SOCAL-gardena-specialized-processing": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:32",
+      "location": "Gardena"
+    }
+  ],
+  "SOCAL-pendarvis-manufacturing": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:33",
+      "location": "Anaheim"
+    }
+  ],
+  "SOCAL-dix-metals-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:34",
+      "location": "Huntington Beach"
+    }
+  ],
+  "SOCAL-trupart-manufacturing-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:35",
+      "location": "Ventura"
+    }
+  ],
+  "SOCAL-delafield-corp": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:37",
+      "location": "Duarte"
+    }
+  ],
+  "SOCAL-abrisa-industrial-glass-abrisa-technologies": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:38",
+      "location": "Santa Paula"
+    }
+  ],
+  "SOCAL-andersen-industries-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:39",
+      "location": "Adelanto"
+    }
+  ],
+  "SOCAL-chromal-plating-co": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:40",
+      "location": "Los Angeles"
+    }
+  ],
+  "SOCAL-milco-wire-edm": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:41",
+      "location": "Huntington Beach"
+    }
+  ],
+  "SOCAL-valencia-plastics-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:42",
+      "location": "Valencia"
+    }
+  ],
+  "SOCAL-prime-plating-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:44",
+      "location": "Sun Valley"
+    }
+  ],
+  "SOCAL-fordon-grind-industries-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:45",
+      "location": "Torrance"
+    }
+  ],
+  "SOCAL-landmark-manufacturing": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:46",
+      "location": "Oceanside"
+    }
+  ],
+  "SOCAL-all-purpose-mfg-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:47",
+      "location": "Oceanside"
+    }
+  ],
+  "SOCAL-binder-metal-products-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:48",
+      "location": "Gardena"
+    }
+  ],
+  "SOCAL-accurate-dial-nameplate-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:49",
+      "location": "Glendale"
+    }
+  ],
+  "SOCAL-rache-corp": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:50",
+      "location": "Camarillo"
+    }
+  ],
+  "SOCAL-b-e-ent": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:51",
+      "location": "Fullerton"
+    }
+  ],
+  "SOCAL-electron-beam-industries-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:52",
+      "location": "Anaheim"
+    }
+  ],
+  "SOCAL-aircraft-foundry-co-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:53",
+      "location": "Huntington Park"
+    }
+  ],
+  "SOCAL-k-l-anodizing-corp": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:54",
+      "location": "Burbank"
+    }
+  ],
+  "SOCAL-color-tec-industrial-finishing": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:55",
+      "location": "Pacoima"
+    }
+  ],
+  "SOCAL-sonic-plating-co-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:56",
+      "location": "Santa Fe Springs"
+    }
+  ],
+  "SOCAL-id-group-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:57",
+      "location": "Huntington Beach"
+    }
+  ],
+  "SOCAL-g-v-industries-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:58",
+      "location": "National City"
+    }
+  ],
+  "SOCAL-proponent": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:59",
+      "location": "Brea"
+    }
+  ],
+  "SOCAL-beartech-alloys-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:60",
+      "location": "Placentia"
+    }
+  ],
+  "SOCAL-golden-state-magnetic-penetrant-lab-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:61",
+      "location": "Arleta"
+    }
+  ],
+  "SOCAL-mgm-manufacturing-alliance-corp": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:62",
+      "location": "Simi Valley"
+    }
+  ],
+  "SOCAL-laser-industries-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:63",
+      "location": "Fullerton"
+    }
+  ],
+  "SOCAL-3d-tek-cnc-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/2/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:64",
+      "location": "Ventura"
+    }
+  ],
+  "SOCAL-abaca-mfg": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:65",
+      "location": "Garden Grove"
+    }
+  ],
+  "SOCAL-veterans-manufacturing-llc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:66",
+      "location": "San Clemente"
+    }
+  ],
+  "SOCAL-green-prototype-services-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:67",
+      "location": "Oak Hills"
+    }
+  ],
+  "SOCAL-tacna-services": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:68",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-american-bright-optoelectronics-corp": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:69",
+      "location": "Chino"
+    }
+  ],
+  "SOCAL-g-m-enterprises": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:70",
+      "location": "Corona"
+    }
+  ],
+  "SOCAL-terra-universal-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:71",
+      "location": "Fullerton"
+    },
+    {
+      "source_id": "official_primary_secondpass_2026",
+      "source_url": "https://www.terrauniversal.com/about-us",
+      "extract_ref": "source/second_pass_official_companies_2026.psv:4",
+      "location": "Fullerton"
+    }
+  ],
+  "SOCAL-thermal-equipment-corporation": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:72",
+      "location": "Rancho Dominguez"
+    }
+  ],
+  "SOCAL-rubbercraft": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:74",
+      "location": "Long Beach"
+    }
+  ],
+  "SOCAL-mer-mar-electronics": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:75",
+      "location": "Hesperia"
+    }
+  ],
+  "SOCAL-performance-engineered-products-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:76",
+      "location": "Pomona"
+    }
+  ],
+  "SOCAL-gordon-brush-mfg-co-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:77",
+      "location": "City of Industry"
+    }
+  ],
+  "SOCAL-vinyl-technology-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:78",
+      "location": "Monrovia"
+    }
+  ],
+  "SOCAL-thirty-two-machine": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:79",
+      "location": "Mission Viejo"
+    }
+  ],
+  "SOCAL-vaniman-manufacturing-co": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:80",
+      "location": "Murrieta"
+    }
+  ],
+  "SOCAL-kadan-consultants-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:81",
+      "location": "Huntington Beach"
+    }
+  ],
+  "SOCAL-outsource-electronics-manufacturing-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:82",
+      "location": "San Marcos"
+    }
+  ],
+  "SOCAL-geoform-inc-precision-measurement-laboratories": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:83",
+      "location": "Gardena"
+    }
+  ],
+  "SOCAL-plastics-research-corporation": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:84",
+      "location": "Ontario"
+    }
+  ],
+  "SOCAL-connector-contacts-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:85",
+      "location": "Covina"
+    }
+  ],
+  "SOCAL-excello-circuits-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:86",
+      "location": "Anaheim"
+    }
+  ],
+  "SOCAL-superlok-usa": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:87",
+      "location": "Ventura"
+    }
+  ],
+  "SOCAL-gear-manufacturing-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:88",
+      "location": "Anaheim"
+    }
+  ],
+  "SOCAL-dynamo-aviation-usa-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:89",
+      "location": "Chatsworth"
+    }
+  ],
+  "SOCAL-dangar-engineering-and-manufacturing-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:90",
+      "location": "Ventura"
+    }
+  ],
+  "SOCAL-coastline-international": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:92",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-plasidyne-engineering-manufacturing-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:93",
+      "location": "Long Beach"
+    }
+  ],
+  "SOCAL-argo-spring-mfg-co-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:94",
+      "location": "Norwalk"
+    }
+  ],
+  "SOCAL-luxon-engineering": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/3/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:95",
+      "location": "Laguna Beach"
+    }
+  ],
+  "SOCAL-california-screw-products-corp": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:96",
+      "location": "Paramount"
+    }
+  ],
+  "SOCAL-baker-furnace": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:97",
+      "location": "Brea"
+    }
+  ],
+  "SOCAL-leading-edge-metals-alloys-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:98",
+      "location": "Santa Fe Springs"
+    }
+  ],
+  "SOCAL-thin-metal-sales-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:99",
+      "location": "Chino"
+    }
+  ],
+  "SOCAL-s-h-glenco-manufacturing-llc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:100",
+      "location": "Ontario"
+    }
+  ],
+  "SOCAL-z-abrasives": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:101",
+      "location": "Santa Fe Springs"
+    }
+  ],
+  "SOCAL-beartech-mfg-llc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:102",
+      "location": "Placentia"
+    }
+  ],
+  "SOCAL-master-research-and-manufacturing-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:103",
+      "location": "Norwalk"
+    }
+  ],
+  "SOCAL-qual-diamond-hi-tech-corp": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:104",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-paramount-roll-forming-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:105",
+      "location": "Adelanto"
+    }
+  ],
+  "SOCAL-south-alliance-industries": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:106",
+      "location": "South El Monte"
+    }
+  ],
+  "SOCAL-clarke-gear-co-clarke-engineering-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:107",
+      "location": "North Hollywood"
+    }
+  ],
+  "SOCAL-orlando-spring-co": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:108",
+      "location": "Huntington Beach"
+    }
+  ],
+  "SOCAL-vulcan-metal-group-llc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:109",
+      "location": "Torrance"
+    }
+  ],
+  "SOCAL-corsair-electrical-connectors-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:110",
+      "location": "Irvine"
+    }
+  ],
+  "SOCAL-bob-martin-co": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:111",
+      "location": "South El Monte"
+    }
+  ],
+  "SOCAL-la-cnc-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:112",
+      "location": "Glendale"
+    }
+  ],
+  "SOCAL-alpha-omega-swiss-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:113",
+      "location": "Yorba Linda"
+    }
+  ],
+  "SOCAL-coc-aerospace": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:114",
+      "location": "Camarillo"
+    }
+  ],
+  "SOCAL-wire-pro-edm-technologies-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:115",
+      "location": "Chatsworth"
+    }
+  ],
+  "SOCAL-master-powder-coating-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:116",
+      "location": "Santa Fe Springs"
+    }
+  ],
+  "SOCAL-the-welding-warehouse": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:117",
+      "location": "Commerce"
+    }
+  ],
+  "SOCAL-comco-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:118",
+      "location": "Burbank"
+    }
+  ],
+  "SOCAL-custom-alloy-sales-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:119",
+      "location": "City of Industry"
+    }
+  ],
+  "SOCAL-qci-hills-laser-marking": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:120",
+      "location": "Torrance"
+    }
+  ],
+  "SOCAL-pacific-magnetic-penetrant-co-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:121",
+      "location": "North Hollywood"
+    }
+  ],
+  "SOCAL-dye-precision-cnc-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:122",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-imtech-of-california-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:123",
+      "location": "Santa Fe Springs"
+    }
+  ],
+  "SOCAL-accu-sembly-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:124",
+      "location": "Duarte"
+    }
+  ],
+  "SOCAL-nubs-plastics-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:125",
+      "location": "Vista"
+    }
+  ],
+  "SOCAL-s-h-rubber-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:126",
+      "location": "Fullerton"
+    }
+  ],
+  "SOCAL-c-m-spring-engineering-co-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:127",
+      "location": "Chino"
+    }
+  ],
+  "SOCAL-spfx-unlimited": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:128",
+      "location": "Fullerton"
+    }
+  ],
+  "SOCAL-esm-aerospace-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:129",
+      "location": "Burbank"
+    }
+  ],
+  "SOCAL-plastic-metal-center-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:130",
+      "location": "Laguna Hills"
+    }
+  ],
+  "SOCAL-alexander-s-precision-machining": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:131",
+      "location": "Huntington Beach"
+    }
+  ],
+  "SOCAL-c-m-machine-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:132",
+      "location": "San Jacinto"
+    }
+  ],
+  "SOCAL-castem-technology-laboratories-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/4/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:133",
+      "location": "Irvine"
+    }
+  ],
+  "SOCAL-fs-precision-tech": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:135",
+      "location": "Rancho Dominguez"
+    }
+  ],
+  "SOCAL-sonoma-industries-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:136",
+      "location": "Bell Gardens"
+    }
+  ],
+  "SOCAL-thirty-two-machine-and-design": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:137",
+      "location": "Santa Ana"
+    }
+  ],
+  "SOCAL-validyne-engineering-corp": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:138",
+      "location": "Canoga Park"
+    }
+  ],
+  "SOCAL-vlach-industries-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:139",
+      "location": "Corona"
+    }
+  ],
+  "SOCAL-amtec": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:140",
+      "location": "Anaheim"
+    }
+  ],
+  "SOCAL-electronic-balancing-co": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:141",
+      "location": "Wilmington"
+    }
+  ],
+  "SOCAL-seurat-technologies": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:142",
+      "location": "Hawthorne"
+    }
+  ],
+  "SOCAL-paragon-steel": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:143",
+      "location": "Commerce"
+    }
+  ],
+  "SOCAL-nectar-product-development": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:144",
+      "location": "Long Beach"
+    }
+  ],
+  "SOCAL-california-nanotechnologies": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:145",
+      "location": "Cerritos"
+    }
+  ],
+  "SOCAL-delkin-devices-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:146",
+      "location": "Long Beach"
+    }
+  ],
+  "SOCAL-reinhold-industries": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:148",
+      "location": "Santa Fe Springs"
+    }
+  ],
+  "SOCAL-integrated-parts-sourcing": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:149",
+      "location": "Anaheim"
+    }
+  ],
+  "SOCAL-ktts": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:150",
+      "location": "Encinitas"
+    }
+  ],
+  "SOCAL-mie-solutions": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:151",
+      "location": "Santa Ana"
+    }
+  ],
+  "SOCAL-uscalibration": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:152",
+      "location": "Irvine"
+    }
+  ],
+  "SOCAL-micro-quality-calibration-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:153",
+      "location": "Chatsworth"
+    },
+    {
+      "source_id": "official_primary_secondpass_2026",
+      "source_url": "https://www.microqualitycalibration.com/our-services/inspection-testing/",
+      "extract_ref": "source/second_pass_official_companies_2026.psv:5",
+      "location": "Chatsworth"
+    }
+  ],
+  "SOCAL-seco-seals-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:154",
+      "location": "Costa Mesa"
+    }
+  ],
+  "SOCAL-tru-form-plastics-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:155",
+      "location": "Westminster"
+    }
+  ],
+  "SOCAL-neo-tech": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:156",
+      "location": "Chatsworth"
+    }
+  ],
+  "SOCAL-ver-sales-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:157",
+      "location": "Burbank"
+    }
+  ],
+  "SOCAL-hirel-connectors-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:158",
+      "location": "Claremont"
+    }
+  ],
+  "SOCAL-laube-titanium-mill-products": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:159",
+      "location": "Camarillo"
+    }
+  ],
+  "SOCAL-spectrum-chemical-mfg-corp": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:160",
+      "location": "Gardena"
+    }
+  ],
+  "SOCAL-fxc-corp": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:161",
+      "location": "Costa Mesa"
+    }
+  ],
+  "SOCAL-fabric8labs-inc": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:162",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-advanced-test-equipment-corporation-atec": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:163",
+      "location": "San Diego"
+    },
+    {
+      "source_id": "official_primary_secondpass_2026",
+      "source_url": "https://www.atecorp.com/contact/about-us",
+      "extract_ref": "source/second_pass_official_companies_2026.psv:8",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-ultramet": [
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "source_url": "https://www.noramark.com/directory/industries/aerospace/california/page/5/",
+      "extract_ref": "source/second_pass_manufacturers_2026.psv:164",
+      "location": "Northridge"
+    },
+    {
+      "source_id": "official_primary_secondpass_2026",
+      "source_url": "https://ultramet.com/",
+      "extract_ref": "source/second_pass_official_companies_2026.psv:7",
+      "location": "Pacoima"
+    }
+  ],
+  "SOCAL-inova-drone": [
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/second_pass_sector_2026.psv:6",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-kratos-defense": [
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "extract_ref": "source/second_pass_sector_2026.psv:14",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-viasat": [
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://www.sandiegobusiness.org/about-the-region/defense/",
+      "extract_ref": "source/second_pass_sector_2026.psv:15",
+      "location": "Carlsbad"
+    }
+  ],
+  "SOCAL-quartus-engineering": [
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://www.aiaa-sd.org/links",
+      "extract_ref": "source/second_pass_sector_2026.psv:16",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-applied-composites": [
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://www.aiaa-sd.org/links",
+      "extract_ref": "source/second_pass_sector_2026.psv:17",
+      "location": "San Diego"
+    },
+    {
+      "source_id": "official_primary_secondpass_2026",
+      "source_url": "https://www.appliedcomposites.com/san-diego-ca/",
+      "extract_ref": "source/second_pass_official_companies_2026.psv:2",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-flowmetrics": [
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://www.aiaa-sd.org/links",
+      "extract_ref": "source/second_pass_sector_2026.psv:18",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-ahntech": [
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://www.aiaa-sd.org/links",
+      "extract_ref": "source/second_pass_sector_2026.psv:19",
+      "location": "San Diego"
+    }
+  ],
+  "SOCAL-apex-space": [
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/second_pass_sector_2026.psv:24",
+      "location": "Playa Vista"
+    }
+  ],
+  "SOCAL-auron-solutions": [
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "source_url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "extract_ref": "source/second_pass_sector_2026.psv:27",
+      "location": "Los Angeles"
+    }
+  ],
+  "SOCAL-rocket-lab": [
+    {
+      "source_id": "official_company_2026",
+      "source_url": "https://rocketlabcorp.com/careers/",
+      "extract_ref": "source/official_current_2026.psv:1",
+      "location": "Long Beach"
+    }
+  ],
+  "SOCAL-relativity-space": [
+    {
+      "source_id": "official_company_2026",
+      "source_url": "https://www.relativityspace.com/locations",
+      "extract_ref": "source/official_current_2026.psv:2",
+      "location": "Long Beach"
+    }
+  ],
+  "SOCAL-vast": [
+    {
+      "source_id": "official_company_2026",
+      "source_url": "https://www.vastspace.com/contact",
+      "extract_ref": "source/official_current_2026.psv:3",
+      "location": "Long Beach"
+    }
+  ],
+  "SOCAL-true-anomaly": [
+    {
+      "source_id": "official_company_2026",
+      "source_url": "https://www.trueanomaly.space/newsroom/true-anomaly-announces-significant-expansion-into-california-with-long-beach-campus",
+      "extract_ref": "source/official_current_2026.psv:4",
+      "location": "Long Beach"
+    }
+  ],
+  "SOCAL-divergent-technologies": [
+    {
+      "source_id": "official_company_2026",
+      "source_url": "https://www.divergent.us/",
+      "extract_ref": "source/official_current_2026.psv:5",
+      "location": "Torrance"
+    }
+  ],
+  "SOCAL-u-s-space-force-space-launch-delta-30": [
+    {
+      "source_id": "spaceforce_sld30_2026",
+      "source_url": "https://www.divergent.us/",
+      "extract_ref": "source official referenced",
+      "location": "Vandenberg SFB"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+question,coverage_in_this_dataset,why,priority,needed_to_resolve
+Who makes space-qualified harnesses in Southern California?,partial,Several manufacturers are named but certifications and flight qualifications are unknown,high,Official product and qualification evidence
+Where can I get environmental and thermal-vacuum testing?,partial,JPL capabilities are source documented but commercial access is unknown,high,Commercial testing laboratories and access conditions
+Which local shops offer Inconel or titanium CNC machining?,partial,Manufacturing candidates exist but materials and tolerance capacities have not been verified,high,Shop capabilities and materials by facility
+Which companies build complete satellites here?,partial,Several major builders identified but complete regional coverage is absent,high,Official satellite builder locations and products
+Who can build satellite RF and microwave components?,partial,RF component company candidates available but flight qualifications unknown,high,Official product datasheets and component certifications
+How do I move from spacecraft assembly to launch?,partial,Conceptual process graph exists in v0.6; suppliers and services not connected,medium,Documented service paths and user-relevant guidance
+Where is the nearest accessible vibration lab?,unsupported,Availability or access not validated,high,Commercial lab directory with booking conditions
+Who can quote aerospace composite parts?,partial,Composite candidate records present but contracting/contact/part capabilities under-verified,high,Official manufacturing and request-for-quote links
+What government programs support a small space-tech company?,existing_site_v06,Seven curated programs in v0.6; this package focuses organizations and suppliers,medium,Continued program freshness and eligibility
+What active SpaceWERX solicitation is closing next?,unsupported,No live authenticated solicitation ingestion,medium,Current official opportunities API
+What local firms have NASA exploration program history?,historical_only,2019 supplier listings provide historical leads not current participation,medium,Revalidate identities and active contracts
+Which supplier can manufacture a specific propulsion valve?,partial,Historical and current component candidates but no part-specific qualified product catalog,high,Current manufacturer product and qualification records
+Who builds spacecraft components around San Diego?,partial,Regional EDC and Space Index candidates present but limited facility verification,high,Independent official San Diego supplier profiles
+Which companies in Southern California can support precision machining?,partial,Many candidates in OC and historical NASA list but most not currently verified,high,Primary manufacturer verification across counties
+Where are suppliers clustered around LA/Orange?,partially_supported,City labels allow exploratory clusters; source coverage is strongly uneven,medium,Broader geographic acquisition and exact facility geocoding

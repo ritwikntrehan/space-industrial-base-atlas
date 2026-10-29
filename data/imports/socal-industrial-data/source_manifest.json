@@ -1,0 +1,364 @@
+{
+  "version": "2026-10-29-v1",
+  "reviewed_at": "2026-10-29",
+  "sources": [
+    {
+      "source_id": "schtmap_2026",
+      "name": "SCHTMap 100-company Orange County hard-tech records",
+      "provider": "SCHTMap (user-owned)",
+      "url": "https://github.com/ritwikntrehan/oc-hard-tech-landscape/blob/main/data/companies.min.json",
+      "access_method": "public GitHub JSON",
+      "coverage": "Orange County; diverse hard-tech, includes many off-space firms",
+      "license_reuse": "user-owned repository; preserve source provenance and check original sources for individual facts",
+      "ingestion_status": "ingested_select_fields",
+      "requires_credentials": false,
+      "update_frequency": "as updated",
+      "last_reviewed": "2026-10-29",
+      "notes": "100 of 100 records transcribed to local compact extract. Re-fetch upstream full JSON for complete capabilities and source-ledger, no claim each company is in space industry.",
+      "local_source_files": [
+        "source/schtmap_100_extract.psv"
+      ]
+    },
+    {
+      "source_id": "nasa_esd_2019",
+      "name": "2019 Deep Space Exploration Systems Supplier Locations",
+      "provider": "NASA",
+      "url": "https://www3.nasa.gov/specials/ESDSuppliersMap/",
+      "access_method": "historical public web listing",
+      "coverage": "US historical suppliers, filtered to seven SoCal counties",
+      "license_reuse": "U.S. federal government historical supplier map, verify webpage-specific terms",
+      "ingestion_status": "ingested_historical_research_leads",
+      "requires_credentials": false,
+      "update_frequency": "historical 2019 snapshot",
+      "last_reviewed": "2026-10-29",
+      "notes": "112 source rows transcribed to names and historical city labels. Retain as historical, do not present as currently active, qualified, or available.",
+      "local_source_files": [
+        "source/nasa_2019_supplier_leads.psv"
+      ]
+    },
+    {
+      "source_id": "defdex_2026",
+      "name": "LA Metro Defense & Space ecosystem directory",
+      "provider": "DefDex",
+      "url": "https://defdex.io/blog/los-angeles-defense-tech-ecosystem",
+      "access_method": "public web directory",
+      "coverage": "Los Angeles and Orange counties",
+      "license_reuse": "third-party copyrighted web content; use name/city facts and independent short tags, no wholesale republication of profiles",
+      "ingestion_status": "ingested_sample_discovery",
+      "requires_credentials": false,
+      "update_frequency": "monthly / unknown",
+      "last_reviewed": "2026-10-29",
+      "notes": "Sampled selected relevant organizations; site lists 133 companies and other institutional records; confirm with first-party sources before strong claims.",
+      "local_source_files": [
+        "source/current_discovery.psv"
+      ]
+    },
+    {
+      "source_id": "spaceindex_2026",
+      "name": "California Space Company Index",
+      "provider": "Space Index",
+      "url": "https://mcp.spaceindex.io/states/california",
+      "access_method": "public web directory",
+      "coverage": "California, filtered to southern counties",
+      "license_reuse": "third-party copyrighted website; metadata facts for independent research, not bulk republication",
+      "ingestion_status": "ingested_sample_discovery",
+      "requires_credentials": false,
+      "update_frequency": "unknown",
+      "last_reviewed": "2026-10-29",
+      "notes": "Only selected current SoCal entries used; no complete extraction.",
+      "local_source_files": [
+        "source/current_discovery.psv"
+      ]
+    },
+    {
+      "source_id": "sdedc_aerospace",
+      "name": "San Diego Aerospace Sector Key Companies",
+      "provider": "San Diego Regional EDC",
+      "url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "access_method": "public regional sector page",
+      "coverage": "San Diego County aerospace",
+      "license_reuse": "public descriptive directory; verify company site and location individually",
+      "ingestion_status": "ingested_key_company_sample",
+      "requires_credentials": false,
+      "update_frequency": "periodic/unknown",
+      "last_reviewed": "2026-10-29",
+      "notes": "Official regional economic development list; company-level specializations are researcher tags until verified first party.",
+      "local_source_files": [
+        "source/current_discovery.psv"
+      ]
+    },
+    {
+      "source_id": "santa_ana_chamber_2026",
+      "name": "Santa Ana Aerospace Manufacturers",
+      "provider": "Santa Ana Chamber of Commerce",
+      "url": "https://santaanachamber.com/list/category/manufacturers-aerospace-284?dm=True&o=",
+      "access_method": "public chamber listing",
+      "coverage": "Santa Ana, Orange County",
+      "license_reuse": "public listing facts, directory content rights may restrict republishing profile text",
+      "ingestion_status": "ingested_small_sample",
+      "requires_credentials": false,
+      "update_frequency": "periodic",
+      "last_reviewed": "2026-10-29",
+      "notes": "Two new firms captured, verified as chamber listings, not space-qualified manufacturers.",
+      "local_source_files": [
+        "source/current_discovery.psv"
+      ]
+    },
+    {
+      "source_id": "corona_chamber_2026",
+      "name": "Corona Aerospace Manufacturers",
+      "provider": "Corona Chamber of Commerce",
+      "url": "https://member.mychamber.org/member-directory/Search/manufacturers-aerospace-662204",
+      "access_method": "public chamber listing",
+      "coverage": "Riverside / Orange county businesses",
+      "license_reuse": "public listing facts; directory copyright/terms to be reviewed",
+      "ingestion_status": "ingested_small_sample",
+      "requires_credentials": false,
+      "update_frequency": "periodic",
+      "last_reviewed": "2026-10-29",
+      "notes": "Five listed manufacturers added as candidate leads; specializations largely unverified.",
+      "local_source_files": [
+        "source/current_discovery.psv"
+      ]
+    },
+    {
+      "source_id": "official_company_2026",
+      "name": "Official facility pages for Rocket Lab, Relativity, Vast, True Anomaly, Divergent",
+      "provider": "Company first-party websites",
+      "url": "https://rocketlabcorp.com/contact/",
+      "access_method": "direct official pages",
+      "coverage": "Long Beach, Hawthorne, Torrance, Pasadena",
+      "license_reuse": "company-owned web text; store own structured factual observations only",
+      "ingestion_status": "ingested_select_current_company_facility_facts",
+      "requires_credentials": false,
+      "update_frequency": "reverify quarterly",
+      "last_reviewed": "2026-10-29",
+      "notes": "Five company identities and nine facility records. Individual official URLs stored in source files and facilities.csv.",
+      "local_source_files": [
+        "source/official_current_2026.psv",
+        "source/official_facilities_2026.psv"
+      ]
+    },
+    {
+      "source_id": "spaceforce_sld30_2026",
+      "name": "Vandenberg Space Launch Delta 30",
+      "provider": "U.S. Space Force",
+      "url": "https://www.ssc.spaceforce.mil/Program-Offices/SPACE-ACCESS",
+      "access_method": "official government site",
+      "coverage": "Santa Barbara county / Vandenberg SFB",
+      "license_reuse": "US federal government public site; specific images/third-party content may vary",
+      "ingestion_status": "ingested_existing_site_facility",
+      "requires_credentials": false,
+      "update_frequency": "reverify annually",
+      "last_reviewed": "2026-10-29",
+      "notes": "Installation centroid only, not a launch pad, customer access unknown.",
+      "local_source_files": [
+        "facilities.csv"
+      ]
+    },
+    {
+      "source_id": "jpl_labs_2026",
+      "name": "JPL public testing laboratories",
+      "provider": "NASA JPL",
+      "url": "https://www.jpl.nasa.gov/go/epl/capabilities/facilities/",
+      "access_method": "official NASA lab pages",
+      "coverage": "Los Angeles County",
+      "license_reuse": "government/public information, website terms apply",
+      "ingestion_status": "ingested_existing_site_facilities",
+      "requires_credentials": false,
+      "update_frequency": "reverify annually",
+      "last_reviewed": "2026-10-29",
+      "notes": "Two JPL facilities, map points approximate JPL campus, not particular test chambers.",
+      "local_source_files": [
+        "facilities.csv"
+      ]
+    },
+    {
+      "source_id": "cmtc_directory",
+      "name": "CMTC Made in CA manufacturer listings",
+      "provider": "CMTC",
+      "url": "https://www.cmtc.com/hubfs/cmtc_mic_menu.html",
+      "access_method": "public categorized directory",
+      "coverage": "California manufacturing",
+      "license_reuse": "third-party directory, check redistribution rights and current operation",
+      "ingestion_status": "staged_index_only",
+      "requires_credentials": false,
+      "update_frequency": "unknown",
+      "last_reviewed": "2026-10-29",
+      "notes": "Good lead universe, including aerospace parts and PCB firms. Manual lookup by city and official company pages still necessary. Not scraped. No new claims added.",
+      "local_source_files": []
+    },
+    {
+      "source_id": "made_in_ca",
+      "name": "Made in California product directory",
+      "provider": "CalOSBA / GO-Biz",
+      "url": "https://app.madeincalifornia.ca.gov/Directory/",
+      "access_method": "public product directory",
+      "coverage": "California manufacturers",
+      "license_reuse": "Government site with company-contributed information; reuse terms to check",
+      "ingestion_status": "staged_index_only",
+      "requires_credentials": false,
+      "update_frequency": "periodic",
+      "last_reviewed": "2026-10-29",
+      "notes": "Official label holders, not evidence of space qualification.",
+      "local_source_files": []
+    },
+    {
+      "source_id": "noramark",
+      "name": "California Aerospace Manufacturing Supplier Directory",
+      "provider": "NORAMARK",
+      "url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "access_method": "public web directory",
+      "coverage": "California aerospace supplier candidates",
+      "license_reuse": "commercial directory; names and publicly checkable facts only, no bulk replication without permission",
+      "ingestion_status": "staged_index_only",
+      "requires_credentials": false,
+      "update_frequency": "unknown",
+      "last_reviewed": "2026-10-29",
+      "notes": "Hundreds of candidate firms; require regional filtering, primary-site validation, and certification checks before importing.",
+      "local_source_files": []
+    },
+    {
+      "source_id": "noramark_aerospace_oct2026",
+      "name": "Noramark CA aerospace supplier directory, pages 1-5",
+      "provider": "NORAMARK",
+      "url": "https://www.noramark.com/directory/industries/aerospace/california/",
+      "access_method": "public multi-page directory",
+      "coverage": "California directory filtered to SoCal locations",
+      "license_reuse": "Third-party commercial directory; fact extraction limited to names, city and category/process descriptors; do not republish copied descriptions or imply qualification",
+      "ingestion_status": "ingested_curated_second_pass",
+      "requires_credentials": false,
+      "update_frequency": "unknown / recheck quarterly",
+      "last_reviewed": "2026-10-29",
+      "notes": "164 selected directory entries recorded manually after filtering invalid or out-of-region location labels. Secondary directory-listed aerospace service claims require first-party verification before raising evidence tier. Source page for each company kept in extract.",
+      "local_source_files": [
+        "source/second_pass_manufacturers_2026.psv"
+      ]
+    },
+    {
+      "source_id": "regional_sector_secondpass_oct2026",
+      "name": "2026 regional aerospace company/association lists",
+      "provider": "SD Regional EDC / AIAA San Diego / DefDex / Santa Ana Chamber",
+      "url": "https://www.sandiegobusiness.org/about-the-region/aerospace/",
+      "access_method": "public regional sector indexes",
+      "coverage": "San Diego, Los Angeles, and Orange county aerospace/industrial actors",
+      "license_reuse": "Third-party lists; limited factual extraction, no reproduction of profiles",
+      "ingestion_status": "ingested_curated_second_pass",
+      "requires_credentials": false,
+      "update_frequency": "recheck quarterly",
+      "last_reviewed": "2026-10-29",
+      "notes": "35 selective organization records with relevant role tags and the per-row source URL. Some merge with previously known records. Broad aerospace and defense activity does not establish space qualification.",
+      "local_source_files": [
+        "source/second_pass_sector_2026.psv"
+      ]
+    },
+    {
+      "source_id": "official_primary_secondpass_2026",
+      "name": "Primary company verification of selected SoCal industrial suppliers",
+      "provider": "Company-operated websites",
+      "url": "https://www.carbonbydesign.com/",
+      "access_method": "official manufacturer and facility sources",
+      "coverage": "SoCal: San Diego, Orange, Los Angeles",
+      "license_reuse": "First-party descriptions and official locations; avoid redistribution of protected descriptions and graphics",
+      "ingestion_status": "ingested_11_official_company_records_and_8_site_records",
+      "requires_credentials": false,
+      "update_frequency": "quarterly",
+      "last_reviewed": "2026-10-29",
+      "notes": "Eleven current official company pages with described products/services and some city corrections; source URL per record, not independent capacity verification. Includes Carbon by Design, Applied Composites, VACCO, Terra Universal, Micro Quality Calibration, Glenair, Ultramet and ATEC.",
+      "local_source_files": [
+        "source/second_pass_official_companies_2026.psv",
+        "source/second_pass_official_facilities_2026.psv"
+      ]
+    },
+    {
+      "source_id": "nasa_smallcraft_soa_2026",
+      "name": "2026 Small Spacecraft State of the Art",
+      "provider": "NASA",
+      "url": "https://www.nasa.gov/smallsat-institute/sst-soa/",
+      "access_method": "web chapters and report",
+      "coverage": "global spacecraft components and suppliers",
+      "license_reuse": "public NASA report portions include protected material; reproduce only citations and own structured facts",
+      "ingestion_status": "staged_technical_reference",
+      "requires_credentials": false,
+      "update_frequency": "annually",
+      "last_reviewed": "2026-10-29",
+      "notes": "Useful capability taxonomy, product tables and qualification semantics. Not a Southern California location index.",
+      "local_source_files": []
+    },
+    {
+      "source_id": "spacedirt_socal_map",
+      "name": "SoCal hard-tech map ~226 companies",
+      "provider": "Space Dirt",
+      "url": "https://spacedirt.beehiiv.com/p/september-s-space-dirt-month-end",
+      "access_method": "visual map / newsletter",
+      "coverage": "Southern California primarily young hard-tech firms",
+      "license_reuse": "third-party copyrighted map; obtain permission or use only as research leads",
+      "ingestion_status": "staged_visual_only",
+      "requires_credentials": false,
+      "update_frequency": "monthly",
+      "last_reviewed": "2026-10-29",
+      "notes": "Do not claim full 226 were ingested; visual list not a structured dataset.",
+      "local_source_files": []
+    },
+    {
+      "source_id": "usaspending",
+      "name": "Federal contract/grant award recipients",
+      "provider": "USASpending (U.S. Treasury)",
+      "url": "https://api.usaspending.gov/docs/endpoints",
+      "access_method": "public API (no key for current endpoints)",
+      "coverage": "national recipients, award locations and agencies",
+      "license_reuse": "U.S. public spending records; API usage terms and identifiers to be checked",
+      "ingestion_status": "staged_api",
+      "requires_credentials": false,
+      "update_frequency": "periodic",
+      "last_reviewed": "2026-10-29",
+      "notes": "Use award/recipient data to identify contractors with program activity; do not infer total revenue, manufacturing sites, or supplier capacity. Prefer search endpoints or bulk download.",
+      "local_source_files": []
+    },
+    {
+      "source_id": "sam_opportunities",
+      "name": "Active opportunities notices",
+      "provider": "SAM.gov / GSA",
+      "url": "https://open.gsa.gov/api/get-opportunities-public-api/",
+      "access_method": "REST API v2",
+      "coverage": "national federal procurement opportunities",
+      "license_reuse": "GSA data/usage terms",
+      "ingestion_status": "staged_requires_api_key",
+      "requires_credentials": true,
+      "update_frequency": "daily",
+      "last_reviewed": "2026-10-29",
+      "notes": "Production endpoint https://api.sam.gov/opportunities/v2/search. Requires account-associated API key. No secret included.",
+      "local_source_files": []
+    },
+    {
+      "source_id": "sbir_awards",
+      "name": "SBIR/STTR awards and winning firms",
+      "provider": "SBIR.gov / SBA",
+      "url": "https://www.sbir.gov/data-resources",
+      "access_method": "downloads XLS/JSON/XML, API where working",
+      "coverage": "national awards/companies/solicitations",
+      "license_reuse": "government data with provider-specific licensing / access",
+      "ingestion_status": "staged_bulk_download_or_api",
+      "requires_credentials": false,
+      "update_frequency": "monthly",
+      "last_reviewed": "2026-10-29",
+      "notes": "Official award data with and without abstracts (tens/hundreds MB); can filter firm location and space-related topics. No full file downloaded into this package.",
+      "local_source_files": []
+    },
+    {
+      "source_id": "census_cbp",
+      "name": "County Business Patterns (2023 latest stated)",
+      "provider": "U.S. Census Bureau",
+      "url": "https://www.census.gov/programs-surveys/cbp/data/datasets.html",
+      "access_method": "download CSV; API key for API queries",
+      "coverage": "US counties / NAICS counts",
+      "license_reuse": "public government aggregate estimates",
+      "ingestion_status": "staged_benchmark_only",
+      "requires_credentials": false,
+      "update_frequency": "annual",
+      "last_reviewed": "2026-10-29",
+      "notes": "Establishment counts are not company names and aerospace NAICS is not equivalent to space-qualified supplier.",
+      "local_source_files": []
+    }
+  ]
+}

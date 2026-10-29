@@ -1,0 +1,1505 @@
+{
+  "schema_version": "1.0",
+  "records": [
+    {
+      "import_id": "SOCAL-relativity-space",
+      "atlas_id": "SOCAL-relativity-space",
+      "decision": "new-selected-import",
+      "matched_name": "Relativity Space"
+    },
+    {
+      "import_id": "SOCAL-applied-composites",
+      "atlas_id": "SOCAL-applied-composites",
+      "decision": "new-selected-import",
+      "matched_name": "Applied Composites"
+    },
+    {
+      "import_id": "SOCAL-spacex",
+      "atlas_id": "SOCAL-spacex",
+      "decision": "new-selected-import",
+      "matched_name": "SpaceX"
+    },
+    {
+      "import_id": "SOCAL-rocket-lab",
+      "atlas_id": "SOCAL-rocket-lab",
+      "decision": "new-selected-import",
+      "matched_name": "Rocket Lab"
+    },
+    {
+      "import_id": "SOCAL-vast",
+      "atlas_id": "SOCAL-vast",
+      "decision": "new-selected-import",
+      "matched_name": "Vast"
+    },
+    {
+      "import_id": "SOCAL-boeing",
+      "atlas_id": "SOCAL-boeing",
+      "decision": "new-selected-import",
+      "matched_name": "Boeing"
+    },
+    {
+      "import_id": "SOCAL-carbon-by-design",
+      "atlas_id": "SOCAL-carbon-by-design",
+      "decision": "new-selected-import",
+      "matched_name": "Carbon by Design"
+    },
+    {
+      "import_id": "SOCAL-northrop-grumman",
+      "atlas_id": "SOCAL-northrop-grumman",
+      "decision": "new-selected-import",
+      "matched_name": "Northrop Grumman"
+    },
+    {
+      "import_id": "SOCAL-true-anomaly",
+      "atlas_id": "SOCAL-true-anomaly",
+      "decision": "new-selected-import",
+      "matched_name": "True Anomaly"
+    },
+    {
+      "import_id": "SOCAL-vacco-industries",
+      "atlas_id": "SOCAL-vacco-industries",
+      "decision": "new-selected-import",
+      "matched_name": "VACCO Industries"
+    },
+    {
+      "import_id": "SOCAL-ultramet",
+      "atlas_id": "SOCAL-ultramet",
+      "decision": "new-selected-import",
+      "matched_name": "Ultramet"
+    },
+    {
+      "import_id": "SOCAL-glenair-inc",
+      "atlas_id": "SOCAL-glenair-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Glenair, Inc."
+    },
+    {
+      "import_id": "SOCAL-u-s-space-force-space-launch-delta-30",
+      "atlas_id": "SOCAL-u-s-space-force-space-launch-delta-30",
+      "decision": "new-selected-import",
+      "matched_name": "U.S. Space Force / Space Launch Delta 30"
+    },
+    {
+      "import_id": "SOCAL-space-micro",
+      "atlas_id": "SOCAL-space-micro",
+      "decision": "new-selected-import",
+      "matched_name": "Space Micro"
+    },
+    {
+      "import_id": "SOCAL-kratos-defense-security-solutions",
+      "atlas_id": "SOCAL-kratos-defense-security-solutions",
+      "decision": "new-selected-import",
+      "matched_name": "Kratos Defense & Security Solutions"
+    },
+    {
+      "import_id": "OC-063",
+      "atlas_id": "OC-063",
+      "decision": "new-selected-import",
+      "matched_name": "RossMerica Industries LLC"
+    },
+    {
+      "import_id": "OC-067",
+      "atlas_id": "senra-systems",
+      "decision": "merged-existing-authoritative",
+      "matched_name": "Senra Systems"
+    },
+    {
+      "import_id": "OC-077",
+      "atlas_id": "OC-077",
+      "decision": "new-selected-import",
+      "matched_name": "Terran Orbital"
+    },
+    {
+      "import_id": "SOCAL-viasat",
+      "atlas_id": "SOCAL-viasat",
+      "decision": "new-selected-import",
+      "matched_name": "Viasat"
+    },
+    {
+      "import_id": "OC-086",
+      "atlas_id": "OC-086",
+      "decision": "new-selected-import",
+      "matched_name": "West Coast Solutions"
+    },
+    {
+      "import_id": "SOCAL-l3harris-aerojet-rocketdyne",
+      "atlas_id": "SOCAL-l3harris-aerojet-rocketdyne",
+      "decision": "new-selected-import",
+      "matched_name": "L3Harris Aerojet Rocketdyne"
+    },
+    {
+      "import_id": "OC-005",
+      "atlas_id": "advanced-composite-products-technology-acpt",
+      "decision": "merged-existing-authoritative",
+      "matched_name": "Advanced Composite Products & Technology (ACPT)"
+    },
+    {
+      "import_id": "OC-007",
+      "atlas_id": "align-precision",
+      "decision": "merged-existing-authoritative",
+      "matched_name": "ALIGN PRECISION"
+    },
+    {
+      "import_id": "OC-011",
+      "atlas_id": "apex-space-defense",
+      "decision": "merged-existing-authoritative",
+      "matched_name": "APEX Space & Defense"
+    },
+    {
+      "import_id": "OC-014",
+      "atlas_id": "astroforge",
+      "decision": "merged-existing-authoritative",
+      "matched_name": "AstroForge"
+    },
+    {
+      "import_id": "OC-098",
+      "atlas_id": "ducommun",
+      "decision": "merged-existing-authoritative",
+      "matched_name": "Ducommun"
+    },
+    {
+      "import_id": "OC-032",
+      "atlas_id": "OC-032",
+      "decision": "new-selected-import",
+      "matched_name": "Halo Industries"
+    },
+    {
+      "import_id": "OC-039",
+      "atlas_id": "karman-space-defense",
+      "decision": "merged-existing-authoritative",
+      "matched_name": "Karman Space & Defense"
+    },
+    {
+      "import_id": "OC-041",
+      "atlas_id": "OC-041",
+      "decision": "new-selected-import",
+      "matched_name": "Lanic Aerospace"
+    },
+    {
+      "import_id": "SOCAL-malin-space-science-systems",
+      "atlas_id": "SOCAL-malin-space-science-systems",
+      "decision": "new-selected-import",
+      "matched_name": "Malin Space Science Systems"
+    },
+    {
+      "import_id": "OC-050",
+      "atlas_id": "OC-050",
+      "decision": "new-selected-import",
+      "matched_name": "Neon Aero"
+    },
+    {
+      "import_id": "OC-071",
+      "atlas_id": "OC-071",
+      "decision": "new-selected-import",
+      "matched_name": "SQUID3 Space"
+    },
+    {
+      "import_id": "OC-092",
+      "atlas_id": "OC-092",
+      "decision": "new-selected-import",
+      "matched_name": "Thomas Global Systems"
+    },
+    {
+      "import_id": "OC-085",
+      "atlas_id": "OC-085",
+      "decision": "new-selected-import",
+      "matched_name": "Volund Manufacturing"
+    },
+    {
+      "import_id": "SOCAL-abl-space-systems",
+      "atlas_id": "SOCAL-abl-space-systems",
+      "decision": "new-selected-import",
+      "matched_name": "ABL Space Systems"
+    },
+    {
+      "import_id": "SOCAL-apex",
+      "atlas_id": "SOCAL-apex",
+      "decision": "new-selected-import",
+      "matched_name": "Apex"
+    },
+    {
+      "import_id": "SOCAL-apex-space",
+      "atlas_id": "SOCAL-apex-space",
+      "decision": "new-selected-import",
+      "matched_name": "Apex Space"
+    },
+    {
+      "import_id": "SOCAL-k2-space",
+      "atlas_id": "SOCAL-k2-space",
+      "decision": "new-selected-import",
+      "matched_name": "K2 Space"
+    },
+    {
+      "import_id": "SOCAL-kratos-defense",
+      "atlas_id": "SOCAL-kratos-defense",
+      "decision": "new-selected-import",
+      "matched_name": "Kratos Defense"
+    },
+    {
+      "import_id": "OC-013",
+      "atlas_id": "arkisys",
+      "decision": "merged-existing-authoritative",
+      "matched_name": "Arkisys"
+    },
+    {
+      "import_id": "OC-016",
+      "atlas_id": "auriga-space",
+      "decision": "merged-existing-authoritative",
+      "matched_name": "Auriga Space"
+    },
+    {
+      "import_id": "OC-019",
+      "atlas_id": "comtech-space-components-and-antennas",
+      "decision": "merged-existing-authoritative",
+      "matched_name": "Comtech Space Components and Antennas"
+    },
+    {
+      "import_id": "OC-024",
+      "atlas_id": "OC-024",
+      "decision": "new-selected-import",
+      "matched_name": "Elevate Aircraft Seating"
+    },
+    {
+      "import_id": "OC-025",
+      "atlas_id": "OC-025",
+      "decision": "new-selected-import",
+      "matched_name": "EnCore Interiors"
+    },
+    {
+      "import_id": "OC-027",
+      "atlas_id": "exoanalytic-solutions",
+      "decision": "merged-existing-authoritative",
+      "matched_name": "ExoAnalytic Solutions"
+    },
+    {
+      "import_id": "OC-029",
+      "atlas_id": "OC-029",
+      "decision": "new-selected-import",
+      "matched_name": "GKN Aerospace"
+    },
+    {
+      "import_id": "OC-068",
+      "atlas_id": "OC-068",
+      "decision": "new-selected-import",
+      "matched_name": "Soaring Aerospace"
+    },
+    {
+      "import_id": "OC-070",
+      "atlas_id": "OC-070",
+      "decision": "new-selected-import",
+      "matched_name": "Spacedock"
+    },
+    {
+      "import_id": "OC-074",
+      "atlas_id": "OC-074",
+      "decision": "new-selected-import",
+      "matched_name": "Symbolic Displays"
+    },
+    {
+      "import_id": "OC-079",
+      "atlas_id": "OC-079",
+      "decision": "new-selected-import",
+      "matched_name": "TOMI Engineering"
+    },
+    {
+      "import_id": "OC-082",
+      "atlas_id": "OC-082",
+      "decision": "new-selected-import",
+      "matched_name": "Turion Space"
+    },
+    {
+      "import_id": "OC-084",
+      "atlas_id": "OC-084",
+      "decision": "new-selected-import",
+      "matched_name": "Virgin Galactic"
+    },
+    {
+      "import_id": "SOCAL-argo-space",
+      "atlas_id": "SOCAL-argo-space",
+      "decision": "new-selected-import",
+      "matched_name": "Argo Space"
+    },
+    {
+      "import_id": "SOCAL-charter-space",
+      "atlas_id": "SOCAL-charter-space",
+      "decision": "new-selected-import",
+      "matched_name": "Charter Space"
+    },
+    {
+      "import_id": "SOCAL-geooptics",
+      "atlas_id": "SOCAL-geooptics",
+      "decision": "new-selected-import",
+      "matched_name": "GeoOptics"
+    },
+    {
+      "import_id": "SOCAL-impulse-space",
+      "atlas_id": "SOCAL-impulse-space",
+      "decision": "new-selected-import",
+      "matched_name": "Impulse Space"
+    },
+    {
+      "import_id": "SOCAL-rtx",
+      "atlas_id": "SOCAL-rtx",
+      "decision": "new-selected-import",
+      "matched_name": "RTX"
+    },
+    {
+      "import_id": "OC-012",
+      "atlas_id": "OC-012",
+      "decision": "new-selected-import",
+      "matched_name": "Archer Aviation"
+    },
+    {
+      "import_id": "OC-015",
+      "atlas_id": "astronics-test-systems",
+      "decision": "merged-existing-authoritative",
+      "matched_name": "Astronics Test Systems"
+    },
+    {
+      "import_id": "OC-035",
+      "atlas_id": "OC-035",
+      "decision": "new-selected-import",
+      "matched_name": "HopAero"
+    },
+    {
+      "import_id": "OC-093",
+      "atlas_id": "marvin-test-solutions",
+      "decision": "merged-existing-authoritative",
+      "matched_name": "Marvin Test Solutions"
+    },
+    {
+      "import_id": "OC-022",
+      "atlas_id": "OC-022",
+      "decision": "new-selected-import",
+      "matched_name": "Ondas Sentinel / DZYNE Technologies"
+    },
+    {
+      "import_id": "OC-056",
+      "atlas_id": "OC-056",
+      "decision": "new-selected-import",
+      "matched_name": "Overair"
+    },
+    {
+      "import_id": "OC-073",
+      "atlas_id": "OC-073",
+      "decision": "new-selected-import",
+      "matched_name": "Supernal"
+    },
+    {
+      "import_id": "OC-080",
+      "atlas_id": "OC-080",
+      "decision": "new-selected-import",
+      "matched_name": "TRL11"
+    },
+    {
+      "import_id": "SOCAL-astrolab",
+      "atlas_id": "SOCAL-astrolab",
+      "decision": "new-selected-import",
+      "matched_name": "Astrolab"
+    },
+    {
+      "import_id": "SOCAL-gitai",
+      "atlas_id": "SOCAL-gitai",
+      "decision": "new-selected-import",
+      "matched_name": "GITAI"
+    },
+    {
+      "import_id": "SOCAL-inversion-space",
+      "atlas_id": "SOCAL-inversion-space",
+      "decision": "new-selected-import",
+      "matched_name": "Inversion Space"
+    },
+    {
+      "import_id": "OC-030",
+      "atlas_id": "OC-030",
+      "decision": "new-selected-import",
+      "matched_name": "Great Western Grinding"
+    },
+    {
+      "import_id": "OC-058",
+      "atlas_id": "rave-manufacturing",
+      "decision": "merged-existing-authoritative",
+      "matched_name": "RAVE Manufacturing"
+    },
+    {
+      "import_id": "OC-097",
+      "atlas_id": "OC-097",
+      "decision": "new-selected-import",
+      "matched_name": "TTM Technologies"
+    },
+    {
+      "import_id": "OC-004",
+      "atlas_id": "OC-004",
+      "decision": "new-selected-import",
+      "matched_name": "ADDMAN Polymer"
+    },
+    {
+      "import_id": "OC-006",
+      "atlas_id": "airtech-international",
+      "decision": "merged-existing-authoritative",
+      "matched_name": "Airtech International"
+    },
+    {
+      "import_id": "OC-042",
+      "atlas_id": "layup-parts",
+      "decision": "merged-existing-authoritative",
+      "matched_name": "Layup Parts"
+    },
+    {
+      "import_id": "OC-046",
+      "atlas_id": "OC-046",
+      "decision": "new-selected-import",
+      "matched_name": "Menlo Micro"
+    },
+    {
+      "import_id": "OC-047",
+      "atlas_id": "mercury-systems",
+      "decision": "merged-existing-authoritative",
+      "matched_name": "Mercury Systems"
+    },
+    {
+      "import_id": "OC-003",
+      "atlas_id": "OC-003",
+      "decision": "new-selected-import",
+      "matched_name": "Acceliot"
+    },
+    {
+      "import_id": "OC-009",
+      "atlas_id": "OC-009",
+      "decision": "new-selected-import",
+      "matched_name": "Anduril Industries"
+    },
+    {
+      "import_id": "OC-010",
+      "atlas_id": "OC-010",
+      "decision": "new-selected-import",
+      "matched_name": "AONDevices"
+    },
+    {
+      "import_id": "OC-020",
+      "atlas_id": "OC-020",
+      "decision": "new-selected-import",
+      "matched_name": "Design West Technologies"
+    },
+    {
+      "import_id": "OC-037",
+      "atlas_id": "OC-037",
+      "decision": "new-selected-import",
+      "matched_name": "Ibis Industries"
+    },
+    {
+      "import_id": "OC-038",
+      "atlas_id": "OC-038",
+      "decision": "new-selected-import",
+      "matched_name": "InPlay Technologies"
+    },
+    {
+      "import_id": "OC-094",
+      "atlas_id": "intellian-technologies",
+      "decision": "merged-existing-authoritative",
+      "matched_name": "Intellian Technologies"
+    },
+    {
+      "import_id": "OC-044",
+      "atlas_id": "OC-044",
+      "decision": "new-selected-import",
+      "matched_name": "Mach Industries"
+    },
+    {
+      "import_id": "OC-048",
+      "atlas_id": "OC-048",
+      "decision": "new-selected-import",
+      "matched_name": "Mobix Labs"
+    },
+    {
+      "import_id": "OC-049",
+      "atlas_id": "OC-049",
+      "decision": "new-selected-import",
+      "matched_name": "Movandi"
+    },
+    {
+      "import_id": "OC-051",
+      "atlas_id": "OC-051",
+      "decision": "new-selected-import",
+      "matched_name": "Newlight Technologies"
+    },
+    {
+      "import_id": "OC-059",
+      "atlas_id": "OC-059",
+      "decision": "new-selected-import",
+      "matched_name": "Regal Technology Partners"
+    },
+    {
+      "import_id": "OC-066",
+      "atlas_id": "OC-066",
+      "decision": "new-selected-import",
+      "matched_name": "Scientific Applications & Research Associates (SARA)"
+    },
+    {
+      "import_id": "OC-075",
+      "atlas_id": "OC-075",
+      "decision": "new-selected-import",
+      "matched_name": "Syndicus USA / Syndicus Aerospace"
+    },
+    {
+      "import_id": "SOCAL-ahntech",
+      "atlas_id": "SOCAL-ahntech",
+      "decision": "new-selected-import",
+      "matched_name": "AhnTech"
+    },
+    {
+      "import_id": "OC-091",
+      "atlas_id": "OC-091",
+      "decision": "new-selected-import",
+      "matched_name": "indie Semiconductor"
+    },
+    {
+      "import_id": "OC-099",
+      "atlas_id": "OC-099",
+      "decision": "new-selected-import",
+      "matched_name": "Lantronix"
+    },
+    {
+      "import_id": "OC-043",
+      "atlas_id": "OC-043",
+      "decision": "new-selected-import",
+      "matched_name": "Litrinium"
+    },
+    {
+      "import_id": "OC-076",
+      "atlas_id": "OC-076",
+      "decision": "new-selected-import",
+      "matched_name": "Syntiant"
+    },
+    {
+      "import_id": "SOCAL-advanced-test-equipment-corporation-atec",
+      "atlas_id": "SOCAL-advanced-test-equipment-corporation-atec",
+      "decision": "new-selected-import",
+      "matched_name": "Advanced Test Equipment Corporation (ATEC)"
+    },
+    {
+      "import_id": "SOCAL-jet-propulsion-laboratory",
+      "atlas_id": "SOCAL-jet-propulsion-laboratory",
+      "decision": "new-selected-import",
+      "matched_name": "Jet Propulsion Laboratory"
+    },
+    {
+      "import_id": "SOCAL-aevex-aerospace",
+      "atlas_id": "SOCAL-aevex-aerospace",
+      "decision": "new-selected-import",
+      "matched_name": "Aevex Aerospace"
+    },
+    {
+      "import_id": "SOCAL-dart-aerospace",
+      "atlas_id": "SOCAL-dart-aerospace",
+      "decision": "new-selected-import",
+      "matched_name": "Dart Aerospace"
+    },
+    {
+      "import_id": "SOCAL-general-atomics",
+      "atlas_id": "SOCAL-general-atomics",
+      "decision": "new-selected-import",
+      "matched_name": "General Atomics"
+    },
+    {
+      "import_id": "SOCAL-space-systems-command",
+      "atlas_id": "SOCAL-space-systems-command",
+      "decision": "new-selected-import",
+      "matched_name": "Space Systems Command"
+    },
+    {
+      "import_id": "SOCAL-spacewerx",
+      "atlas_id": "SOCAL-spacewerx",
+      "decision": "new-selected-import",
+      "matched_name": "SpaceWERX"
+    },
+    {
+      "import_id": "SOCAL-the-aerospace-corporation",
+      "atlas_id": "SOCAL-the-aerospace-corporation",
+      "decision": "new-selected-import",
+      "matched_name": "The Aerospace Corporation"
+    },
+    {
+      "import_id": "SOCAL-divergent-technologies",
+      "atlas_id": "SOCAL-divergent-technologies",
+      "decision": "new-selected-import",
+      "matched_name": "Divergent Technologies"
+    },
+    {
+      "import_id": "SOCAL-auron-solutions",
+      "atlas_id": "SOCAL-auron-solutions",
+      "decision": "new-selected-import",
+      "matched_name": "Auron Solutions"
+    },
+    {
+      "import_id": "SOCAL-micro-quality-calibration-inc",
+      "atlas_id": "SOCAL-micro-quality-calibration-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Micro Quality Calibration, Inc."
+    },
+    {
+      "import_id": "SOCAL-terra-universal-inc",
+      "atlas_id": "SOCAL-terra-universal-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Terra Universal, Inc."
+    },
+    {
+      "import_id": "SOCAL-all-purpose-mfg-inc",
+      "atlas_id": "SOCAL-all-purpose-mfg-inc",
+      "decision": "new-selected-import",
+      "matched_name": "All Purpose Mfg. Inc."
+    },
+    {
+      "import_id": "SOCAL-green-prototype-services-inc",
+      "atlas_id": "SOCAL-green-prototype-services-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Green Prototype Services, Inc."
+    },
+    {
+      "import_id": "SOCAL-outsource-electronics-manufacturing-inc",
+      "atlas_id": "SOCAL-outsource-electronics-manufacturing-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Outsource Electronics Manufacturing Inc"
+    },
+    {
+      "import_id": "SOCAL-versatech-precision-inc",
+      "atlas_id": "SOCAL-versatech-precision-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Versatech Precision, Inc."
+    },
+    {
+      "import_id": "SOCAL-veterans-manufacturing-llc",
+      "atlas_id": "SOCAL-veterans-manufacturing-llc",
+      "decision": "new-selected-import",
+      "matched_name": "Veterans Manufacturing, LLC"
+    },
+    {
+      "import_id": "SOCAL-andersen-industries-inc",
+      "atlas_id": "SOCAL-andersen-industries-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Andersen Industries, Inc."
+    },
+    {
+      "import_id": "SOCAL-bmt-aerospace",
+      "atlas_id": "SOCAL-bmt-aerospace",
+      "decision": "new-selected-import",
+      "matched_name": "BMT Aerospace"
+    },
+    {
+      "import_id": "SOCAL-modus-advanced-inc",
+      "atlas_id": "SOCAL-modus-advanced-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Modus Advanced, Inc."
+    },
+    {
+      "import_id": "SOCAL-salsa-prototype-specialties",
+      "atlas_id": "SOCAL-salsa-prototype-specialties",
+      "decision": "new-selected-import",
+      "matched_name": "Salsa Prototype Specialties"
+    },
+    {
+      "import_id": "SOCAL-superior-metal-shapes-inc",
+      "atlas_id": "SOCAL-superior-metal-shapes-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Superior Metal Shapes, Inc."
+    },
+    {
+      "import_id": "SOCAL-trupart-manufacturing-inc",
+      "atlas_id": "SOCAL-trupart-manufacturing-inc",
+      "decision": "new-selected-import",
+      "matched_name": "TruPart Manufacturing, Inc."
+    },
+    {
+      "import_id": "SOCAL-helical-machining-inc",
+      "atlas_id": "SOCAL-helical-machining-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Helical Machining, Inc."
+    },
+    {
+      "import_id": "SOCAL-laser-industries-inc",
+      "atlas_id": "SOCAL-laser-industries-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Laser Industries Inc"
+    },
+    {
+      "import_id": "SOCAL-aluminum-die-casting-co-inc",
+      "atlas_id": "SOCAL-aluminum-die-casting-co-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Aluminum Die Casting Co, Inc."
+    },
+    {
+      "import_id": "SOCAL-american-bright-optoelectronics-corp",
+      "atlas_id": "SOCAL-american-bright-optoelectronics-corp",
+      "decision": "new-selected-import",
+      "matched_name": "American Bright Optoelectronics Corp."
+    },
+    {
+      "import_id": "SOCAL-american-precision-consulting-llc",
+      "atlas_id": "SOCAL-american-precision-consulting-llc",
+      "decision": "new-selected-import",
+      "matched_name": "American Precision Consulting LLC."
+    },
+    {
+      "import_id": "SOCAL-c-m-machine-inc",
+      "atlas_id": "SOCAL-c-m-machine-inc",
+      "decision": "new-selected-import",
+      "matched_name": "C M MACHINE INC"
+    },
+    {
+      "import_id": "SOCAL-cal-draulics-inc",
+      "atlas_id": "SOCAL-cal-draulics-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Cal-Draulics, Inc."
+    },
+    {
+      "import_id": "SOCAL-circor-aerospace-inc",
+      "atlas_id": "SOCAL-circor-aerospace-inc",
+      "decision": "new-selected-import",
+      "matched_name": "CIRCOR Aerospace, Inc."
+    },
+    {
+      "import_id": "SOCAL-dangar-engineering-and-manufacturing-inc",
+      "atlas_id": "SOCAL-dangar-engineering-and-manufacturing-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Dangar Engineering and Manufacturing Inc."
+    },
+    {
+      "import_id": "SOCAL-dieform-llc",
+      "atlas_id": "SOCAL-dieform-llc",
+      "decision": "new-selected-import",
+      "matched_name": "Dieform, LLC"
+    },
+    {
+      "import_id": "SOCAL-fabric8labs-inc",
+      "atlas_id": "SOCAL-fabric8labs-inc",
+      "decision": "new-selected-import",
+      "matched_name": "FABRIC8LABS, INC"
+    },
+    {
+      "import_id": "SOCAL-g-v-industries-inc",
+      "atlas_id": "SOCAL-g-v-industries-inc",
+      "decision": "new-selected-import",
+      "matched_name": "G. V. Industries, Inc."
+    },
+    {
+      "import_id": "SOCAL-innoflight",
+      "atlas_id": "SOCAL-innoflight",
+      "decision": "new-selected-import",
+      "matched_name": "Innoflight"
+    },
+    {
+      "import_id": "SOCAL-ipa-werks-llc",
+      "atlas_id": "SOCAL-ipa-werks-llc",
+      "decision": "new-selected-import",
+      "matched_name": "IPA Werks LLC"
+    },
+    {
+      "import_id": "SOCAL-landmark-manufacturing",
+      "atlas_id": "SOCAL-landmark-manufacturing",
+      "decision": "new-selected-import",
+      "matched_name": "Landmark Manufacturing"
+    },
+    {
+      "import_id": "SOCAL-mer-mar-electronics",
+      "atlas_id": "SOCAL-mer-mar-electronics",
+      "decision": "new-selected-import",
+      "matched_name": "Mer-Mar Electronics"
+    },
+    {
+      "import_id": "SOCAL-mgm-manufacturing-alliance-corp",
+      "atlas_id": "SOCAL-mgm-manufacturing-alliance-corp",
+      "decision": "new-selected-import",
+      "matched_name": "MGM Manufacturing Alliance Corp."
+    },
+    {
+      "import_id": "SOCAL-omni-engineering-inc",
+      "atlas_id": "SOCAL-omni-engineering-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Omni Engineering, Inc."
+    },
+    {
+      "import_id": "SOCAL-rache-corp",
+      "atlas_id": "SOCAL-rache-corp",
+      "decision": "new-selected-import",
+      "matched_name": "Rache Corp."
+    },
+    {
+      "import_id": "SOCAL-rickard-specialty-metals-engineering",
+      "atlas_id": "SOCAL-rickard-specialty-metals-engineering",
+      "decision": "new-selected-import",
+      "matched_name": "Rickard Specialty Metals & Engineering"
+    },
+    {
+      "import_id": "SOCAL-s-h-glenco-manufacturing-llc",
+      "atlas_id": "SOCAL-s-h-glenco-manufacturing-llc",
+      "decision": "new-selected-import",
+      "matched_name": "S & H Glenco Manufacturing, LLC"
+    },
+    {
+      "import_id": "SOCAL-vaniman-manufacturing-co",
+      "atlas_id": "SOCAL-vaniman-manufacturing-co",
+      "decision": "new-selected-import",
+      "matched_name": "Vaniman Manufacturing Co."
+    },
+    {
+      "import_id": "SOCAL-westech-products",
+      "atlas_id": "SOCAL-westech-products",
+      "decision": "new-selected-import",
+      "matched_name": "Westech Products"
+    },
+    {
+      "import_id": "SOCAL-3d-cam",
+      "atlas_id": "SOCAL-3d-cam",
+      "decision": "new-selected-import",
+      "matched_name": "3D-CAM"
+    },
+    {
+      "import_id": "SOCAL-abaca-mfg",
+      "atlas_id": "SOCAL-abaca-mfg",
+      "decision": "new-selected-import",
+      "matched_name": "Abaca MFG"
+    },
+    {
+      "import_id": "SOCAL-abc-sheet-metal",
+      "atlas_id": "SOCAL-abc-sheet-metal",
+      "decision": "new-selected-import",
+      "matched_name": "ABC Sheet Metal"
+    },
+    {
+      "import_id": "SOCAL-all-ways-metal-inc",
+      "atlas_id": "SOCAL-all-ways-metal-inc",
+      "decision": "new-selected-import",
+      "matched_name": "All-Ways Metal, Inc."
+    },
+    {
+      "import_id": "SOCAL-amtec",
+      "atlas_id": "SOCAL-amtec",
+      "decision": "new-selected-import",
+      "matched_name": "AMTEC"
+    },
+    {
+      "import_id": "SOCAL-id-group-inc",
+      "atlas_id": "SOCAL-id-group-inc",
+      "decision": "new-selected-import",
+      "matched_name": "ID Group inc."
+    },
+    {
+      "import_id": "SOCAL-pendarvis-manufacturing",
+      "atlas_id": "SOCAL-pendarvis-manufacturing",
+      "decision": "new-selected-import",
+      "matched_name": "Pendarvis Manufacturing"
+    },
+    {
+      "import_id": "SOCAL-reinhold-industries",
+      "atlas_id": "SOCAL-reinhold-industries",
+      "decision": "new-selected-import",
+      "matched_name": "Reinhold Industries"
+    },
+    {
+      "import_id": "SOCAL-3d-tek-cnc-inc",
+      "atlas_id": "SOCAL-3d-tek-cnc-inc",
+      "decision": "new-selected-import",
+      "matched_name": "3D TEK CNC INC."
+    },
+    {
+      "import_id": "SOCAL-abrisa-industrial-glass-abrisa-technologies",
+      "atlas_id": "SOCAL-abrisa-industrial-glass-abrisa-technologies",
+      "decision": "new-selected-import",
+      "matched_name": "Abrisa Industrial Glass/Abrisa Technologies"
+    },
+    {
+      "import_id": "SOCAL-blue-sky-network",
+      "atlas_id": "SOCAL-blue-sky-network",
+      "decision": "new-selected-import",
+      "matched_name": "Blue Sky Network"
+    },
+    {
+      "import_id": "SOCAL-c-m-spring-engineering-co-inc",
+      "atlas_id": "SOCAL-c-m-spring-engineering-co-inc",
+      "decision": "new-selected-import",
+      "matched_name": "C & M Spring Engineering Co Inc."
+    },
+    {
+      "import_id": "SOCAL-coastline-international",
+      "atlas_id": "SOCAL-coastline-international",
+      "decision": "new-selected-import",
+      "matched_name": "Coastline International"
+    },
+    {
+      "import_id": "SOCAL-coc-aerospace",
+      "atlas_id": "SOCAL-coc-aerospace",
+      "decision": "new-selected-import",
+      "matched_name": "COC Aerospace"
+    },
+    {
+      "import_id": "SOCAL-collins-aerospace",
+      "atlas_id": "SOCAL-collins-aerospace",
+      "decision": "new-selected-import",
+      "matched_name": "Collins Aerospace"
+    },
+    {
+      "import_id": "SOCAL-dye-precision-cnc-inc",
+      "atlas_id": "SOCAL-dye-precision-cnc-inc",
+      "decision": "new-selected-import",
+      "matched_name": "DYE PRECISION CNC, INC."
+    },
+    {
+      "import_id": "SOCAL-g-m-enterprises",
+      "atlas_id": "SOCAL-g-m-enterprises",
+      "decision": "new-selected-import",
+      "matched_name": "G-M Enterprises"
+    },
+    {
+      "import_id": "SOCAL-hi-rel-plastics-molding",
+      "atlas_id": "SOCAL-hi-rel-plastics-molding",
+      "decision": "new-selected-import",
+      "matched_name": "Hi Rel Plastics & Molding"
+    },
+    {
+      "import_id": "SOCAL-ktts",
+      "atlas_id": "SOCAL-ktts",
+      "decision": "new-selected-import",
+      "matched_name": "KTTS"
+    },
+    {
+      "import_id": "SOCAL-laminated-shim-co-inc",
+      "atlas_id": "SOCAL-laminated-shim-co-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Laminated Shim Co., Inc."
+    },
+    {
+      "import_id": "SOCAL-nikkiso-america",
+      "atlas_id": "SOCAL-nikkiso-america",
+      "decision": "new-selected-import",
+      "matched_name": "Nikkiso America"
+    },
+    {
+      "import_id": "SOCAL-nitrex-metal-inc",
+      "atlas_id": "SOCAL-nitrex-metal-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Nitrex Metal, Inc."
+    },
+    {
+      "import_id": "SOCAL-paramount-roll-forming-inc",
+      "atlas_id": "SOCAL-paramount-roll-forming-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Paramount Roll & Forming, Inc."
+    },
+    {
+      "import_id": "SOCAL-quartus-engineering",
+      "atlas_id": "SOCAL-quartus-engineering",
+      "decision": "new-selected-import",
+      "matched_name": "Quartus Engineering"
+    },
+    {
+      "import_id": "SOCAL-savage-machining-inc",
+      "atlas_id": "SOCAL-savage-machining-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Savage Machining Inc"
+    },
+    {
+      "import_id": "SOCAL-sungear-inc",
+      "atlas_id": "SOCAL-sungear-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Sungear Inc."
+    },
+    {
+      "import_id": "SOCAL-superlok-usa",
+      "atlas_id": "SOCAL-superlok-usa",
+      "decision": "new-selected-import",
+      "matched_name": "SUPERLOK USA"
+    },
+    {
+      "import_id": "SOCAL-tacna-services",
+      "atlas_id": "SOCAL-tacna-services",
+      "decision": "new-selected-import",
+      "matched_name": "TACNA Services"
+    },
+    {
+      "import_id": "SOCAL-thin-metal-sales-inc",
+      "atlas_id": "SOCAL-thin-metal-sales-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Thin Metal Sales, Inc."
+    },
+    {
+      "import_id": "SOCAL-vlach-industries-inc",
+      "atlas_id": "SOCAL-vlach-industries-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Vlach Industries, Inc"
+    },
+    {
+      "import_id": "SOCAL-andrews-hi-tec-corporation",
+      "atlas_id": "SOCAL-andrews-hi-tec-corporation",
+      "decision": "new-selected-import",
+      "matched_name": "Andrews Hi-Tec Corporation"
+    },
+    {
+      "import_id": "SOCAL-beartech-alloys-inc",
+      "atlas_id": "SOCAL-beartech-alloys-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Beartech Alloys, Inc."
+    },
+    {
+      "import_id": "SOCAL-cemcoat-inc",
+      "atlas_id": "SOCAL-cemcoat-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Cemcoat, Inc."
+    },
+    {
+      "import_id": "SOCAL-delta-hi-tech",
+      "atlas_id": "SOCAL-delta-hi-tech",
+      "decision": "new-selected-import",
+      "matched_name": "Delta Hi-Tech"
+    },
+    {
+      "import_id": "SOCAL-electronic-balancing-co",
+      "atlas_id": "SOCAL-electronic-balancing-co",
+      "decision": "new-selected-import",
+      "matched_name": "Electronic Balancing Co."
+    },
+    {
+      "import_id": "SOCAL-fabcon-inc",
+      "atlas_id": "SOCAL-fabcon-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Fabcon, Inc."
+    },
+    {
+      "import_id": "SOCAL-hadrian",
+      "atlas_id": "SOCAL-hadrian",
+      "decision": "new-selected-import",
+      "matched_name": "Hadrian"
+    },
+    {
+      "import_id": "SOCAL-kenwalt-die-casting-co",
+      "atlas_id": "SOCAL-kenwalt-die-casting-co",
+      "decision": "new-selected-import",
+      "matched_name": "KenWalt Die Casting Co."
+    },
+    {
+      "import_id": "SOCAL-leading-edge-metals-alloys-inc",
+      "atlas_id": "SOCAL-leading-edge-metals-alloys-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Leading Edge Metals & Alloys, Inc."
+    },
+    {
+      "import_id": "SOCAL-luxon-engineering",
+      "atlas_id": "SOCAL-luxon-engineering",
+      "decision": "new-selected-import",
+      "matched_name": "Luxon Engineering"
+    },
+    {
+      "import_id": "SOCAL-milco-wire-edm",
+      "atlas_id": "SOCAL-milco-wire-edm",
+      "decision": "new-selected-import",
+      "matched_name": "Milco Wire EDM"
+    },
+    {
+      "import_id": "SOCAL-neo-tech",
+      "atlas_id": "SOCAL-neo-tech",
+      "decision": "new-selected-import",
+      "matched_name": "NEO Tech"
+    },
+    {
+      "import_id": "SOCAL-precision-machining-fab",
+      "atlas_id": "SOCAL-precision-machining-fab",
+      "decision": "new-selected-import",
+      "matched_name": "Precision Machining & Fab"
+    },
+    {
+      "import_id": "SOCAL-precision-waterjet-laser",
+      "atlas_id": "SOCAL-precision-waterjet-laser",
+      "decision": "new-selected-import",
+      "matched_name": "Precision Waterjet & Laser"
+    },
+    {
+      "import_id": "SOCAL-prime-plating-inc",
+      "atlas_id": "SOCAL-prime-plating-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Prime Plating, Inc."
+    },
+    {
+      "import_id": "SOCAL-verdugo-tool-engineering-co-inc",
+      "atlas_id": "SOCAL-verdugo-tool-engineering-co-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Verdugo Tool & Engineering Co., Inc."
+    },
+    {
+      "import_id": "SOCAL-west-coast-machining-inc",
+      "atlas_id": "SOCAL-west-coast-machining-inc",
+      "decision": "new-selected-import",
+      "matched_name": "West Coast Machining, Inc."
+    },
+    {
+      "import_id": "SOCAL-ata-engineering",
+      "atlas_id": "SOCAL-ata-engineering",
+      "decision": "new-selected-import",
+      "matched_name": "ATA Engineering"
+    },
+    {
+      "import_id": "SOCAL-flowmetrics",
+      "atlas_id": "SOCAL-flowmetrics",
+      "decision": "new-selected-import",
+      "matched_name": "Flowmetrics"
+    },
+    {
+      "import_id": "SOCAL-laube-titanium-mill-products",
+      "atlas_id": "SOCAL-laube-titanium-mill-products",
+      "decision": "new-selected-import",
+      "matched_name": "Laube Titanium Mill Products"
+    },
+    {
+      "import_id": "SOCAL-nubs-plastics-inc",
+      "atlas_id": "SOCAL-nubs-plastics-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Nubs Plastics, Inc."
+    },
+    {
+      "import_id": "SOCAL-plastics-research-corporation",
+      "atlas_id": "SOCAL-plastics-research-corporation",
+      "decision": "new-selected-import",
+      "matched_name": "Plastics Research Corporation"
+    },
+    {
+      "import_id": "SOCAL-qual-diamond-hi-tech-corp",
+      "atlas_id": "SOCAL-qual-diamond-hi-tech-corp",
+      "decision": "new-selected-import",
+      "matched_name": "Qual Diamond Hi-Tech Corp."
+    },
+    {
+      "import_id": "SOCAL-3h-communication-systems",
+      "atlas_id": "SOCAL-3h-communication-systems",
+      "decision": "new-selected-import",
+      "matched_name": "3H Communication Systems"
+    },
+    {
+      "import_id": "SOCAL-accu-sembly-inc",
+      "atlas_id": "SOCAL-accu-sembly-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Accu-Sembly, Inc."
+    },
+    {
+      "import_id": "SOCAL-aircraft-foundry-co-inc",
+      "atlas_id": "SOCAL-aircraft-foundry-co-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Aircraft Foundry Co., Inc."
+    },
+    {
+      "import_id": "SOCAL-almex-usa-inc",
+      "atlas_id": "SOCAL-almex-usa-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Almex USA, Inc."
+    },
+    {
+      "import_id": "SOCAL-b-e-ent",
+      "atlas_id": "SOCAL-b-e-ent",
+      "decision": "new-selected-import",
+      "matched_name": "B&E ENT"
+    },
+    {
+      "import_id": "SOCAL-binder-metal-products-inc",
+      "atlas_id": "SOCAL-binder-metal-products-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Binder Metal Products, Inc."
+    },
+    {
+      "import_id": "SOCAL-california-nanotechnologies",
+      "atlas_id": "SOCAL-california-nanotechnologies",
+      "decision": "new-selected-import",
+      "matched_name": "California Nanotechnologies"
+    },
+    {
+      "import_id": "SOCAL-california-sealing-solutions",
+      "atlas_id": "SOCAL-california-sealing-solutions",
+      "decision": "new-selected-import",
+      "matched_name": "California Sealing Solutions"
+    },
+    {
+      "import_id": "SOCAL-chromal-plating-co",
+      "atlas_id": "SOCAL-chromal-plating-co",
+      "decision": "new-selected-import",
+      "matched_name": "Chromal Plating Co."
+    },
+    {
+      "import_id": "SOCAL-clarke-gear-co-clarke-engineering-inc",
+      "atlas_id": "SOCAL-clarke-gear-co-clarke-engineering-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Clarke Gear Co. (Clarke Engineering Inc.)"
+    },
+    {
+      "import_id": "SOCAL-consolidated-precision-products",
+      "atlas_id": "SOCAL-consolidated-precision-products",
+      "decision": "new-selected-import",
+      "matched_name": "Consolidated Precision Products"
+    },
+    {
+      "import_id": "SOCAL-corsair-electrical-connectors-inc",
+      "atlas_id": "SOCAL-corsair-electrical-connectors-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Corsair Electrical Connectors, Inc."
+    },
+    {
+      "import_id": "SOCAL-delafield-corp",
+      "atlas_id": "SOCAL-delafield-corp",
+      "decision": "new-selected-import",
+      "matched_name": "Delafield Corp."
+    },
+    {
+      "import_id": "SOCAL-dynamo-aviation-usa-inc",
+      "atlas_id": "SOCAL-dynamo-aviation-usa-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Dynamo Aviation (USA) Inc."
+    },
+    {
+      "import_id": "SOCAL-electron-beam-industries-inc",
+      "atlas_id": "SOCAL-electron-beam-industries-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Electron Beam Industries, Inc."
+    },
+    {
+      "import_id": "SOCAL-excello-circuits-inc",
+      "atlas_id": "SOCAL-excello-circuits-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Excello Circuits, Inc."
+    },
+    {
+      "import_id": "SOCAL-fordon-grind-industries-inc",
+      "atlas_id": "SOCAL-fordon-grind-industries-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Fordon Grind Industries, Inc."
+    },
+    {
+      "import_id": "SOCAL-fs-precision-tech",
+      "atlas_id": "SOCAL-fs-precision-tech",
+      "decision": "new-selected-import",
+      "matched_name": "FS Precision Tech."
+    },
+    {
+      "import_id": "SOCAL-gardena-specialized-processing",
+      "atlas_id": "SOCAL-gardena-specialized-processing",
+      "decision": "new-selected-import",
+      "matched_name": "Gardena Specialized Processing"
+    },
+    {
+      "import_id": "SOCAL-gear-manufacturing-inc",
+      "atlas_id": "SOCAL-gear-manufacturing-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Gear Manufacturing, Inc."
+    },
+    {
+      "import_id": "SOCAL-geoform-inc-precision-measurement-laboratories",
+      "atlas_id": "SOCAL-geoform-inc-precision-measurement-laboratories",
+      "decision": "new-selected-import",
+      "matched_name": "Geoform, Inc. - Precision Measurement Laboratories"
+    },
+    {
+      "import_id": "SOCAL-golden-state-magnetic-penetrant-lab-inc",
+      "atlas_id": "SOCAL-golden-state-magnetic-penetrant-lab-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Golden State Magnetic & Penetrant Lab, Inc."
+    },
+    {
+      "import_id": "SOCAL-hirel-connectors-inc",
+      "atlas_id": "SOCAL-hirel-connectors-inc",
+      "decision": "new-selected-import",
+      "matched_name": "HiRel Connectors, Inc."
+    },
+    {
+      "import_id": "SOCAL-k-l-anodizing-corp",
+      "atlas_id": "SOCAL-k-l-anodizing-corp",
+      "decision": "new-selected-import",
+      "matched_name": "K & L Anodizing Corp."
+    },
+    {
+      "import_id": "SOCAL-mie-solutions",
+      "atlas_id": "SOCAL-mie-solutions",
+      "decision": "new-selected-import",
+      "matched_name": "MIE Solutions"
+    },
+    {
+      "import_id": "SOCAL-novus-autonomous-systems-llc",
+      "atlas_id": "SOCAL-novus-autonomous-systems-llc",
+      "decision": "new-selected-import",
+      "matched_name": "Novus Autonomous Systems LLC"
+    },
+    {
+      "import_id": "SOCAL-pacific-magnetic-penetrant-co-inc",
+      "atlas_id": "SOCAL-pacific-magnetic-penetrant-co-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Pacific Magnetic & Penetrant Co. Inc."
+    },
+    {
+      "import_id": "SOCAL-paragon-steel",
+      "atlas_id": "SOCAL-paragon-steel",
+      "decision": "new-selected-import",
+      "matched_name": "Paragon Steel"
+    },
+    {
+      "import_id": "SOCAL-proponent",
+      "atlas_id": "SOCAL-proponent",
+      "decision": "new-selected-import",
+      "matched_name": "Proponent"
+    },
+    {
+      "import_id": "SOCAL-qual-pro-corporation",
+      "atlas_id": "SOCAL-qual-pro-corporation",
+      "decision": "new-selected-import",
+      "matched_name": "Qual-Pro Corporation"
+    },
+    {
+      "import_id": "SOCAL-seurat-technologies",
+      "atlas_id": "SOCAL-seurat-technologies",
+      "decision": "new-selected-import",
+      "matched_name": "Seurat Technologies"
+    },
+    {
+      "import_id": "SOCAL-spectrum-chemical-mfg-corp",
+      "atlas_id": "SOCAL-spectrum-chemical-mfg-corp",
+      "decision": "new-selected-import",
+      "matched_name": "Spectrum Chemical Mfg. Corp."
+    },
+    {
+      "import_id": "SOCAL-spfx-unlimited",
+      "atlas_id": "SOCAL-spfx-unlimited",
+      "decision": "new-selected-import",
+      "matched_name": "SPFX Unlimited"
+    },
+    {
+      "import_id": "SOCAL-thermal-equipment-corporation",
+      "atlas_id": "SOCAL-thermal-equipment-corporation",
+      "decision": "new-selected-import",
+      "matched_name": "Thermal Equipment Corporation"
+    },
+    {
+      "import_id": "SOCAL-wire-pro-edm-technologies-inc",
+      "atlas_id": "SOCAL-wire-pro-edm-technologies-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Wire Pro EDM Technologies, Inc."
+    },
+    {
+      "import_id": "SOCAL-accurate-dial-nameplate-inc",
+      "atlas_id": "SOCAL-accurate-dial-nameplate-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Accurate Dial & Nameplate, Inc."
+    },
+    {
+      "import_id": "SOCAL-accurate-plating",
+      "atlas_id": "SOCAL-accurate-plating",
+      "decision": "new-selected-import",
+      "matched_name": "Accurate Plating"
+    },
+    {
+      "import_id": "SOCAL-airborne-systems-north-america-of-ca",
+      "atlas_id": "SOCAL-airborne-systems-north-america-of-ca",
+      "decision": "new-selected-import",
+      "matched_name": "Airborne Systems North America of CA"
+    },
+    {
+      "import_id": "SOCAL-alexander-s-precision-machining",
+      "atlas_id": "SOCAL-alexander-s-precision-machining",
+      "decision": "new-selected-import",
+      "matched_name": "Alexander's Precision Machining"
+    },
+    {
+      "import_id": "SOCAL-alpha-omega-swiss-inc",
+      "atlas_id": "SOCAL-alpha-omega-swiss-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Alpha Omega Swiss, Inc."
+    },
+    {
+      "import_id": "SOCAL-amca",
+      "atlas_id": "SOCAL-amca",
+      "decision": "new-selected-import",
+      "matched_name": "Amca"
+    },
+    {
+      "import_id": "SOCAL-anysignal",
+      "atlas_id": "SOCAL-anysignal",
+      "decision": "new-selected-import",
+      "matched_name": "AnySignal"
+    },
+    {
+      "import_id": "SOCAL-argo-spring-mfg-co-inc",
+      "atlas_id": "SOCAL-argo-spring-mfg-co-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Argo Spring Mfg Co Inc"
+    },
+    {
+      "import_id": "SOCAL-astro-tek-industries-inc",
+      "atlas_id": "SOCAL-astro-tek-industries-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Astro-Tek Industries, Inc."
+    },
+    {
+      "import_id": "SOCAL-baker-furnace",
+      "atlas_id": "SOCAL-baker-furnace",
+      "decision": "new-selected-import",
+      "matched_name": "Baker Furnace"
+    },
+    {
+      "import_id": "SOCAL-beartech-mfg-llc",
+      "atlas_id": "SOCAL-beartech-mfg-llc",
+      "decision": "new-selected-import",
+      "matched_name": "Beartech MFG, LLC"
+    },
+    {
+      "import_id": "SOCAL-bob-martin-co",
+      "atlas_id": "SOCAL-bob-martin-co",
+      "decision": "new-selected-import",
+      "matched_name": "Bob Martin Co."
+    },
+    {
+      "import_id": "SOCAL-california-screw-products-corp",
+      "atlas_id": "SOCAL-california-screw-products-corp",
+      "decision": "new-selected-import",
+      "matched_name": "California Screw Products Corp."
+    },
+    {
+      "import_id": "SOCAL-castem-technology-laboratories-inc",
+      "atlas_id": "SOCAL-castem-technology-laboratories-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Castem Technology Laboratories, Inc"
+    },
+    {
+      "import_id": "SOCAL-connector-contacts-inc",
+      "atlas_id": "SOCAL-connector-contacts-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Connector Contacts, Inc."
+    },
+    {
+      "import_id": "SOCAL-custom-alloy-sales-inc",
+      "atlas_id": "SOCAL-custom-alloy-sales-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Custom Alloy Sales, Inc."
+    },
+    {
+      "import_id": "SOCAL-delkin-devices-inc",
+      "atlas_id": "SOCAL-delkin-devices-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Delkin Devices, Inc."
+    },
+    {
+      "import_id": "SOCAL-dix-metals-inc",
+      "atlas_id": "SOCAL-dix-metals-inc",
+      "decision": "new-selected-import",
+      "matched_name": "DIX Metals, Inc."
+    },
+    {
+      "import_id": "SOCAL-electrolurgy-inc",
+      "atlas_id": "SOCAL-electrolurgy-inc",
+      "decision": "new-selected-import",
+      "matched_name": "Electrolurgy Inc."
+    },
+    {
+      "import_id": "SOCAL-esm-aerospace-inc",
+      "atlas_id": "SOCAL-esm-aerospace-inc",
+      "decision": "new-selected-import",
+      "matched_name": "ESM Aerospace, Inc."
+    },
+    {
+      "import_id": "SOCAL-fxc-corp",
+      "atlas_id": "SOCAL-fxc-corp",
+      "decision": "new-selected-import",
+      "matched_name": "FXC Corp."
+    }
+  ]
+}

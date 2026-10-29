@@ -27,21 +27,25 @@ def ask(question, **extra):
 def test_health_and_data_contract():
     health = client.get("/healthz")
     assert health.status_code == 200
-    assert health.json()["version"] == "0.6.0"
+    assert health.json()["version"] == "0.7.0"
     assert "anthropic_configured" in health.json()
     assert "openai_configured" not in health.json()
     data = client.get("/api/data").json()
-    assert len(data["companies"]) >= 18
+    assert len(data["companies"]) == 250
     assert len(data["processes"]) >= 14
     assert len(data["programs"]) == 7
-    assert len([f for f in data["facilities"] if f.get("verification_status")]) >= 3
+    assert len([f for f in data["facilities"] if f.get("verification_status")]) == 20
+    assert {c["county"] for c in data["companies"]} == {
+        "Los Angeles", "Orange", "San Diego", "Ventura", "Riverside", "San Bernardino", "Santa Barbara"
+    }
 
 
 def test_homepage_is_compact_and_suggested_queries_precede_map():
     html = client.get("/").text
     assert "<h1" not in html and "hero-copy" not in html
-    assert html.count('class="prompt"') == 5
+    assert html.count('class="prompt"') >= 5
     assert "Where can I find SpaceWERX or SBIR opportunities?" in html
+    assert "county-filter" in html and "evidence-filter" in html and "leaflet.markercluster" in html
     assert html.index('id="ask"') < html.index('id="map-section"') < html.index('id="process-section"')
 
 
@@ -61,9 +65,31 @@ def test_composite_question_filters_registry_without_asserting_supplier_relation
     payload = ask("Who manufactures aerospace composites around Los Angeles?")
     assert payload["mode"] == "deterministic-registry"
     assert payload["organization_ids"]
-    assert any("Composite" in c["label"] or "Airtech" in c["label"] for c in payload["citations"])
-    assert "not verified supplier relationships" in payload["answer_text"]
+    by_id = {row["id"]: row for row in main.DATA["companies"]}
+    assert any("composite" in " ".join(by_id[org_id]["capabilities"]).lower() for org_id in payload["organization_ids"])
+    assert "none of these results establishes a supplier relationship" in payload["answer_text"]
     assert any(a["action"] == "filter_organizations" for a in payload["suggested_actions"])
+
+
+def test_large_directory_builder_queries_are_deterministic_and_evidence_bounded():
+    machining = ask("Find precision machining suppliers in Orange County")
+    assert machining["mode"] == "deterministic-registry"
+    assert machining["organization_ids"]
+    assert "preliminary candidates" in machining["answer_text"]
+    rf = ask("Which companies manufacture RF components?")
+    assert rf["organization_ids"] and rf["citations"]
+    san_diego = ask("Show me industrial suppliers in San Diego County")
+    assert san_diego["organization_ids"]
+    assert all(org_id in main.ORGANIZATION_IDS for org_id in san_diego["organization_ids"])
+
+
+def test_import_reconciliation_and_evidence_tiers():
+    records = main.DATA["companies"]
+    assert len(records) == len({row["id"] for row in records}) == 250
+    assert sum(row["evidence_status"] == "official_current" for row in records) == 17
+    assert sum(row["evidence_status"] == "curated_2026_source_snapshot" for row in records) == 63
+    assert sum(row["evidence_status"] == "secondary_index_requires_primary_verification" for row in records) == 170
+    assert all(row["source_urls"] and row["unknowns"] for row in records)
 
 
 def test_assembly_to_launch_question_selects_complete_relevant_path():
@@ -121,19 +147,19 @@ def test_backend_removes_unrecognized_ids_actions_and_citations():
             {"label": "NASA", "url": main.SOURCES["nasa-verification"]["url"], "evidence_classification": "conceptual"},
             {"label": "Injected", "url": "https://malicious.invalid", "evidence_classification": "observed"},
         ],
-        "organization_ids": ["nasa-jpl", "invented-org"],
+        "organization_ids": ["SOCAL-jet-propulsion-laboratory", "invented-org"],
         "facility_ids": ["jpl-25ft", "invented-facility"],
         "process_ids": ["integration", "invented-process"],
         "program_ids": ["spacewerx-sbir-sttr", "invented-program"],
         "suggested_actions": [
-            {"action": "highlight_facilities", "label": "Show", "target_ids": ["jpl-25ft", "nasa-jpl", "invented"]},
+            {"action": "highlight_facilities", "label": "Show", "target_ids": ["jpl-25ft", "SOCAL-jet-propulsion-laboratory", "invented"]},
             {"action": "select_processes", "label": "Bad", "target_ids": ["invented"]},
             {"action": "filter_programs", "label": "Programs", "target_ids": ["spacewerx-sbir-sttr", "invented"]},
         ],
         "unknowns": [], "evidence_limitations": [], "mode": "test",
     }
     safe = main.validate_response(raw)
-    assert safe["organization_ids"] == ["nasa-jpl"]
+    assert safe["organization_ids"] == ["SOCAL-jet-propulsion-laboratory"]
     assert safe["facility_ids"] == ["jpl-25ft"]
     assert safe["process_ids"] == ["integration"]
     assert safe["program_ids"] == ["spacewerx-sbir-sttr"]

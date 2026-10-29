@@ -1,0 +1,103 @@
+{
+  "build_date": "2026-10-29",
+  "total_research_organizations": 437,
+  "website_candidates_all": 306,
+  "demo_250": 250,
+  "research_only": 131,
+  "core_evidence_breakdown": {
+    "official_current": 17,
+    "secondary_index_requires_primary_verification": 170,
+    "curated_2026_source_snapshot": 63
+  },
+  "role_breakdown": {
+    "direct-space": 25,
+    "direct-or-aerospace": 42,
+    "ecosystem": 5,
+    "adjacent-industrial-candidate": 28,
+    "industrial-supply-base": 147,
+    "adjacent-industrial": 3
+  },
+  "county_coverage": [
+    {
+      "county": "Los Angeles",
+      "demo_count": 81,
+      "directory_secondary": 69,
+      "curated_2026": 0,
+      "official_primary": 12,
+      "direct_space_or_aerospace": 23,
+      "industrial_supply_base": 53,
+      "adjacent_candidates": 1,
+      "ecosystem": 4
+    },
+    {
+      "county": "Orange",
+      "demo_count": 97,
+      "directory_secondary": 33,
+      "curated_2026": 63,
+      "official_primary": 1,
+      "direct_space_or_aerospace": 37,
+      "industrial_supply_base": 34,
+      "adjacent_candidates": 26,
+      "ecosystem": 0
+    },
+    {
+      "county": "Riverside",
+      "demo_count": 13,
+      "directory_secondary": 13,
+      "curated_2026": 0,
+      "official_primary": 0,
+      "direct_space_or_aerospace": 0,
+      "industrial_supply_base": 13,
+      "adjacent_candidates": 0,
+      "ecosystem": 0
+    },
+    {
+      "county": "San Bernardino",
+      "demo_count": 12,
+      "directory_secondary": 12,
+      "curated_2026": 0,
+      "official_primary": 0,
+      "direct_space_or_aerospace": 0,
+      "industrial_supply_base": 12,
+      "adjacent_candidates": 0,
+      "ecosystem": 0
+    },
+    {
+      "county": "San Diego",
+      "demo_count": 35,
+      "directory_secondary": 32,
+      "curated_2026": 0,
+      "official_primary": 3,
+      "direct_space_or_aerospace": 7,
+      "industrial_supply_base": 24,
+      "adjacent_candidates": 4,
+      "ecosystem": 0
+    },
+    {
+      "county": "Santa Barbara",
+      "demo_count": 1,
+      "directory_secondary": 0,
+      "curated_2026": 0,
+      "official_primary": 1,
+      "direct_space_or_aerospace": 0,
+      "industrial_supply_base": 0,
+      "adjacent_candidates": 0,
+      "ecosystem": 1
+    },
+    {
+      "county": "Ventura",
+      "demo_count": 11,
+      "directory_secondary": 11,
+      "curated_2026": 0,
+      "official_primary": 0,
+      "direct_space_or_aerospace": 0,
+      "industrial_supply_base": 11,
+      "adjacent_candidates": 0,
+      "ecosystem": 0
+    }
+  ],
+  "historical_only_in_demo": 0,
+  "website_live_already_updated": false,
+  "all_require_publication_review": true,
+  "source_count": 22
+}

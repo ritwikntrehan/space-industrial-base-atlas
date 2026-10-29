@@ -1,0 +1,325 @@
+{
+  "as_of": "2026-10-29",
+  "total_unique_organizations": 437,
+  "locations_city_labels": 443,
+  "individually_evidenced_facilities": 20,
+  "capability_claims": 765,
+  "relationships": 896,
+  "by_tier": {
+    "industrial-supply-base": 185,
+    "direct-space": 25,
+    "out-of-scope-seed": 30,
+    "adjacent-industrial-candidate": 36,
+    "historical-nasa-supplier-lead": 101,
+    "direct-or-aerospace": 42,
+    "adjacent-industrial": 13,
+    "ecosystem": 5
+  },
+  "by_county": {
+    "Ventura": 16,
+    "Los Angeles": 166,
+    "Orange": 177,
+    "San Diego": 42,
+    "San Bernardino": 21,
+    "Riverside": 14,
+    "Santa Barbara": 1
+  },
+  "by_source": {
+    "noramark_aerospace_oct2026": 164,
+    "spaceindex_2026": 13,
+    "defdex_2026": 21,
+    "regional_sector_secondpass_oct2026": 35,
+    "schtmap_2026": 100,
+    "nasa_esd_2019": 111,
+    "official_primary_secondpass_2026": 11,
+    "sdedc_aerospace": 14,
+    "santa_ana_chamber_2026": 2,
+    "corona_chamber_2026": 5,
+    "official_company_2026": 5,
+    "spaceforce_sld30_2026": 1
+  },
+  "ready_as_candidates_for_website": 306,
+  "demo_shortlist_250": 250,
+  "source_record_count_second_pass": 199,
+  "research_only": 131,
+  "duplicate_name_merges": 46,
+  "duplicate_examples": [
+    {
+      "incoming": "TTM Technologies, Inc.",
+      "existing": "TTM Technologies",
+      "source_id": "nasa_esd_2019",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Halo Industries, Inc.",
+      "existing": "Halo Industries",
+      "source_id": "nasa_esd_2019",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "National Technical Systems, Inc.",
+      "existing": "National Technical Systems",
+      "source_id": "nasa_esd_2019",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Qual-Pro Corporation",
+      "existing": "Qual-Pro Corporation",
+      "source_id": "noramark_aerospace_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Metal Surfaces, Inc.",
+      "existing": "Metal Surfaces, Inc.",
+      "source_id": "noramark_aerospace_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "VACCO Industries",
+      "existing": "VACCO Industries",
+      "source_id": "noramark_aerospace_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Astro-Tek Industries Inc",
+      "existing": "Astro-Tek Industries, Inc.",
+      "source_id": "noramark_aerospace_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Consolidated Precision Products",
+      "existing": "Consolidated Precision Products",
+      "source_id": "noramark_aerospace_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Rickard Specialty Metals & Engineering",
+      "existing": "Rickard Specialty Metals & Engineering",
+      "source_id": "noramark_aerospace_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Aevex Aerospace",
+      "existing": "Aevex Aerospace",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "ATA Engineering",
+      "existing": "ATA Engineering",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Blue Sky Network",
+      "existing": "Blue Sky Network",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "BMT Aerospace",
+      "existing": "BMT Aerospace",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Carbon by Design",
+      "existing": "Carbon by Design",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Malin Space Science Systems",
+      "existing": "Malin Space Science Systems",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Planck Aerosystems",
+      "existing": "Planck Aerosystems",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Nikkiso America",
+      "existing": "Nikkiso America",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Sungear Inc.",
+      "existing": "Sungear Inc.",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Space Micro",
+      "existing": "Space Micro",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "SkySafe",
+      "existing": "SkySafe",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Shield AI",
+      "existing": "Shield AI",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "ABL Space Systems",
+      "existing": "ABL Space Systems",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Amca",
+      "existing": "Amca",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Ampaire",
+      "existing": "Ampaire",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "AnySignal",
+      "existing": "AnySignal",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Argo Space",
+      "existing": "Argo Space",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Atlas Motion",
+      "existing": "Atlas Motion",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Blue Robotics",
+      "existing": "Blue Robotics",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Boeing",
+      "existing": "Boeing",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Northrop Grumman",
+      "existing": "Northrop Grumman",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "SpaceX",
+      "existing": "SpaceX",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Space Systems Command",
+      "existing": "Space Systems Command",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "The Aerospace Corporation",
+      "existing": "The Aerospace Corporation",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Airborne Systems North America of CA, Inc.",
+      "existing": "Airborne Systems North America of CA",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "QED, Inc.",
+      "existing": "QED Inc.",
+      "source_id": "regional_sector_secondpass_oct2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Carbon by Design",
+      "existing": "Carbon by Design",
+      "source_id": "official_primary_secondpass_2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Applied Composites",
+      "existing": "Applied Composites",
+      "source_id": "official_primary_secondpass_2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "VACCO Industries",
+      "existing": "VACCO Industries",
+      "source_id": "official_primary_secondpass_2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Terra Universal, Inc.",
+      "existing": "Terra Universal, Inc.",
+      "source_id": "official_primary_secondpass_2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Micro Quality Calibration, Inc.",
+      "existing": "Micro Quality Calibration, Inc.",
+      "source_id": "official_primary_secondpass_2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Glenair, Inc.",
+      "existing": "Glenair, Inc.",
+      "source_id": "official_primary_secondpass_2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Ultramet",
+      "existing": "Ultramet",
+      "source_id": "official_primary_secondpass_2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Advanced Test Equipment Corporation (ATEC)",
+      "existing": "Advanced Test Equipment Corporation (ATEC)",
+      "source_id": "official_primary_secondpass_2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Boeing",
+      "existing": "Boeing",
+      "source_id": "official_primary_secondpass_2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "Northrop Grumman",
+      "existing": "Northrop Grumman",
+      "source_id": "official_primary_secondpass_2026",
+      "type": "name-normalized"
+    },
+    {
+      "incoming": "SpaceX",
+      "existing": "SpaceX",
+      "source_id": "official_primary_secondpass_2026",
+      "type": "name-normalized"
+    }
+  ],
+  "no_active_supplier_status_inferred_from_2019_nasa_map": true
+}
